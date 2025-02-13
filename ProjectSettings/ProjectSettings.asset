@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 94a7f1c246660ba49921a2f31c9b840c
+  productGUID: 49b22a96bb4593f4fa06f76ac4347489
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Proyecto
+  productName: JuegoProy3
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -838,14 +838,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Proyecto
+  metroPackageName: JuegoProy3
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Proyecto
+  metroApplicationDescription: JuegoProy3
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -913,12 +913,12 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 2
+  activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 2cb342c4-c205-46c9-b19e-0e6d6764fe7f
+  cloudProjectId: e40f3baa-19a4-4bb1-9209-38ff5baa34de
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Proyecto
+  projectName: JuegoProy3
   organizationId: anglod
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
