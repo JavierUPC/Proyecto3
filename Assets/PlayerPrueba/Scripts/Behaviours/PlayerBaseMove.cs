@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerBaseMove : MonoBehaviour
 {
-    public float moveSpeed = 0, runSpeed = 0, jumpForce = 0, sensX = 0, sensY = 0;
-    public InputActionReference move, rotate;
+    public float moveSpeed = 0, runSpeed = 0, sensX = 0, sensY = 0;
+    public InputActionReference move, run, climb;
     public InputActionAsset inputActions;
     public Transform playerCam;
 
-    private bool grounded;
+    private bool grounded, climbing;
     private Rigidbody rb;
     private Vector2 rotationDelta;
     private Vector3 moveDirection;
@@ -41,11 +41,11 @@ public class PlayerBaseMove : MonoBehaviour
 
 
     //JUMP
-    private void Jump(InputAction.CallbackContext obj)
-    {
-        if (grounded)
-            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-    }
+    //private void Jump(InputAction.CallbackContext obj)
+    //{
+    //    if (grounded)
+    //        rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+    //}
     //------
 
 
@@ -60,7 +60,7 @@ public class PlayerBaseMove : MonoBehaviour
             Run();
         //}
 
-        Rotate();
+        //Rotate();
 
         rb.velocity = new Vector3(moveDirection.x * speed, rb.velocity.y, moveDirection.z * speed);
     }
@@ -79,7 +79,7 @@ public class PlayerBaseMove : MonoBehaviour
     {
         Vector2 worldMoveDirection = move.action.ReadValue<Vector2>();
         Vector3 worldDirection = new Vector3(worldMoveDirection.x, 0, worldMoveDirection.y);
-        moveDirection = transform.TransformDirection(worldDirection);
+        moveDirection = playerCam.TransformDirection(worldDirection);
 
         //Debug.Log("Move: " + moveDirection);
     }
@@ -87,27 +87,27 @@ public class PlayerBaseMove : MonoBehaviour
 
 
     //ROTATE    
-    private void Rotate()
-    {
-        rotationDelta = rotate.action.ReadValue<Vector2>();
+    //private void Rotate()
+    //{
+    //    rotationDelta = rotate.action.ReadValue<Vector2>();
 
-        //Debug.Log(rotationDelta);
+    //    //Debug.Log(rotationDelta);
 
-        vertRot = rotationDelta.y * sensY * Time.deltaTime;
-        horiRot = rotationDelta.x * sensX * Time.deltaTime;
+    //    vertRot = rotationDelta.y * sensY * Time.deltaTime;
+    //    horiRot = rotationDelta.x * sensX * Time.deltaTime;
 
-        //Evitar que la cámara rote de más
-        Vector3 currentRotation = playerCam.localEulerAngles;
-        float pitch = currentRotation.x;
-        if (pitch > 180)
-            pitch -= 360;
-        pitch = Mathf.Clamp(pitch - vertRot, -90f, 90f);
-        currentRotation.x = pitch;
-        //-------------------------------
+    //    //Evitar que la cámara rote de más
+    //    Vector3 currentRotation = playerCam.localEulerAngles;
+    //    float pitch = currentRotation.x;
+    //    if (pitch > 180)
+    //        pitch -= 360;
+    //    pitch = Mathf.Clamp(pitch - vertRot, -90f, 90f);
+    //    currentRotation.x = pitch;
+    //    //-------------------------------
 
-        playerCam.localEulerAngles = currentRotation;
-        transform.Rotate(Vector3.up, horiRot);
-    }
+    //    playerCam.localEulerAngles = currentRotation;
+    //    transform.Rotate(Vector3.up, horiRot);
+    //}
     //------
 
     //RUN
