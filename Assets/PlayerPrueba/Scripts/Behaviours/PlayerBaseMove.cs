@@ -78,11 +78,9 @@ public class PlayerBaseMove : MonoBehaviour
         if (moveDirection != new Vector3(0f, moveDirection.y, 0f))
         {
             Quaternion targetRotation = Quaternion.Euler(player.transform.rotation.eulerAngles.x, playerCam.transform.rotation.eulerAngles.y, player.transform.rotation.eulerAngles.z);
-
-            player.transform.rotation = Quaternion.Lerp(player.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            player.transform.rotation = Quaternion.Lerp(player.transform.rotation, targetRotation, Time.unscaledDeltaTime * rotationSpeed);
         }
         //Debug.Log(worldMoveDirection);
-
         //Debug.Log("Move: " + moveDirection);
     }
     //------
@@ -105,7 +103,7 @@ public class PlayerBaseMove : MonoBehaviour
     //GROUNDED
     public void SetGrounded(bool state)
     {
-        Debug.Log("Grounded");
+        //Debug.Log("Grounded");
         if (!gameObject.activeSelf)
             return;
 
