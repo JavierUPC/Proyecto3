@@ -5,24 +5,23 @@ using UnityEngine.InputSystem;
 
 public class PlayerBaseMove : MonoBehaviour
 {
-    public float moveSpeed = 0, runSpeed = 0, sensX = 0, sensY = 0;
-    public InputActionReference move, run, climb;
-    public InputActionAsset inputActions;
+    public float moveSpeed = 0, runSpeed = 0, rotationSpeed = 0;
+    public InputActionReference move, run;
     public Transform playerCam;
 
-    private bool grounded, climbing;
+    private bool grounded = false;
     private Rigidbody rb;
-    private Vector2 rotationDelta;
     private Vector3 moveDirection;
     private float speed;
-    private float vertRot, horiRot;
+
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        rb = GetComponent<Rigidbody>();
+        rb = player.GetComponent<Rigidbody>();
         speed = moveSpeed;
     }
 
@@ -30,37 +29,33 @@ public class PlayerBaseMove : MonoBehaviour
     //ACTION EVENTLISTENERS
     private void OnEnable()
     {
+        move.action.Enable();
+        run.action.Enable();
 
+        run.action.started += Run;
+        run.action.canceled += StopRun;
     }
 
     private void OnDisable()
     {
+        move.action.Disable();
+        run.action.Disable();
 
+        run.action.started -= Run;
+        run.action.canceled -= StopRun;
     }
     //------
 
 
-    //JUMP
-    //private void Jump(InputAction.CallbackContext obj)
-    //{
-    //    if (grounded)
-    //        rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-    //}
-    //------
 
 
     //UPDATE
     void Update()
     {
-        //if (grounded)
-        //{
-        Move();
-
         if (grounded)
-            Run();
-        //}
-
-        //Rotate();
+        {
+            Move();
+        }
 
         rb.velocity = new Vector3(moveDirection.x * speed, rb.velocity.y, moveDirection.z * speed);
     }
@@ -80,58 +75,41 @@ public class PlayerBaseMove : MonoBehaviour
         Vector2 worldMoveDirection = move.action.ReadValue<Vector2>();
         Vector3 worldDirection = new Vector3(worldMoveDirection.x, 0, worldMoveDirection.y);
         moveDirection = playerCam.TransformDirection(worldDirection);
+        if (moveDirection != new Vector3(0f, moveDirection.y, 0f))
+        {
+            Quaternion targetRotation = Quaternion.Euler(player.transform.rotation.eulerAngles.x, playerCam.transform.rotation.eulerAngles.y, player.transform.rotation.eulerAngles.z);
+
+            player.transform.rotation = Quaternion.Lerp(player.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        }
+        //Debug.Log(worldMoveDirection);
 
         //Debug.Log("Move: " + moveDirection);
     }
     //------
 
 
-    //ROTATE    
-    //private void Rotate()
-    //{
-    //    rotationDelta = rotate.action.ReadValue<Vector2>();
-
-    //    //Debug.Log(rotationDelta);
-
-    //    vertRot = rotationDelta.y * sensY * Time.deltaTime;
-    //    horiRot = rotationDelta.x * sensX * Time.deltaTime;
-
-    //    //Evitar que la cámara rote de más
-    //    Vector3 currentRotation = playerCam.localEulerAngles;
-    //    float pitch = currentRotation.x;
-    //    if (pitch > 180)
-    //        pitch -= 360;
-    //    pitch = Mathf.Clamp(pitch - vertRot, -90f, 90f);
-    //    currentRotation.x = pitch;
-    //    //-------------------------------
-
-    //    playerCam.localEulerAngles = currentRotation;
-    //    transform.Rotate(Vector3.up, horiRot);
-    //}
-    //------
-
     //RUN
-    private void Run()
+    private void Run(InputAction.CallbackContext obj)
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (grounded)
             speed = runSpeed;
-        else
-            speed = moveSpeed;
+    }
+
+    private void StopRun(InputAction.CallbackContext obj)
+    {
+        speed = moveSpeed;
     }
     //-----
 
 
     //GROUNDED
-    private void OnCollisionStay(Collision collision)
+    public void SetGrounded(bool state)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-            grounded = true;
-    }
+        Debug.Log("Grounded");
+        if (!gameObject.activeSelf)
+            return;
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-            grounded = false;
+        grounded = state;
     }
     //--------
 }
