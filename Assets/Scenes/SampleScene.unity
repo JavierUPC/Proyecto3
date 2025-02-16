@@ -1040,6 +1040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d064df18708ef3d43bc72ac9a11de7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAiming: 0
   mainCam: {fileID: 330585545}
   freeLookCamera: {fileID: 1141277188}
   zoomSpeed: 5
@@ -1363,13 +1364,13 @@ MonoBehaviour:
   m_LegacyBlendHint: 0
   m_YAxis:
     Value: 0
-    m_SpeedMode: 0
-    m_MaxSpeed: 2
+    m_SpeedMode: 1
+    m_MaxSpeed: 0.1
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
     m_Wrap: 0
@@ -1388,7 +1389,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 1
-    m_MaxSpeed: 3
+    m_MaxSpeed: 2
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -1650,6 +1651,7 @@ MonoBehaviour:
   moveSpeed: 5
   gravityForce: 90
   move: {fileID: -147782202262129947, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
+  isClimbing: 0
 --- !u!1 &1412561334
 GameObject:
   m_ObjectHideFlags: 3

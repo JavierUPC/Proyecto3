@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Aim : MonoBehaviour
 {
+    public bool isAiming;
     public Camera mainCam;
     public CinemachineFreeLook freeLookCamera;
     public float zoomSpeed = 5f;
@@ -25,9 +26,11 @@ public class Aim : MonoBehaviour
         aim.action.Disable();
     }
 
+    private PlayerVerticalMove playerVertical;
     private float normalFOV;
     private float zoomLevel = 1f; // 1 = normal state, 0 = aiming
     private CinemachineVirtualCamera vCam;
+    private CinemachineBrain cinemachineBrain;
 
     private float[] originalHeights = new float[3];
     private float[] originalDistances = new float[3];
@@ -54,11 +57,18 @@ public class Aim : MonoBehaviour
         {
             normalFOV = Camera.main.fieldOfView;
         }
+
+        playerVertical = GetComponentInChildren<PlayerVerticalMove>();
+
+        cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
+        cinemachineBrain.m_UpdateMethod = CinemachineBrain.UpdateMethod.ManualUpdate;
     }
 
     void Update()
     {
-        bool isAiming = aim.action.IsPressed();
+        cinemachineBrain.ManualUpdate();
+
+        isAiming = aim.action.IsPressed();
 
         if (zoomLevel >= 0.5)
         {
@@ -67,10 +77,13 @@ public class Aim : MonoBehaviour
         else if(zoomLevel < 0.5)
         {
             currentLookAt = new Vector3(initPosLookAt.x + sideDistance, initPosLookAt.y, initPosLookAt.z);
-            Vector3 cameraForward = mainCam.transform.forward;
-            cameraForward.y = 0;
-            Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            if (!playerVertical.isClimbing)
+            {
+                Vector3 cameraForward = mainCam.transform.forward;
+                cameraForward.y = 0;
+                Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.unscaledDeltaTime * rotationSpeed);
+            }
         }
 
         zoomLevel = Mathf.Lerp(zoomLevel, isAiming ? 0f : 1f, Time.unscaledDeltaTime * zoomSpeed);

@@ -11,7 +11,7 @@ public class PlayerVerticalMove : MonoBehaviour
     public InputActionReference move;
     private Rigidbody rb;
     private Vector3 surfaceNormal;
-    private bool isClimbing = false;
+    public bool isClimbing = false;
 
     void Start()
     {
