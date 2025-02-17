@@ -16,6 +16,7 @@ public class Aim : MonoBehaviour
     public float rotationSpeed;
     public Transform lookAt;
     public InputActionReference aim;
+    public PlayerVerticalMove playerVertical;
     private void OnEnable()
     {
         aim.action.Enable();
@@ -26,7 +27,6 @@ public class Aim : MonoBehaviour
         aim.action.Disable();
     }
 
-    private PlayerVerticalMove playerVertical;
     private float normalFOV;
     private float zoomLevel = 1f; // 1 = normal state, 0 = aiming
     private CinemachineVirtualCamera vCam;
@@ -57,8 +57,6 @@ public class Aim : MonoBehaviour
         {
             normalFOV = Camera.main.fieldOfView;
         }
-
-        playerVertical = GetComponentInChildren<PlayerVerticalMove>();
 
         cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
         cinemachineBrain.m_UpdateMethod = CinemachineBrain.UpdateMethod.ManualUpdate;

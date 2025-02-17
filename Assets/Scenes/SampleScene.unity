@@ -1050,6 +1050,7 @@ MonoBehaviour:
   rotationSpeed: 15
   lookAt: {fileID: 1674577920}
   aim: {fileID: 2137594422101474723, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
+  playerVertical: {fileID: 1326119683}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
