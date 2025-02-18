@@ -12,18 +12,24 @@ public class Aim : MonoBehaviour
     public float zoomSpeed = 5f;
     public float aimDistanceMulti = 0.4f;
     public float aimFOV = 40f;
-    public float sideDistance = 1.5f;
+    public Vector2 displaceCam = new Vector2(1.5f, 0.5f);
     public float rotationSpeed;
     public Transform lookAt;
-    public InputActionReference aim;
+    public InputActionReference aim, fire;
     private void OnEnable()
     {
         aim.action.Enable();
+        fire.action.Enable();
+
+        fire.action.performed += Fire;
     }
 
     private void OnDisable()
     {
         aim.action.Disable();
+        fire.action.Disable();
+
+        fire.action.performed -= Fire;
     }
 
     public GameObject playerVertical;
@@ -62,6 +68,14 @@ public class Aim : MonoBehaviour
         cinemachineBrain.m_UpdateMethod = CinemachineBrain.UpdateMethod.ManualUpdate;
     }
 
+    private void Fire (InputAction.CallbackContext context)
+    {
+        if(isAiming && zoomLevel < 0.1)
+        {
+            Debug.Log("Fire");
+        }
+    }
+
     void Update()
     {
         cinemachineBrain.ManualUpdate();
@@ -74,7 +88,7 @@ public class Aim : MonoBehaviour
         }
         else if(zoomLevel < 0.5)
         {
-            currentLookAt = new Vector3(initPosLookAt.x + sideDistance, initPosLookAt.y, initPosLookAt.z);
+            currentLookAt = new Vector3(initPosLookAt.x + displaceCam.x, initPosLookAt.y + displaceCam.y, initPosLookAt.z);
             if (!playerVertical.activeSelf)
             {
                 Vector3 cameraForward = mainCam.transform.forward;
