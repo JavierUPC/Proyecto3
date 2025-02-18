@@ -27,6 +27,7 @@ public class Aim : MonoBehaviour
         aim.action.Disable();
     }
 
+    public GameObject playerVertical;
     private float normalFOV;
     private float zoomLevel = 1f; // 1 = normal state, 0 = aiming
     private CinemachineVirtualCamera vCam;
@@ -75,7 +76,7 @@ public class Aim : MonoBehaviour
         else if(zoomLevel < 0.5)
         {
             currentLookAt = new Vector3(initPosLookAt.x + sideDistance, initPosLookAt.y, initPosLookAt.z);
-            if (!playerVertical.isClimbing)
+            if (!playerVertical.activeSelf)
             {
                 Vector3 cameraForward = mainCam.transform.forward;
                 cameraForward.y = 0;
