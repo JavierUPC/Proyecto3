@@ -1046,11 +1046,12 @@ MonoBehaviour:
   zoomSpeed: 5
   aimDistanceMulti: 0.3
   aimFOV: 40
-  sideDistance: 1.5
+  displaceCam: {x: 1.5, y: 0.5}
   rotationSpeed: 15
   lookAt: {fileID: 1674577920}
   aim: {fileID: 2137594422101474723, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
-  playerVertical: {fileID: 1326119683}
+  fire: {fileID: 5439237347058325833, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
+  playerVertical: {fileID: 1326119681}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
