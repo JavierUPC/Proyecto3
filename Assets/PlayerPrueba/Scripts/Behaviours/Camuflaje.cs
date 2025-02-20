@@ -74,7 +74,7 @@ public class Camuflaje : MonoBehaviour
     //AÑADIR METODO PARA ACTICAR COOLDOWN PARA NO PODER ACTIVAR CAMO SI TIENE MOSCA EN LA BOCA
     //-----------------------------------------------------------------------------------------
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         Material collisionMat = collision.gameObject.GetComponent<MeshRenderer>().material;
         if (collision.gameObject.layer == LayerMask.NameToLayer("Wall") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
