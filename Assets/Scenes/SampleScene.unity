@@ -1068,7 +1068,8 @@ MonoBehaviour:
   isCamo: 0
   camoUseTime: 5
   camoCoolDown: 5
-  camouflage: {fileID: 0}
+  camouflage: {fileID: 5382348245184421563, guid: 47225417dc76fad48a9838d4130af3c1,
+    type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
