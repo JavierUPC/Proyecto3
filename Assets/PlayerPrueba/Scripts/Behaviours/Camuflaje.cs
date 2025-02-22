@@ -12,6 +12,7 @@ public class Camuflaje : MonoBehaviour
     private bool cooldown;
     private Collider playerCollider;
     public bool isCamo;
+    public bool previousState;
 
     public float camoUseTime;
     public float camoCoolDown;
@@ -41,7 +42,13 @@ public class Camuflaje : MonoBehaviour
         if (isCamo)
             GetComponent<Renderer>().material = matContact;
         else
+        {
             GetComponent<Renderer>().material = matPlayer;
+            if (previousState)
+                cooldown = true;
+        }
+
+        previousState = isCamo;
     }
 
     private void FixedUpdate()
