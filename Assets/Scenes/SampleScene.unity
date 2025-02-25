@@ -890,8 +890,8 @@ GameObject:
   - component: {fileID: 773641964}
   - component: {fileID: 773641965}
   m_Layer: 0
-  m_Name: Capsule
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1905,7 +1905,7 @@ GameObject:
   - component: {fileID: 1732807755}
   - component: {fileID: 1732807760}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Mosca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1957,7 +1957,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1732807757
 MeshRenderer:
@@ -2018,7 +2018,7 @@ Transform:
   m_GameObject: {fileID: 1732807754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.74, y: 1.68, z: 0.62658316}
+  m_LocalPosition: {x: 2.74, y: 2.6, z: 0.62658316}
   m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2039,6 +2039,9 @@ MonoBehaviour:
   velocidad: 4.5
   escala: 2
   velocidadRotacion: 45
+  tiempoHuyendo: 2
+  amplitudSerpenteo: 1
+  frecuenciaSerpenteo: 5
 --- !u!1 &1853829045
 GameObject:
   m_ObjectHideFlags: 0
