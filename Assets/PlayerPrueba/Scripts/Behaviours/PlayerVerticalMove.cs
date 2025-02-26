@@ -54,6 +54,7 @@ public class PlayerVerticalMove : MonoBehaviour
         surfaceNormal = highestPoint.normal;
         isClimbing = true;
         AlignToSurface();
+        AlignZDirectionToUp(collision.transform); //QUITAR ESTO PARA QUE NO SE ALINEE CON LA DIRECCIÓN DE ARRIBA DEL OBJETO QUE SE ESCALA
         rb.useGravity = false;
     }
 
@@ -62,6 +63,14 @@ public class PlayerVerticalMove : MonoBehaviour
         Quaternion targetRotation = Quaternion.FromToRotation(player.transform.up, surfaceNormal) * player.transform.rotation;
         player.transform.rotation = targetRotation;
     }
+
+    private void AlignZDirectionToUp(Transform climbableTransform) //QUITAR ESTO PARA QUE NO SE ALINEE CON LA DIRECCIÓN DE ARRIBA DEL OBJETO QUE SE ESCALA
+    {
+        Vector3 targetUp = climbableTransform.up;
+        Quaternion newRotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(targetUp, surfaceNormal), surfaceNormal);
+        player.transform.rotation = Quaternion.Lerp(player.transform.rotation, newRotation, 0.1f);
+    }
+    //HACER QUE CUANDO SE CLIQUE LA "S", CAMBIE LA DIROCCIÓN DE Y DEL OBJETO EN LA QUE APUNTA
 
     private void ApplyGravity()
     {
