@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnerMosca : MonoBehaviour
 {
     public MoscaSO moscaSO;
+    private bool spawn = true;
 
     private void Start()
     {
@@ -13,6 +14,24 @@ public class SpawnerMosca : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //SPAWNER
+        if (spawn)
+        {
+            if (moscaSO.mosca == TipoMosca.Electrico)
+            {
+                //InstanciarMosca eléctrica
+                spawn = false;
+            }
+            if (moscaSO.mosca == TipoMosca.Fuego)
+            {
+                //InstanciarMosca de fuego
+                spawn = false;
+            }
+        }
+
+    }
+
+    public void SetSpawn()
+    {
+        spawn = true;
     }
 }
