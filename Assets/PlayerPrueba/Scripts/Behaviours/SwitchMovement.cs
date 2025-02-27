@@ -9,7 +9,7 @@ public class SwitchMovement : MonoBehaviour
     public GameObject baseMovement;
     private bool grounded = false, climbing = false;
 
-    public InputActionReference climb;
+    public InputActionReference climb, fall;
 
     private void Start()
     {
@@ -19,14 +19,42 @@ public class SwitchMovement : MonoBehaviour
 
     private void OnEnable()
     {
+        fall.action.Enable();
         climb.action.Enable();
         climb.action.started += SwitchState;
+        fall.action.started += Fall;
     }
 
     private void OnDisable()
     {
+        fall.action.Disable();
         climb.action.started -= SwitchState;
+        fall.action.started -= Fall;
         climb.action.Disable();
+    }
+
+    public void Fall(InputAction.CallbackContext obj)
+    {
+        //Debug.Log("SwitchState called");
+
+            if (verticalMovement.activeSelf)
+            {
+                verticalMovement.SetActive(false);
+                baseMovement.SetActive(true);
+                GetComponent<Rigidbody>().useGravity = true;
+                float playerYRotationInLocalSpace = transform.localEulerAngles.y;
+                transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
+                //Debug.Log("Switched to Base Movement");
+            }
+            else if (baseMovement.activeSelf)
+            {
+                baseMovement.SetActive(false);
+                verticalMovement.SetActive(true);
+                float playerYRotationInLocalSpace = transform.localEulerAngles.y;
+                transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
+                GetComponent<Rigidbody>().useGravity = false;
+                Debug.Log("Switched to Climbing Movement");
+            }
     }
 
     public void SwitchState(InputAction.CallbackContext obj)

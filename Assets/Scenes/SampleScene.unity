@@ -1029,6 +1029,7 @@ MonoBehaviour:
   verticalMovement: {fileID: 1326119681}
   baseMovement: {fileID: 257208553}
   climb: {fileID: -4030589357138319987, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
+  fall: {fileID: -6977582181945453535, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
 --- !u!114 &773641964
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "FallFromWall",
+                    "type": "Button",
+                    "id": "fdeb3a31-48ab-4487-be66-731eb270a89c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -472,6 +481,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Camo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa2cbfdc-2058-45cf-8e3c-529e8014fdb3",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "FallFromWall",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
