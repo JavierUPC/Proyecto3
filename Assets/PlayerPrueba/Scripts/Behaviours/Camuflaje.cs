@@ -13,6 +13,7 @@ public class Camuflaje : MonoBehaviour
     private Collider playerCollider;
     public bool isCamo;
     public bool previousState;
+    public ApplyAbilty checkMoscaEnBoca;
 
     public float camoUseTime;
     public float camoCoolDown;
@@ -37,7 +38,7 @@ public class Camuflaje : MonoBehaviour
     void Update()
     {
         if(!cooldown)
-        isCamo = camouflage.action.IsPressed();
+        isCamo = (camouflage.action.IsPressed() && checkMoscaEnBoca.BugInMouth());
 
         if (isCamo)
             GetComponent<Renderer>().material = matContact;

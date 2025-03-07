@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Climbable
   - Lengua
+  - Mosca
   layers:
   - Default
   - TransparentFX

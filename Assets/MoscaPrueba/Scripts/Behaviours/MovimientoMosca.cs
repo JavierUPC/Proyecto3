@@ -78,21 +78,24 @@ public class MovimientoMosca : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Lengua") || collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Lengua") || other.CompareTag("Player"))
         {
-            ContactPoint contacto = collision.GetContact(0);
-            Vector3 normalContacto = contacto.normal;
-
-            direccionOpuesta = normalContacto.normalized;
-
+            Vector3 normalContacto = (transform.position - other.transform.position).normalized;
+            direccionOpuesta = normalContacto;
             direccionPerpendicular = Vector3.Cross(direccionOpuesta, Vector3.up).normalized;
 
-            Debug.Log($"Normal: {normalContacto}, Dirección Opuesta: {direccionOpuesta}, Perpendicular: {direccionPerpendicular}");
+            //Debug.Log($"Normal: {normalContacto}, Dirección Opuesta: {direccionOpuesta}, Perpendicular: {direccionPerpendicular}");
 
-            fleeing = true;
-            timer = 0;
+            StartCoroutine(FleeingActive());
         }
+    }
+
+    private IEnumerator FleeingActive()
+    {
+        yield return new WaitForSeconds(0.1f);
+        fleeing = true;
+        timer = 0;
     }
 }

@@ -32,6 +32,7 @@ public class Aim : MonoBehaviour
         fire.action.performed -= Fire;
     }
 
+    public ApplyAbilty checkIfBugInMouth;
     public GameObject playerVertical;
     private float normalFOV;
     private float zoomLevel = 1f; // 1 = normal state, 0 = aiming
@@ -70,7 +71,7 @@ public class Aim : MonoBehaviour
 
     private void Fire (InputAction.CallbackContext context)
     {
-        if(isAiming && zoomLevel < 0.1)
+        if(isAiming && zoomLevel < 0.1 && checkIfBugInMouth.BugInMouth())
         {
             Debug.Log("Fire");
         }
