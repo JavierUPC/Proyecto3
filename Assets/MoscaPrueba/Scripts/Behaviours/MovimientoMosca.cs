@@ -13,7 +13,7 @@ public class MovimientoMosca : MonoBehaviour
 
     private Rigidbody rb;
     private float tiempo = 0f;
-    private Transform centroRotacion;
+    public Transform centroRotacion;
     private Vector3 ultimaPosicion;
     private bool fleeing;
     private float timer;

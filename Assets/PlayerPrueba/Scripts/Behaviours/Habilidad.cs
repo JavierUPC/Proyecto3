@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Habilidad : MonoBehaviour
 {
-    private TipoMosca tipo;
+    private TipoMosca tipo = TipoMosca.None;
     public InputActionReference fire;
     private bool habilidad;
 
@@ -41,5 +41,6 @@ public class Habilidad : MonoBehaviour
     public void Stop()
     {
         habilidad = false;
+        tipo = TipoMosca.None;
     }
 }

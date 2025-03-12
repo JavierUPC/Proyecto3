@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum TipoMosca
 {
+    None,
     Electrico,
     Fuego
 }
