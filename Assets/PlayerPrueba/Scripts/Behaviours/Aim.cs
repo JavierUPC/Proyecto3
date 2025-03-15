@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class Aim : MonoBehaviour
 {
+    public GameObject vertical;
+    public GameObject horizontal;
     public bool isAiming;
     public Camera mainCam;
     public CinemachineFreeLook freeLookCamera;
@@ -13,6 +15,7 @@ public class Aim : MonoBehaviour
     public float aimDistanceMulti = 0.4f;
     public float aimFOV = 40f;
     public Vector2 displaceCam = new Vector2(1.5f, 0.5f);
+    public Vector2 displaceCamClimb = new Vector2(0.5f, 1.5f);
     public float rotationSpeed;
     public Transform lookAt;
     public InputActionReference aim, fire;
@@ -35,7 +38,7 @@ public class Aim : MonoBehaviour
     public ApplyAbilty checkIfBugInMouth;
     public GameObject playerVertical;
     private float normalFOV;
-    private float zoomLevel = 1f; // 1 = normal state, 0 = aiming
+    private float zoomLevel = 1f;
     private CinemachineVirtualCamera vCam;
     private CinemachineBrain cinemachineBrain;
 
@@ -69,9 +72,9 @@ public class Aim : MonoBehaviour
         cinemachineBrain.m_UpdateMethod = CinemachineBrain.UpdateMethod.ManualUpdate;
     }
 
-    private void Fire (InputAction.CallbackContext context)
+    private void Fire(InputAction.CallbackContext context)
     {
-        if(isAiming && zoomLevel < 0.1 && checkIfBugInMouth.BugInMouth())
+        if (isAiming && zoomLevel < 0.1 && checkIfBugInMouth.BugInMouth())
         {
             Debug.Log("Fire");
         }
@@ -83,13 +86,15 @@ public class Aim : MonoBehaviour
 
         isAiming = aim.action.IsPressed();
 
+        Vector2 currentDisplaceCam = horizontal.activeSelf ? displaceCam : (vertical.activeSelf ? displaceCamClimb : displaceCam);
+
         if (zoomLevel >= 0.5)
         {
             currentLookAt = initPosLookAt;
         }
-        else if(zoomLevel < 0.5)
+        else if (zoomLevel < 0.5)
         {
-            currentLookAt = new Vector3(initPosLookAt.x + displaceCam.x, initPosLookAt.y + displaceCam.y, initPosLookAt.z);
+            currentLookAt = new Vector3(initPosLookAt.x + currentDisplaceCam.x, initPosLookAt.y + currentDisplaceCam.y, initPosLookAt.z);
             if (!playerVertical.activeSelf)
             {
                 Vector3 cameraForward = mainCam.transform.forward;
@@ -104,7 +109,6 @@ public class Aim : MonoBehaviour
         float targetTimeScale = isAiming ? 0.2f : 1f;
         Time.timeScale = Mathf.Lerp(Time.timeScale, targetTimeScale, Time.unscaledDeltaTime * zoomSpeed);
 
-
         AdjustCamera(zoomLevel);
     }
 
@@ -112,7 +116,7 @@ public class Aim : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            freeLookCamera.m_Orbits[i].m_Height = Mathf.Lerp(originalHeights[i], originalHeights[i] * 0.8f, 1 - zoom); 
+            freeLookCamera.m_Orbits[i].m_Height = Mathf.Lerp(originalHeights[i], originalHeights[i] * 0.8f, 1 - zoom);
             freeLookCamera.m_Orbits[i].m_Radius = Mathf.Lerp(originalDistances[i], originalDistances[i] * aimDistanceMulti, 1 - zoom);
         }
 
@@ -125,6 +129,6 @@ public class Aim : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Lerp(normalFOV, aimFOV, 1 - zoom);
         }
 
-        lookAt.transform.localPosition = Vector3.Lerp(lookAt.transform.localPosition, currentLookAt, Time.unscaledDeltaTime * zoomSpeed/2);
+        lookAt.transform.localPosition = Vector3.Lerp(lookAt.transform.localPosition, currentLookAt, Time.unscaledDeltaTime * zoomSpeed / 2);
     }
 }
