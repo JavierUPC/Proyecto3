@@ -86,6 +86,15 @@ public class Aim : MonoBehaviour
 
         isAiming = aim.action.IsPressed();
 
+        if (isAiming)
+        {
+            freeLookCamera.m_WorldUpOverride = playerVertical.transform;
+        }
+        else
+        {
+            freeLookCamera.m_WorldUpOverride = null; 
+        }
+
         Vector2 currentDisplaceCam = horizontal.activeSelf ? displaceCam : (vertical.activeSelf ? displaceCamClimb : displaceCam);
 
         if (zoomLevel >= 0.5)
@@ -114,10 +123,15 @@ public class Aim : MonoBehaviour
 
     void AdjustCamera(float zoom)
     {
+        float[] aimHeights = { 2f, 0f, -2f };
+        float[] defaultHeights = { 3.5f, 1.5f, -2.5f };
+        float[] aimDistances = { 2f, 1.5f, 2f };
+        float[] defaultDistances = { 10f, 6f, 10f };
+
         for (int i = 0; i < 3; i++)
         {
-            freeLookCamera.m_Orbits[i].m_Height = Mathf.Lerp(originalHeights[i], originalHeights[i] * 0.8f, 1 - zoom);
-            freeLookCamera.m_Orbits[i].m_Radius = Mathf.Lerp(originalDistances[i], originalDistances[i] * aimDistanceMulti, 1 - zoom);
+            freeLookCamera.m_Orbits[i].m_Height = Mathf.Lerp(defaultHeights[i], aimHeights[i], 1 - zoom);
+            freeLookCamera.m_Orbits[i].m_Radius = Mathf.Lerp(defaultDistances[i], aimDistances[i], 1 - zoom);
         }
 
         if (vCam != null)
