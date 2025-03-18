@@ -86,14 +86,14 @@ public class Aim : MonoBehaviour
 
         isAiming = aim.action.IsPressed();
 
-        if (isAiming)
-        {
-            freeLookCamera.m_WorldUpOverride = playerVertical.transform;
-        }
-        else
-        {
-            freeLookCamera.m_WorldUpOverride = null; 
-        }
+        //if (isAiming)
+        //{
+        //    freeLookCamera.m_WorldUp = playerVertical.transform.up;
+        //}
+        //else
+        //{
+        //    freeLookCamera.m_WorldUp = Vector3.up;
+        //}
 
         Vector2 currentDisplaceCam = horizontal.activeSelf ? displaceCam : (vertical.activeSelf ? displaceCamClimb : displaceCam);
 
