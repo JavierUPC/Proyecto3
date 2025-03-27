@@ -109,6 +109,8 @@ public class Aim : MonoBehaviour
             }
         }
 
+        Debug.Log(zoomLevel);
+
         zoomLevel = Mathf.Lerp(zoomLevel, isAiming ? 0f : 1f, Time.unscaledDeltaTime * zoomSpeed);
 
         float targetTimeScale = isAiming ? 0.2f : 1f;
