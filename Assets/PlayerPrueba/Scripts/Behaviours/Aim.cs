@@ -45,11 +45,14 @@ public class Aim : MonoBehaviour
     private float[] originalHeights = new float[3];
     private float[] originalDistances = new float[3];
     private Vector3 initPosLookAt, currentLookAt;
+    private float fixedDeltaTimeInit;
 
     void Start()
     {
         initPosLookAt = new Vector3(0, 0, 0);
         currentLookAt = lookAt.localPosition;
+
+        fixedDeltaTimeInit = Time.fixedDeltaTime;
 
         vCam = freeLookCamera.GetComponent<CinemachineVirtualCamera>();
 
@@ -113,8 +116,9 @@ public class Aim : MonoBehaviour
 
         zoomLevel = Mathf.Lerp(zoomLevel, isAiming ? 0f : 1f, Time.unscaledDeltaTime * zoomSpeed);
 
-        float targetTimeScale = isAiming ? 0.2f : 1f;
+        float targetTimeScale = isAiming ? 0.1f : 1f;
         Time.timeScale = Mathf.Lerp(Time.timeScale, targetTimeScale, Time.unscaledDeltaTime * zoomSpeed);
+        Time.fixedDeltaTime =  targetTimeScale*fixedDeltaTimeInit;
 
         AdjustCamera(zoomLevel);
     }
