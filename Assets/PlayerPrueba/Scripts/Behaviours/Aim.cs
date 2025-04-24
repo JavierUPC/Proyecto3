@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+using Unity.Cinemachine;
 using UnityEngine.InputSystem;
 
 public class Aim : MonoBehaviour
@@ -10,7 +10,7 @@ public class Aim : MonoBehaviour
     public GameObject horizontal;
     public bool isAiming;
     public Camera mainCam;
-    public CinemachineFreeLook freeLookCamera;
+    public CinemachineOrbitalFollow freeLookCamera;
     public float zoomSpeed = 5f;
     public float aimDistanceMulti = 0.4f;
     public float aimFOV = 40f;
@@ -45,19 +45,16 @@ public class Aim : MonoBehaviour
     private float[] originalHeights = new float[3];
     private float[] originalDistances = new float[3];
     private Vector3 initPosLookAt, currentLookAt;
+    private float fixedDeltaTimeInit;
 
     void Start()
     {
         initPosLookAt = new Vector3(0, 0, 0);
         currentLookAt = lookAt.localPosition;
 
-        vCam = freeLookCamera.GetComponent<CinemachineVirtualCamera>();
+        fixedDeltaTimeInit = Time.fixedDeltaTime;
 
-        for (int i = 0; i < 3; i++)
-        {
-            originalHeights[i] = freeLookCamera.m_Orbits[i].m_Height;
-            originalDistances[i] = freeLookCamera.m_Orbits[i].m_Radius;
-        }
+        vCam = freeLookCamera.GetComponent<CinemachineVirtualCamera>();
 
         if (vCam != null)
         {
@@ -69,7 +66,7 @@ public class Aim : MonoBehaviour
         }
 
         cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
-        cinemachineBrain.m_UpdateMethod = CinemachineBrain.UpdateMethod.ManualUpdate;
+        cinemachineBrain.UpdateMethod = CinemachineBrain.UpdateMethods.ManualUpdate;
     }
 
     private void Fire(InputAction.CallbackContext context)
@@ -85,6 +82,17 @@ public class Aim : MonoBehaviour
         cinemachineBrain.ManualUpdate();
 
         isAiming = aim.action.IsPressed();
+
+        if (isAiming && vertical.activeSelf)
+        {
+            cinemachineBrain.WorldUpOverride = transform;
+            freeLookCamera.TrackerSettings.BindingMode = Unity.Cinemachine.TargetTracking.BindingMode.LockToTarget;
+        }
+        else
+        {
+            cinemachineBrain.WorldUpOverride = null;
+            freeLookCamera.TrackerSettings.BindingMode = Unity.Cinemachine.TargetTracking.BindingMode.WorldSpace;
+        }
 
         Vector2 currentDisplaceCam = horizontal.activeSelf ? displaceCam : (vertical.activeSelf ? displaceCamClimb : displaceCam);
 
@@ -104,21 +112,32 @@ public class Aim : MonoBehaviour
             }
         }
 
+        Debug.Log(zoomLevel);
+
         zoomLevel = Mathf.Lerp(zoomLevel, isAiming ? 0f : 1f, Time.unscaledDeltaTime * zoomSpeed);
 
-        float targetTimeScale = isAiming ? 0.2f : 1f;
+        float targetTimeScale = isAiming ? 0.1f : 1f;
         Time.timeScale = Mathf.Lerp(Time.timeScale, targetTimeScale, Time.unscaledDeltaTime * zoomSpeed);
+        Time.fixedDeltaTime =  targetTimeScale*fixedDeltaTimeInit;
 
         AdjustCamera(zoomLevel);
     }
 
     void AdjustCamera(float zoom)
     {
-        for (int i = 0; i < 3; i++)
-        {
-            freeLookCamera.m_Orbits[i].m_Height = Mathf.Lerp(originalHeights[i], originalHeights[i] * 0.8f, 1 - zoom);
-            freeLookCamera.m_Orbits[i].m_Radius = Mathf.Lerp(originalDistances[i], originalDistances[i] * aimDistanceMulti, 1 - zoom);
-        }
+        float[] aimHeights = { 2f, 0f, -2f };
+        float[] defaultHeights = { 3.5f, 1.5f, -2.5f };
+        float[] aimDistances = { 2f, 1.5f, 2f };
+        float[] defaultDistances = { 10f, 6f, 10f };
+
+        freeLookCamera.Orbits.Top.Height = Mathf.Lerp(defaultHeights[0], aimHeights[0], 1 - zoom);
+        freeLookCamera.Orbits.Top.Radius = Mathf.Lerp(defaultDistances[0], aimDistances[0], 1 - zoom);
+
+        freeLookCamera.Orbits.Center.Height = Mathf.Lerp(defaultHeights[1], aimHeights[1], 1 - zoom);
+        freeLookCamera.Orbits.Center.Radius = Mathf.Lerp(defaultDistances[1], aimDistances[1], 1 - zoom);
+
+        freeLookCamera.Orbits.Bottom.Height = Mathf.Lerp(defaultHeights[2], aimHeights[2], 1 - zoom);
+        freeLookCamera.Orbits.Bottom.Radius = Mathf.Lerp(defaultDistances[2], aimDistances[2], 1 - zoom);
 
         if (vCam != null)
         {
