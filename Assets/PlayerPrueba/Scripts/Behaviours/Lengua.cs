@@ -6,12 +6,12 @@ public class Lengua : MonoBehaviour
 {
     public ApplyAbilty player;
     public Camera cameraRef; 
-    public bool detectionEnabled = false; 
+    public bool firing = false; 
     public float rayDistance = 100f; 
 
     void Update()
     {
-        if (!detectionEnabled || cameraRef == null) return;
+        if (!firing || cameraRef == null) return;
 
         Ray ray = new Ray(cameraRef.transform.position, cameraRef.transform.forward);
         RaycastHit hit;
