@@ -37,6 +37,7 @@ public class Aim : MonoBehaviour
         fire.action.canceled -= FireReleased;
     }
 
+    public FireAbilty fireAbilty;
     public ApplyAbilty checkIfBugInMouth;
     public GameObject playerVertical;
     private float normalFOV;
@@ -79,11 +80,16 @@ public class Aim : MonoBehaviour
         {
             lengua.firing = true;
         }
+        else if (isAiming && zoomLevel < 0.1 && !checkIfBugInMouth.BugInMouth())
+        {
+            fireAbilty.fireAbility = true;
+        }
     }
 
     private void FireReleased(InputAction.CallbackContext context)
     {
         lengua.firing = false;
+        fireAbilty.fireAbility = false;
     }
 
     void Update()
