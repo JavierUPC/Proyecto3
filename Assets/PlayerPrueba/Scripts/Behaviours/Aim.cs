@@ -41,6 +41,7 @@ public class Aim : MonoBehaviour
     private float zoomLevel = 1f;
     private CinemachineVirtualCamera vCam;
     private CinemachineBrain cinemachineBrain;
+    public Lengua lengua;
 
     private float[] originalHeights = new float[3];
     private float[] originalDistances = new float[3];
@@ -67,6 +68,7 @@ public class Aim : MonoBehaviour
 
         cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
         cinemachineBrain.UpdateMethod = CinemachineBrain.UpdateMethods.ManualUpdate;
+
     }
 
     private void Fire(InputAction.CallbackContext context)
@@ -99,6 +101,7 @@ public class Aim : MonoBehaviour
         if (zoomLevel >= 0.5)
         {
             currentLookAt = initPosLookAt;
+            lengua.detectionEnabled = false;
         }
         else if (zoomLevel < 0.5)
         {
@@ -110,9 +113,9 @@ public class Aim : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.unscaledDeltaTime * rotationSpeed);
             }
-        }
 
-        Debug.Log(zoomLevel);
+            lengua.detectionEnabled = true;
+        }
 
         zoomLevel = Mathf.Lerp(zoomLevel, isAiming ? 0f : 1f, Time.unscaledDeltaTime * zoomSpeed);
 
