@@ -1161,6 +1161,7 @@ GameObject:
   - component: {fileID: 1364606611}
   - component: {fileID: 1364606610}
   - component: {fileID: 1364606609}
+  - component: {fileID: 1364606619}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1241,7 +1242,7 @@ MonoBehaviour:
   fire: {fileID: 5439237347058325833, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
   checkIfBugInMouth: {fileID: 1364606610}
   playerVertical: {fileID: 755160155}
-  lengua: {fileID: 0}
+  lengua: {fileID: 1364606619}
 --- !u!54 &1364606613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1377,6 +1378,22 @@ Transform:
   - {fileID: 1304485334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1364606619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364606608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a51aa96b137b6429adebe19cd12e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1364606610}
+  cameraRef: {fileID: 874058468}
+  detectionEnabled: 0
+  rayDistance: 100
 --- !u!1 &1430595542
 GameObject:
   m_ObjectHideFlags: 0
