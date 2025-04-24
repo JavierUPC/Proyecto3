@@ -25,6 +25,7 @@ public class Aim : MonoBehaviour
         fire.action.Enable();
 
         fire.action.performed += Fire;
+        fire.action.canceled += FireReleased;
     }
 
     private void OnDisable()
@@ -33,6 +34,7 @@ public class Aim : MonoBehaviour
         fire.action.Disable();
 
         fire.action.performed -= Fire;
+        fire.action.canceled -= FireReleased;
     }
 
     public ApplyAbilty checkIfBugInMouth;
@@ -75,8 +77,13 @@ public class Aim : MonoBehaviour
     {
         if (isAiming && zoomLevel < 0.1 && checkIfBugInMouth.BugInMouth())
         {
-            Debug.Log("Fire");
+            lengua.firing = true;
         }
+    }
+
+    private void FireReleased(InputAction.CallbackContext context)
+    {
+        lengua.firing = false;
     }
 
     void Update()
@@ -101,7 +108,6 @@ public class Aim : MonoBehaviour
         if (zoomLevel >= 0.5)
         {
             currentLookAt = initPosLookAt;
-            lengua.detectionEnabled = false;
         }
         else if (zoomLevel < 0.5)
         {
@@ -113,8 +119,6 @@ public class Aim : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.unscaledDeltaTime * rotationSpeed);
             }
-
-            lengua.detectionEnabled = true;
         }
 
         zoomLevel = Mathf.Lerp(zoomLevel, isAiming ? 0f : 1f, Time.unscaledDeltaTime * zoomSpeed);
