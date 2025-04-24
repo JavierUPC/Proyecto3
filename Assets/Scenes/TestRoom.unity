@@ -1162,6 +1162,7 @@ GameObject:
   - component: {fileID: 1364606610}
   - component: {fileID: 1364606609}
   - component: {fileID: 1364606619}
+  - component: {fileID: 1364606620}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1240,6 +1241,7 @@ MonoBehaviour:
   lookAt: {fileID: 1188423133}
   aim: {fileID: 2137594422101474723, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
   fire: {fileID: 5439237347058325833, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
+  fireAbilty: {fileID: 1364606620}
   checkIfBugInMouth: {fileID: 1364606610}
   playerVertical: {fileID: 755160155}
   lengua: {fileID: 1364606619}
@@ -1392,8 +1394,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1364606610}
   cameraRef: {fileID: 874058468}
-  detectionEnabled: 0
+  firing: 0
   rayDistance: 100
+--- !u!114 &1364606620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364606608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5330e98c43f41fa4b99798db3c9afe9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireAbility: 0
+  rayDistance: 100
+  cameraRef: {fileID: 874058468}
 --- !u!1 &1430595542
 GameObject:
   m_ObjectHideFlags: 0
