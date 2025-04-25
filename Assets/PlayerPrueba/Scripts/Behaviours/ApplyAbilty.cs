@@ -7,10 +7,12 @@ public class ApplyAbilty : MonoBehaviour
     private bool abilty = false;
     public Habilidad habilidad;
     private Habilidad activeAbilty;
-    private float timer; 
+    private float timer;
+    public TipoMosca type;
 
     public void Abilty(TipoMosca tipoMosca)
     {
+        type = tipoMosca;
         activeAbilty = habilidad;
         abilty = true;
         activeAbilty.AssignType(tipoMosca);
@@ -29,6 +31,7 @@ public class ApplyAbilty : MonoBehaviour
             timer = 0;
             activeAbilty.Stop();
             activeAbilty = null;
+            Debug.Log("Abilty Limit Reached");
         }
     }
 

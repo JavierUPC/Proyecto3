@@ -130,6 +130,7 @@ public class Aim : MonoBehaviour
         zoomLevel = Mathf.Lerp(zoomLevel, isAiming ? 0f : 1f, Time.unscaledDeltaTime * zoomSpeed);
 
         float targetTimeScale = isAiming ? 0.1f : 1f;
+
         Time.timeScale = Mathf.Lerp(Time.timeScale, targetTimeScale, Time.unscaledDeltaTime * zoomSpeed);
         Time.fixedDeltaTime =  targetTimeScale*fixedDeltaTimeInit;
 
