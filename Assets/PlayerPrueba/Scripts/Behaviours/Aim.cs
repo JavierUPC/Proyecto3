@@ -25,6 +25,7 @@ public class Aim : MonoBehaviour
         fire.action.Enable();
 
         fire.action.performed += Fire;
+        fire.action.canceled += FireReleased;
     }
 
     private void OnDisable()
@@ -33,14 +34,17 @@ public class Aim : MonoBehaviour
         fire.action.Disable();
 
         fire.action.performed -= Fire;
+        fire.action.canceled -= FireReleased;
     }
 
+    public FireAbilty fireAbilty;
     public ApplyAbilty checkIfBugInMouth;
     public GameObject playerVertical;
     private float normalFOV;
     private float zoomLevel = 1f;
     private CinemachineVirtualCamera vCam;
     private CinemachineBrain cinemachineBrain;
+    public Lengua lengua;
 
     private float[] originalHeights = new float[3];
     private float[] originalDistances = new float[3];
@@ -67,14 +71,25 @@ public class Aim : MonoBehaviour
 
         cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
         cinemachineBrain.UpdateMethod = CinemachineBrain.UpdateMethods.ManualUpdate;
+
     }
 
     private void Fire(InputAction.CallbackContext context)
     {
         if (isAiming && zoomLevel < 0.1 && checkIfBugInMouth.BugInMouth())
         {
-            Debug.Log("Fire");
+            lengua.firing = true;
         }
+        else if (isAiming && zoomLevel < 0.1 && !checkIfBugInMouth.BugInMouth())
+        {
+            fireAbilty.fireAbility = true;
+        }
+    }
+
+    private void FireReleased(InputAction.CallbackContext context)
+    {
+        lengua.firing = false;
+        fireAbilty.fireAbility = false;
     }
 
     void Update()
@@ -112,11 +127,10 @@ public class Aim : MonoBehaviour
             }
         }
 
-        Debug.Log(zoomLevel);
-
         zoomLevel = Mathf.Lerp(zoomLevel, isAiming ? 0f : 1f, Time.unscaledDeltaTime * zoomSpeed);
 
         float targetTimeScale = isAiming ? 0.1f : 1f;
+
         Time.timeScale = Mathf.Lerp(Time.timeScale, targetTimeScale, Time.unscaledDeltaTime * zoomSpeed);
         Time.fixedDeltaTime =  targetTimeScale*fixedDeltaTimeInit;
 

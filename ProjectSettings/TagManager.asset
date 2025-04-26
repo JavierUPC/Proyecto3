@@ -9,6 +9,7 @@ TagManager:
   - Climbable
   - Lengua
   - Mosca
+  - Interact
   layers:
   - Default
   - TransparentFX

@@ -261,6 +261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 773641966}
+  cameraRef: {fileID: 330585545}
+  detectionEnabled: 0
+  rayDistance: 100
 --- !u!65 &70528780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -973,6 +976,7 @@ MonoBehaviour:
   fire: {fileID: 5439237347058325833, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
   checkIfBugInMouth: {fileID: 773641966}
   playerVertical: {fileID: 1326119681}
+  lengua: {fileID: 70528779}
 --- !u!114 &773641965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1843,7 +1847,7 @@ GameObject:
   - component: {fileID: 1732807761}
   m_Layer: 0
   m_Name: Mosca
-  m_TagString: Mosca
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
