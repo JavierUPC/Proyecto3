@@ -6,15 +6,14 @@ using UnityEngine.InputSystem;
 public class Camuflaje : MonoBehaviour
 {
     private Material matContact;
-    private Material matPlayer;
-    private Material matPrevious;
+    public Material matPlayer;
     private float useTimer, cooldownTimer;
     private bool cooldown;
-    private Collider playerCollider;
     public bool isCamo;
     public bool previousState;
     public ApplyAbilty checkMoscaEnBoca;
 
+    public Renderer playerSkin;
     public float camoUseTime;
     public float camoCoolDown;
     public InputActionReference camouflage;
@@ -31,7 +30,6 @@ public class Camuflaje : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        matPlayer = GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -41,10 +39,10 @@ public class Camuflaje : MonoBehaviour
         isCamo = (camouflage.action.IsPressed() && checkMoscaEnBoca.BugInMouth());
 
         if (isCamo)
-            GetComponent<Renderer>().material = matContact;
+            playerSkin.material = matContact;
         else
         {
-            GetComponent<Renderer>().material = matPlayer;
+            playerSkin.material = matPlayer;
             if (previousState)
                 cooldown = true;
         }
