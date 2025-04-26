@@ -78,6 +78,7 @@ public class SwitchMovement : MonoBehaviour
                 float playerYRotationInLocalSpace = transform.localEulerAngles.y;
                 transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
                 GetComponent<Rigidbody>().useGravity = false;
+                verticalMovement.GetComponent<PlayerVerticalMove>().justStarted = true;
                 Debug.Log("Switched to Climbing Movement");
             }
         }
@@ -85,30 +86,47 @@ public class SwitchMovement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        //Debug.Log("Grounded1");
-        if (collision.gameObject.CompareTag("Climbable"))
+        foreach (ContactPoint contact in collision.contacts)
         {
-            climbing = true;
-            verticalMovement.GetComponent<PlayerVerticalMove>().SetClimbing(climbing, collision);
-        }
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            grounded = true;
-            baseMovement.GetComponent<PlayerBaseMove>().SetGrounded(grounded);
+            Vector3 directionToContact = (contact.point - transform.position).normalized;
+            float dot = Vector3.Dot(transform.forward, directionToContact);
+
+            if (dot > 0f)
+            {
+                if (collision.gameObject.CompareTag("Climbable"))
+                {
+                    climbing = true;
+                    verticalMovement.GetComponent<PlayerVerticalMove>().SetClimbing(climbing, collision);
+                }
+                if (collision.gameObject.CompareTag("Ground"))
+                {
+                    grounded = true;
+                    baseMovement.GetComponent<PlayerBaseMove>().SetGrounded(grounded);
+                }
+            }
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Climbable"))
+        foreach (ContactPoint contact in collision.contacts)
         {
-            climbing = false;
-            verticalMovement.GetComponent<PlayerVerticalMove>().SetClimbing(climbing, collision);
-        }
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            grounded = false;
-            baseMovement.GetComponent<PlayerBaseMove>().SetGrounded(grounded);
+            Vector3 directionToContact = (contact.point - transform.position).normalized;
+            float dot = Vector3.Dot(transform.forward, directionToContact);
+
+            if (dot > 0f)
+            {
+                if (collision.gameObject.CompareTag("Climbable"))
+                {
+                    climbing = false;
+                    verticalMovement.GetComponent<PlayerVerticalMove>().SetClimbing(climbing, collision);
+                }
+                if (collision.gameObject.CompareTag("Ground"))
+                {
+                    grounded = false;
+                    baseMovement.GetComponent<PlayerBaseMove>().SetGrounded(grounded);
+                }
+            }
         }
     }
 }

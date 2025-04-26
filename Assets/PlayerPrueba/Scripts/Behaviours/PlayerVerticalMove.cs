@@ -14,7 +14,7 @@ public class PlayerVerticalMove : MonoBehaviour
     public bool isClimbing = false;
     private Vector2 input;
     private float timer = 0;
-    private bool justStarted;
+    public bool justStarted;
     private Vector3 targetUp = Vector3.zero;
     private Vector3 previousUp;
 
