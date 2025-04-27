@@ -26,7 +26,7 @@ public class CientificoPersecucion : MonoBehaviour
 
     private NavMeshAgent agent;
     private Renderer rend;
-    private Camuflaje camuflajeScript; // Referencia al script Camuflaje
+    private Camuflaje camuflajeScript; // Referencia al script Camuflaje para la variable bool isCamo
 
     private float tiempoDeteccionActual;
     private float tiempoMatarActual;
