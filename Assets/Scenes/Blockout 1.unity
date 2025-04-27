@@ -8895,7 +8895,7 @@ GameObject:
   - component: {fileID: 1607474753}
   - component: {fileID: 1607474752}
   - component: {fileID: 1607474751}
-  - component: {fileID: 1607474750}
+  - component: {fileID: 1607474757}
   m_Layer: 0
   m_Name: Scientist
   m_TagString: Untagged
@@ -8903,26 +8903,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1607474750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607474749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 960b02bba2694224e984ac9538c628f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camaleon: {fileID: 904626694}
-  spawnPosition: {x: 456, y: 9.9, z: 291}
-  exitPosition: {x: 456, y: 9.9, z: -250}
-  tiempoEsperaEntreCiclos: 2
-  tiempoDeteccion: 4
-  distanciaDeteccion: 100
-  colorNormal: {r: 1, g: 1, b: 1, a: 1}
-  colorDeteccion: {r: 1, g: 0, b: 0, a: 1}
 --- !u!195 &1607474751
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9060,6 +9040,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 90022183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607474757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607474749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e90b32f04d3db49b3c475a682e39fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camaleon: {fileID: 904626694}
+  spawnPosition: {x: 456, y: 10, z: 291}
+  exitPosition: {x: 456, y: 10, z: -250}
+  tiempoEsperaEntreCiclos: 2
+  tiempoDeteccion: 4
+  tiempoNecesarioParaMatar: 1
+  distanciaDeteccion: 100
+  colorNormal: {r: 1, g: 1, b: 1, a: 1}
+  colorDeteccion: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1640978144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be7a88d975a340649bd94eaee81dd302,

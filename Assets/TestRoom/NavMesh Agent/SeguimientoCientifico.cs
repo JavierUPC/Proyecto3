@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CientificoPerseguidor : MonoBehaviour
+public class CientificoPersecucion : MonoBehaviour
 {
     [Header("Referencias")]
     public GameObject camaleon;
 
-    [Header("Puntos (coordenadas manuales XZ)")]
+    [Header("Posiciones")]
     public Vector3 spawnPosition;
     public Vector3 exitPosition;
 
-    [Header("Configuración de tiempos y distancias")]
+    [Header("Tiempos")]
     public float tiempoEsperaEntreCiclos = 2f;
-    public float tiempoDeteccion = 3f;
+    public float tiempoDeteccion = 2f;
+    public float tiempoNecesarioParaMatar = 3f;
+
+    [Header("Detección")]
     public float distanciaDeteccion = 5f;
 
     [Header("Colores")]
@@ -23,73 +26,127 @@ public class CientificoPerseguidor : MonoBehaviour
 
     private NavMeshAgent agent;
     private Renderer rend;
-    private bool enDeteccion = false;
+    private Camuflaje camuflajeScript; // Referencia al script Camuflaje
+    //private Kill kill;           // Referencia al script Kill
+
+    private float tiempoDeteccionActual;
+    private float tiempoMatarActual;
+    private bool buscando = false;
+    private bool enFaseDeteccion = false;
+    private bool yendoASalida = false;
+    private bool yendoASpawn = false;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         rend = GetComponent<Renderer>();
-        rend.material.color = colorNormal;
+        camuflajeScript = camaleon.GetComponent<Camuflaje>();
+        //kill = camaleon.GetComponent<Kill>();
 
-        StartCoroutine(CicloBusqueda());
+        StartCoroutine(Ciclo());
     }
 
-    private IEnumerator CicloBusqueda()
+    private System.Collections.IEnumerator Ciclo()
     {
         while (true)
         {
-            // Buscar al camaleón hasta detectarlo
-            while (Vector3.Distance(transform.position, camaleon.transform.position) > distanciaDeteccion)
-            {
-                agent.SetDestination(camaleon.transform.position);
-                yield return null;
-            }
 
-            // Detección activa
-            enDeteccion = true;
-            rend.material.color = colorDeteccion;
-            float tiempoRestante = tiempoDeteccion;
-
-            while (tiempoRestante > 0f)
-            {
-                agent.SetDestination(camaleon.transform.position);
-                tiempoRestante -= Time.deltaTime;
-                yield return null;
-            }
-
-            // Termina la detección
-            enDeteccion = false;
-            rend.material.color = colorNormal;
-
-            // Ir al punto de salida (solo XZ)
-            agent.SetDestination(FijarAltura(exitPosition));
-            yield return new WaitUntil(() => HaLlegadoDestino(exitPosition));
-
-            // Ir al punto de spawn (solo XZ)
-            agent.SetDestination(FijarAltura(spawnPosition));
-            yield return new WaitUntil(() => HaLlegadoDestino(spawnPosition));
-
-            // Esperar el tiempo de descanso
             yield return new WaitForSeconds(tiempoEsperaEntreCiclos);
+
+            //Buscar camaleón
+            buscando = true;
+            enFaseDeteccion = false;
+            yendoASalida = false;
+            yendoASpawn = false;
+            tiempoDeteccionActual = tiempoDeteccion;
+            tiempoMatarActual = tiempoNecesarioParaMatar;
+
+            while (buscando)
+            {
+                agent.SetDestination(new Vector3(camaleon.transform.position.x, transform.position.y, camaleon.transform.position.z));
+
+                float distancia = DistanciaXZ(transform.position, camaleon.transform.position);
+
+                if (distancia <= distanciaDeteccion)
+                {
+                    //Iniciar tiempo de detección
+                    buscando = false;
+                    enFaseDeteccion = true;
+                }
+
+                yield return null;
+            }
+
+            while (enFaseDeteccion)
+            {
+                agent.SetDestination(new Vector3(camaleon.transform.position.x, transform.position.y, camaleon.transform.position.z));
+
+                if (tiempoDeteccionActual > 0)
+                {
+                    tiempoDeteccionActual -= Time.deltaTime;
+
+                    if (!camuflajeScript.isCamo)
+                    {
+                        // No camuflado -> detección
+                        rend.material.color = colorDeteccion;
+                        tiempoMatarActual -= Time.deltaTime;
+
+                        if (tiempoMatarActual <= 0)
+                        {
+                            //kill.Kill();
+                            Debug.Log("MUERTE CAMALEON");
+                            rend.material.color = colorNormal;
+                            enFaseDeteccion = false;
+                        }
+                    }
+                    else
+                    {
+                        // Camuflado -> reset matar
+                        rend.material.color = colorNormal;
+                        tiempoMatarActual = tiempoNecesarioParaMatar;
+                    }
+                }
+                else
+                {
+                    // Fin tiempo de detección
+                    enFaseDeteccion = false;
+                }
+
+                yield return null;
+            }
+
+            //Ir a salida
+            yendoASalida = true;
+            agent.SetDestination(new Vector3(exitPosition.x, transform.position.y, exitPosition.z));
+
+            while (yendoASalida)
+            {
+                if (DistanciaXZ(transform.position, exitPosition) <= 1f)
+                {
+                    yendoASalida = false;
+                }
+                yield return null;
+            }
+
+            //Ir a spawn
+            yendoASpawn = true;
+            agent.SetDestination(new Vector3(spawnPosition.x, transform.position.y, spawnPosition.z));
+
+            while (yendoASpawn)
+            {
+                if (DistanciaXZ(transform.position, spawnPosition) <= 1f)
+                {
+                    yendoASpawn = false;
+                }
+                yield return null;
+            }
         }
     }
 
-    private Vector3 FijarAltura(Vector3 destino)
+    private float DistanciaXZ(Vector3 a, Vector3 b)
     {
-        // Mantiene la Y actual del científico
-        return new Vector3(destino.x, transform.position.y, destino.z);
+        Vector2 a2D = new Vector2(a.x, a.z);
+        Vector2 b2D = new Vector2(b.x, b.z);
+        return Vector2.Distance(a2D, b2D);
     }
-
-    private bool HaLlegadoDestino(Vector3 destino)
-    {
-        float distanciaXZ = Vector2.Distance(
-            new Vector2(transform.position.x, transform.position.z),
-            new Vector2(destino.x, destino.z)
-        );
-
-        return distanciaXZ <= 1f; // Puedes ajustar este margen (por ejemplo 0.5 metros)
-    }
-
-
-
 }
