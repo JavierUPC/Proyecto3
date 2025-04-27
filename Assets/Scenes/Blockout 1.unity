@@ -9055,10 +9055,10 @@ MonoBehaviour:
   camaleon: {fileID: 904626694}
   spawnPosition: {x: 456, y: 10, z: 291}
   exitPosition: {x: 456, y: 10, z: -250}
-  tiempoEsperaEntreCiclos: 2
+  tiempoEsperaEntreCiclos: 30
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1
-  distanciaDeteccion: 100
+  distanciaDeteccion: 85
   colorNormal: {r: 1, g: 1, b: 1, a: 1}
   colorDeteccion: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1640978144 stripped
