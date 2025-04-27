@@ -24,7 +24,7 @@ public class FireAbilty : MonoBehaviour
         Ray ray = new Ray(cameraRef.transform.position, cameraRef.transform.forward);
         RaycastHit hit;
 
-        Debug.Log("Firing Ability");
+        //Debug.Log("Firing Ability");
         if (Physics.Raycast(ray, out hit, rayDistance))
         {
             if (hit.collider.CompareTag("Interact"))
