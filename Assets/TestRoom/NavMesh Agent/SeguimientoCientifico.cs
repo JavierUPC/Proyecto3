@@ -27,7 +27,6 @@ public class CientificoPersecucion : MonoBehaviour
     private NavMeshAgent agent;
     private Renderer rend;
     private Camuflaje camuflajeScript; // Referencia al script Camuflaje
-    //private Kill kill;           // Referencia al script Kill
 
     private float tiempoDeteccionActual;
     private float tiempoMatarActual;
@@ -41,8 +40,7 @@ public class CientificoPersecucion : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         rend = GetComponent<Renderer>();
         camuflajeScript = camaleon.GetComponent<Camuflaje>();
-        //kill = camaleon.GetComponent<Kill>();
-
+       
         StartCoroutine(Ciclo());
     }
 
@@ -93,8 +91,8 @@ public class CientificoPersecucion : MonoBehaviour
 
                         if (tiempoMatarActual <= 0)
                         {
-                            //kill.Kill();
-                            Debug.Log("MUERTE CAMALEON");
+                            Kill.Reload();
+                            //Debug.Log("MUERTE CAMALEON");
                             rend.material.color = colorNormal;
                             enFaseDeteccion = false;
                         }
