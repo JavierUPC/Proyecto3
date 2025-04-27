@@ -19,6 +19,7 @@ public class Aim : MonoBehaviour
     public float rotationSpeed;
     public Transform lookAt;
     public InputActionReference aim, fire;
+    public Animator uiApuntarLento, uiApuntarHabilidad;
     private void OnEnable()
     {
         aim.action.Enable();
@@ -114,10 +115,20 @@ public class Aim : MonoBehaviour
         if (zoomLevel >= 0.5)
         {
             currentLookAt = initPosLookAt;
+
+            uiApuntarLento.SetBool("Activar", false);
+            uiApuntarHabilidad.SetBool("Activar", false);
+
         }
         else if (zoomLevel < 0.5)
         {
             currentLookAt = new Vector3(initPosLookAt.x + currentDisplaceCam.x, initPosLookAt.y + currentDisplaceCam.y, initPosLookAt.z);
+
+            if (checkIfBugInMouth.BugInMouth())
+                uiApuntarLento.SetBool("Activar", true);
+            if (!checkIfBugInMouth.BugInMouth())
+                uiApuntarHabilidad.SetBool("Activar", true);
+
             if (!playerVertical.activeSelf)
             {
                 Vector3 cameraForward = mainCam.transform.forward;
@@ -129,7 +140,12 @@ public class Aim : MonoBehaviour
 
         zoomLevel = Mathf.Lerp(zoomLevel, isAiming ? 0f : 1f, Time.unscaledDeltaTime * zoomSpeed);
 
-        float targetTimeScale = isAiming ? 0.1f : 1f;
+        float targetTimeScale;
+
+        if (checkIfBugInMouth.BugInMouth())
+            targetTimeScale = isAiming ? 0.1f : 1f;
+        else
+            targetTimeScale = 1f;
 
         Time.timeScale = Mathf.Lerp(Time.timeScale, targetTimeScale, Time.unscaledDeltaTime * zoomSpeed);
         Time.fixedDeltaTime =  targetTimeScale*fixedDeltaTimeInit;
