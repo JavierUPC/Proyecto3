@@ -10,6 +10,7 @@ TagManager:
   - Lengua
   - Mosca
   - Interact
+  - Rejilla
   layers:
   - Default
   - TransparentFX
