@@ -25,7 +25,7 @@ public class CientificoPersecucion : MonoBehaviour
     public Color colorDeteccion = Color.red;
 
     private NavMeshAgent agent;
-    private Renderer rend;
+    public Renderer rend;
     private Camuflaje camuflajeScript; // Referencia al script Camuflaje para la variable bool isCamo
 
     private float tiempoDeteccionActual;
@@ -38,7 +38,6 @@ public class CientificoPersecucion : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        rend = GetComponent<Renderer>();
         camuflajeScript = camaleon.GetComponent<Camuflaje>();
        
         StartCoroutine(Ciclo());
