@@ -3491,6 +3491,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348216407}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &388213446 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1234035805744098308, guid: 952036c5fbcc5e749ab63aeb52277e7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2014164038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -9149,12 +9155,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013072337}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1071015765 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 952036c5fbcc5e749ab63aeb52277e7b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2014164038}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1071015766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 952036c5fbcc5e749ab63aeb52277e7b,
@@ -14187,7 +14187,7 @@ MonoBehaviour:
   distanciaDeteccion: 85
   colorNormal: {r: 1, g: 1, b: 1, a: 1}
   colorDeteccion: {r: 1, g: 0, b: 0, a: 1}
-  rend: {fileID: 799217160}
+  rend: {fileID: 388213446}
 --- !u!4 &1640978144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be7a88d975a340649bd94eaee81dd302,
