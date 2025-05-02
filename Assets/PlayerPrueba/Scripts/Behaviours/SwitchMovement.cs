@@ -42,18 +42,10 @@ public class SwitchMovement : MonoBehaviour
                 verticalMovement.SetActive(false);
                 baseMovement.SetActive(true);
                 GetComponent<Rigidbody>().useGravity = true;
-                float playerYRotationInLocalSpace = transform.localEulerAngles.y;
-                transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
+                //float playerYRotationInLocalSpace = transform.localEulerAngles.y;
+                //transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
+                transform.up = Vector3.up;
                 //Debug.Log("Switched to Base Movement");
-            }
-            else if (baseMovement.activeSelf)
-            {
-                baseMovement.SetActive(false);
-                verticalMovement.SetActive(true);
-                float playerYRotationInLocalSpace = transform.localEulerAngles.y;
-                transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
-                GetComponent<Rigidbody>().useGravity = false;
-                Debug.Log("Switched to Climbing Movement");
             }
     }
 
@@ -79,7 +71,7 @@ public class SwitchMovement : MonoBehaviour
                 transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
                 GetComponent<Rigidbody>().useGravity = false;
                 verticalMovement.GetComponent<PlayerVerticalMove>().justStarted = true;
-                Debug.Log("Switched to Climbing Movement");
+                //Debug.Log("Switched to Climbing Movement");
             }
         }
     }

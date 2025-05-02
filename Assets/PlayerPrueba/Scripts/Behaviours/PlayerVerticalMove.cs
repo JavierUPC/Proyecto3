@@ -17,6 +17,8 @@ public class PlayerVerticalMove : MonoBehaviour
     public bool justStarted;
     private Vector3 targetUp = Vector3.zero;
     private Vector3 previousUp;
+    private Transform currentClimbable;
+    private ContactPoint lastValidContact;
 
 
     void Start()
@@ -40,6 +42,7 @@ public class PlayerVerticalMove : MonoBehaviour
         if (isClimbing)
         {
             ApplyGravity();
+            AlignZDirectionToUp(); // only align up direction, not forward
             Move();
         }
     }
@@ -49,6 +52,7 @@ public class PlayerVerticalMove : MonoBehaviour
         if (!climbing || !gameObject.activeSelf)
             return;
 
+        // Determine the highest contact point
         ContactPoint highestPoint = collision.contacts[0];
         foreach (var contact in collision.contacts)
         {
@@ -58,10 +62,27 @@ public class PlayerVerticalMove : MonoBehaviour
             }
         }
 
+        // If we're already latched onto a surface
+        if (isClimbing && currentClimbable != null && collision.transform != currentClimbable)
+        {
+            // Determine direction to new surface
+            Vector3 toNewSurface = (highestPoint.point - player.transform.position).normalized;
+            float alignment = Vector3.Dot(player.transform.forward, toNewSurface);
+
+            // Only switch if player is moving toward the new surface
+            if (alignment < 0.3f)  // Adjust this threshold to taste
+            {
+                return; // Reject the switch
+            }
+        }
+
         surfaceNormal = highestPoint.normal;
+        currentClimbable = collision.transform;
+        lastValidContact = highestPoint;
+
         isClimbing = true;
         AlignToSurface();
-        AlignZDirectionToUp(collision.transform);
+        AlignZDirectionToUp();
         rb.useGravity = false;
     }
 
@@ -71,40 +92,11 @@ public class PlayerVerticalMove : MonoBehaviour
         player.transform.rotation = targetRotation;
     }
 
-    private void AlignZDirectionToUp(Transform climbableTransform)
+    private void AlignZDirectionToUp()
     {
-        if(targetUp != climbableTransform.up || targetUp != -climbableTransform.up)
-        {
-            if (previousUp == targetUp)
-                targetUp = climbableTransform.up;
-            else
-                targetUp = -climbableTransform.up;
-        }
-
-
-        if (justStarted)
-            targetUp = climbableTransform.up;
-
-        if (input.y < 0 && timer > 0.5f)
-        {
-            timer = 0;
-            if (targetUp != climbableTransform.up)
-            {
-                targetUp = climbableTransform.up;
-                Debug.Log("Target Up: " + targetUp);
-            }
-            else
-            {
-                targetUp = -climbableTransform.up;
-                Debug.Log("Target Up: " + targetUp);
-            }
-        }
-
-        Quaternion newRotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(targetUp, surfaceNormal), surfaceNormal);
-        player.transform.rotation = Quaternion.Lerp(player.transform.rotation, newRotation, 0.4f);
-        justStarted = false;
-        timer += Time.deltaTime;
-        previousUp = climbableTransform.up;
+        // Keep the player's up aligned to the surface normal without affecting the forward direction
+        Quaternion alignUp = Quaternion.FromToRotation(player.transform.up, surfaceNormal);
+        player.transform.rotation = alignUp * player.transform.rotation;
     }
 
     private void ApplyGravity()
@@ -116,26 +108,25 @@ public class PlayerVerticalMove : MonoBehaviour
     private void Move()
     {
         input = move.action.ReadValue<Vector2>();
-        Vector3 worldDirection = new Vector3(input.x, 0, input.y);
-        Vector3 relativeDirection = player.transform.TransformDirection(worldDirection);
-        rb.velocity = relativeDirection * moveSpeed + Vector3.Project(rb.velocity, surfaceNormal);
 
+        // Turn left/right (A/D) using local Y axis
+        float turnSpeed = 100f;
+        float turnAmount = input.x * turnSpeed * Time.fixedDeltaTime;
 
-        //if (input.y < 0)
-        //{
-        //    player.transform.rotation = Quaternion.LookRotation(-player.transform.forward, player.transform.up);
-        //}
-        //else if (input.y > 0)
-        //{
-        //    player.transform.rotation = Quaternion.LookRotation(player.transform.forward, player.transform.up);
-        //}
+        // Rotate around the player's local up (which is aligned with the surface normal)
+        player.transform.localRotation *= Quaternion.AngleAxis(turnAmount, Vector3.up);
+
+        // Move forward/backward (W/S) in the direction the player is facing
+        Vector3 moveDirection = player.transform.forward * input.y;
+        rb.velocity = moveDirection * moveSpeed + Vector3.Project(rb.velocity, surfaceNormal);
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Climbable"))
+        if (collision.gameObject.CompareTag("Climbable") && collision.transform == currentClimbable)
         {
             isClimbing = false;
+            currentClimbable = null;
             rb.useGravity = true;
         }
     }
