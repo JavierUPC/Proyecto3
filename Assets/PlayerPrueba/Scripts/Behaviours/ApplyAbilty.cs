@@ -16,7 +16,7 @@ public class ApplyAbilty : MonoBehaviour
         activeAbilty = habilidad;
         abilty = true;
         activeAbilty.AssignType(tipoMosca);
-        Debug.Log("Tipo: " + tipoMosca);
+        //Debug.Log("Tipo: " + tipoMosca);
     }
 
     // Update is called once per frame

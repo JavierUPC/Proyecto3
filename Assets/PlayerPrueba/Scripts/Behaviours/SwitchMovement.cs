@@ -35,23 +35,20 @@ public class SwitchMovement : MonoBehaviour
 
     public void Fall(InputAction.CallbackContext obj)
     {
-        //Debug.Log("SwitchState called");
+        if (verticalMovement.activeSelf)
+        {
+            verticalMovement.SetActive(false);
+            baseMovement.SetActive(true);
+            GetComponent<Rigidbody>().useGravity = true;
+            transform.up = Vector3.up;
 
-            if (verticalMovement.activeSelf)
-            {
-                verticalMovement.SetActive(false);
-                baseMovement.SetActive(true);
-                GetComponent<Rigidbody>().useGravity = true;
-                //float playerYRotationInLocalSpace = transform.localEulerAngles.y;
-                //transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
-                transform.up = Vector3.up;
-                //Debug.Log("Switched to Base Movement");
-            }
+            // Clear climbing state explicitly
+            verticalMovement.GetComponent<PlayerVerticalMove>().ClearClimbState();
+        }
     }
 
     public void SwitchState(InputAction.CallbackContext obj)
     {
-        //Debug.Log("SwitchState called");
         if (grounded && climbing)
         {
             if (verticalMovement.activeSelf)
@@ -61,7 +58,8 @@ public class SwitchMovement : MonoBehaviour
                 GetComponent<Rigidbody>().useGravity = true;
                 float playerYRotationInLocalSpace = transform.localEulerAngles.y;
                 transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
-                //Debug.Log("Switched to Base Movement");
+
+                verticalMovement.GetComponent<PlayerVerticalMove>().ClearClimbState();
             }
             else if (baseMovement.activeSelf)
             {
@@ -71,14 +69,12 @@ public class SwitchMovement : MonoBehaviour
                 transform.localRotation = Quaternion.Euler(0f, playerYRotationInLocalSpace, 0f);
                 GetComponent<Rigidbody>().useGravity = false;
                 verticalMovement.GetComponent<PlayerVerticalMove>().justStarted = true;
-                //Debug.Log("Switched to Climbing Movement");
             }
         }
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        //Debug.Log("Grounded1");
         if (collision.gameObject.CompareTag("Climbable"))
         {
             climbing = true;

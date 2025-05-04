@@ -10,7 +10,7 @@ public class Button : MonoBehaviour
     {
         if(type == TipoMosca.Electrico && !activado)
         {
-            Debug.Log("Button Activated");
+            //Debug.Log("Button Activated");
             activado = true;
             interactableProp.SetTrigger("Activate");
         }
