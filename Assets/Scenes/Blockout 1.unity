@@ -7997,12 +7997,12 @@ NavMeshObstacle:
   m_GameObject: {fileID: 787667875}
   m_Enabled: 1
   serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.45, y: 0.75, z: 0.46}
+  m_Shape: 0
+  m_Extents: {x: 0.6, y: 0.87, z: 0.6}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: -0.37100002}
+  m_Center: {x: 0, y: 0, z: -0.22}
   m_TimeToStationary: 0.5
 --- !u!4 &787667879 stripped
 Transform:
@@ -14756,7 +14756,7 @@ Transform:
   m_GameObject: {fileID: 1607474749}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 182, y: 20, z: 674}
+  m_LocalPosition: {x: 150, y: 20, z: 674}
   m_LocalScale: {x: 69.67, y: 92.893326, z: 69.67}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -14776,9 +14776,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camaleon: {fileID: 904626694}
-  spawnPosition: {x: 456, y: 10, z: 291}
-  exitPosition: {x: 456, y: 10, z: -250}
-  tiempoEsperaEntreCiclos: 30
+  spawnPosition: {x: 150, y: 20, z: 674}
+  exitPosition: {x: 697, y: 20, z: -506}
+  tiempoEsperaEntreCiclos: 0
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1
   distanciaDeteccion: 275
