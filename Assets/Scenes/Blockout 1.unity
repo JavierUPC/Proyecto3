@@ -797,6 +797,7 @@ Transform:
   - {fileID: 1607474756}
   - {fileID: 1578419218}
   - {fileID: 640195388}
+  - {fileID: 1968504130}
   - {fileID: 988117082}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13789,11 +13790,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.3, y: 3.5, z: 0.3}
+  m_Extents: {x: 0.63, y: 3.655, z: 0.63}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0.549}
+  m_Center: {x: 1.02, y: 0, z: 0.549}
   m_TimeToStationary: 0.5
 --- !u!1 &1560829494
 GameObject:
@@ -14776,10 +14777,10 @@ MonoBehaviour:
   camaleon: {fileID: 904626694}
   spawnPosition: {x: 150, y: 20, z: 674}
   exitPosition: {x: 697, y: 20, z: -506}
-  tiempoEsperaEntreCiclos: 30
+  tiempoEsperaEntreCiclos: 0
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1
-  distanciaDeteccion: 275
+  distanciaDeteccion: 300
   colorNormal: {r: 1, g: 1, b: 1, a: 1}
   colorDeteccion: {r: 1, g: 0, b: 0, a: 1}
   rend: {fileID: 2078469578}
@@ -17504,6 +17505,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941909337}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1968504129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1968504130}
+  m_Layer: 0
+  m_Name: TargetCamaleon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1968504130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968504129}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 34.8, y: 159.2, z: -103.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 90022183}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1968617415
 GameObject:
   m_ObjectHideFlags: 0
