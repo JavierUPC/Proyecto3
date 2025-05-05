@@ -2107,8 +2107,8 @@ NavMeshObstacle:
   m_GameObject: {fileID: 233993739}
   m_Enabled: 1
   serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.75, y: 3, z: 0.549}
+  m_Shape: 0
+  m_Extents: {x: 0.3, y: 3.5, z: 0.3}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
@@ -5593,7 +5593,6 @@ MonoBehaviour:
   isClimbing: 0
   justStarted: 0
   currentClimbable: {fileID: 0}
-  justEnabled: 0
 --- !u!1 &561339121
 GameObject:
   m_ObjectHideFlags: 0
@@ -13791,8 +13790,8 @@ NavMeshObstacle:
   m_GameObject: {fileID: 1541008799}
   m_Enabled: 1
   serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.75, y: 3, z: 0.549}
+  m_Shape: 0
+  m_Extents: {x: 0.3, y: 3.5, z: 0.3}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
