@@ -9,6 +9,7 @@ public class ApplyAbilty : MonoBehaviour
     private Habilidad activeAbilty;
     private float timer;
     public TipoMosca type;
+    public float tiempoHabilidad;
 
     public void Abilty(TipoMosca tipoMosca)
     {
@@ -25,7 +26,7 @@ public class ApplyAbilty : MonoBehaviour
         if (abilty)
             timer += Time.unscaledDeltaTime;
 
-        if (abilty && timer >= 15)
+        if (abilty && timer >= tiempoHabilidad)
         {
             abilty = false;
             timer = 0;
