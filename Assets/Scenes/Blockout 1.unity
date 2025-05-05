@@ -11494,7 +11494,7 @@ GameObject:
   - component: {fileID: 1266468480}
   - component: {fileID: 1266468483}
   - component: {fileID: 1266468482}
-  - component: {fileID: 1266468481}
+  - component: {fileID: 1266468484}
   m_Layer: 6
   m_Name: Capsule (1)
   m_TagString: Climbable
@@ -11517,29 +11517,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1753509494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1266468481
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266468479}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1266468482
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11589,6 +11566,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266468479}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &1266468484
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266468479}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1266991840
 GameObject:
@@ -14506,7 +14505,7 @@ GameObject:
   - component: {fileID: 1601388745}
   - component: {fileID: 1601388748}
   - component: {fileID: 1601388747}
-  - component: {fileID: 1601388746}
+  - component: {fileID: 1601388749}
   m_Layer: 6
   m_Name: Capsule (3)
   m_TagString: Climbable
@@ -14529,29 +14528,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1753509494}
   m_LocalEulerAnglesHint: {x: 0, y: -18.405, z: 0}
---- !u!136 &1601388746
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601388744}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1601388747
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14601,6 +14577,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601388744}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &1601388749
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601388744}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1607474749
 GameObject:
@@ -14755,7 +14753,7 @@ Transform:
   m_GameObject: {fileID: 1607474749}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 150, y: 20, z: 674}
+  m_LocalPosition: {x: 853, y: 20, z: 674}
   m_LocalScale: {x: 69.67, y: 92.893326, z: 69.67}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -14775,12 +14773,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camaleon: {fileID: 904626694}
-  spawnPosition: {x: 150, y: 20, z: 674}
-  exitPosition: {x: 697, y: 20, z: -506}
-  tiempoEsperaEntreCiclos: 0
+  spawnPosition: {x: 853, y: 20, z: 674}
+  exitPosition: {x: 73, y: 20, z: 674}
+  tiempoEsperaEntreCiclos: 30
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1
-  distanciaDeteccion: 300
+  distanciaDeteccion: 325
   colorNormal: {r: 1, g: 1, b: 1, a: 1}
   colorDeteccion: {r: 1, g: 0, b: 0, a: 1}
   rend: {fileID: 2078469578}
@@ -17888,17 +17886,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 952036c5fbcc5e749ab63aeb52277e7b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.016351113
+      value: 0.02635111
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 952036c5fbcc5e749ab63aeb52277e7b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.012263335
+      value: 0.019763334
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 952036c5fbcc5e749ab63aeb52277e7b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.016351113
+      value: 0.02635111
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 952036c5fbcc5e749ab63aeb52277e7b,
         type: 3}
@@ -17908,7 +17906,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 952036c5fbcc5e749ab63aeb52277e7b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7411489
+      value: 1.78
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 952036c5fbcc5e749ab63aeb52277e7b,
         type: 3}
@@ -17953,7 +17951,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 952036c5fbcc5e749ab63aeb52277e7b,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 952036c5fbcc5e749ab63aeb52277e7b,
         type: 3}
