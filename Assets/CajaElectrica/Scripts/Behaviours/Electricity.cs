@@ -13,7 +13,7 @@ public class Electricity : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("DEBERÍA ENTRAR EN KILL: " + collision.transform.tag + "and " + On);
+        //Debug.Log("DEBERÍA ENTRAR EN KILL: " + collision.transform.tag + "and " + On);
         if (On && collision.transform.CompareTag("Player"))
         {
             Kill.Reload();

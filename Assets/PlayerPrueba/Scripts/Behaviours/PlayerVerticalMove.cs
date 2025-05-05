@@ -10,16 +10,17 @@ public class PlayerVerticalMove : MonoBehaviour
     public float gravityForce = 9.81f;
     public InputActionReference move;
     private Rigidbody rb;
-    private Vector3 surfaceNormal;
+    private Vector3 surfaceNormal = Vector3.zero;
     public bool isClimbing = false;
     private Vector2 input;
     private float timer = 0;
     public bool justStarted;
     private Vector3 targetUp = Vector3.zero;
     private Vector3 previousUp;
-    private Transform currentClimbable;
+    public Transform currentClimbable;
     private ContactPoint lastValidContact;
-
+    private float lastDetachTime = -1f;
+    private float reattachCooldown = 0.2f; // prevents immediate reattachment
 
     void Start()
     {
@@ -42,7 +43,7 @@ public class PlayerVerticalMove : MonoBehaviour
         if (isClimbing)
         {
             ApplyGravity();
-            AlignZDirectionToUp(); // only align up direction, not forward
+            AlignZDirectionToUp();
             Move();
         }
     }
@@ -50,6 +51,10 @@ public class PlayerVerticalMove : MonoBehaviour
     public void SetClimbing(bool climbing, Collision collision)
     {
         if (!climbing || !gameObject.activeSelf)
+            return;
+
+        // Prevent reattachment too soon
+        if (Time.time - lastDetachTime < reattachCooldown)
             return;
 
         // Determine the highest contact point
@@ -62,18 +67,14 @@ public class PlayerVerticalMove : MonoBehaviour
             }
         }
 
-        // If we're already latched onto a surface
+        // If already climbing a surface, avoid switching unless alignment is acceptable
         if (isClimbing && currentClimbable != null && collision.transform != currentClimbable)
         {
-            // Determine direction to new surface
             Vector3 toNewSurface = (highestPoint.point - player.transform.position).normalized;
             float alignment = Vector3.Dot(player.transform.forward, toNewSurface);
 
-            // Only switch if player is moving toward the new surface
-            if (alignment < 0.3f)  // Adjust this threshold to taste
-            {
-                return; // Reject the switch
-            }
+            if (alignment < 0.3f)
+                return; // Reject switch if player isn't clearly moving toward new surface
         }
 
         surfaceNormal = highestPoint.normal;
@@ -86,6 +87,15 @@ public class PlayerVerticalMove : MonoBehaviour
         rb.useGravity = false;
     }
 
+    public void ClearClimbState()
+    {
+        isClimbing = false;
+        currentClimbable = null;
+        surfaceNormal = Vector3.zero;
+        rb.useGravity = true;
+        lastDetachTime = Time.time;
+    }
+
     private void AlignToSurface()
     {
         Quaternion targetRotation = Quaternion.FromToRotation(player.transform.up, surfaceNormal) * player.transform.rotation;
@@ -94,7 +104,6 @@ public class PlayerVerticalMove : MonoBehaviour
 
     private void AlignZDirectionToUp()
     {
-        // Keep the player's up aligned to the surface normal without affecting the forward direction
         Quaternion alignUp = Quaternion.FromToRotation(player.transform.up, surfaceNormal);
         player.transform.rotation = alignUp * player.transform.rotation;
     }
@@ -108,15 +117,11 @@ public class PlayerVerticalMove : MonoBehaviour
     private void Move()
     {
         input = move.action.ReadValue<Vector2>();
-
-        // Turn left/right (A/D) using local Y axis
         float turnSpeed = 100f;
         float turnAmount = input.x * turnSpeed * Time.fixedDeltaTime;
 
-        // Rotate around the player's local up (which is aligned with the surface normal)
         player.transform.localRotation *= Quaternion.AngleAxis(turnAmount, Vector3.up);
 
-        // Move forward/backward (W/S) in the direction the player is facing
         Vector3 moveDirection = player.transform.forward * input.y;
         rb.velocity = moveDirection * moveSpeed + Vector3.Project(rb.velocity, surfaceNormal);
     }
@@ -125,9 +130,7 @@ public class PlayerVerticalMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Climbable") && collision.transform == currentClimbable)
         {
-            isClimbing = false;
-            currentClimbable = null;
-            rb.useGravity = true;
+            ClearClimbState();
         }
     }
 }

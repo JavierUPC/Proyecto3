@@ -2269,8 +2269,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241943582}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.20270017, y: 6.907395e-11, z: 1.4298117e-11, w: 0.97924083}
-  m_LocalPosition: {x: -25.7, y: 46.409634, z: 157.79536}
+  m_LocalRotation: {x: -0.20270137, y: -0.000000014558303, z: -0.0000000030135474,
+    w: 0.9792406}
+  m_LocalPosition: {x: -25.7, y: 46.409634, z: 107.195366}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3499,8 +3500,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345165541}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.20270017, y: 6.907395e-11, z: 1.4298117e-11, w: 0.97924083}
-  m_LocalPosition: {x: -25.7, y: 43.190254, z: 148.6}
+  m_LocalRotation: {x: -0.20270137, y: -0.000000014558303, z: -0.0000000030135474,
+    w: 0.9792406}
+  m_LocalPosition: {x: -25.7, y: 43.190254, z: 98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5590,6 +5592,8 @@ MonoBehaviour:
   move: {fileID: -147782202262129947, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
   isClimbing: 0
   justStarted: 0
+  currentClimbable: {fileID: 0}
+  justEnabled: 0
 --- !u!1 &561339121
 GameObject:
   m_ObjectHideFlags: 0
@@ -8673,7 +8677,7 @@ Transform:
   m_GameObject: {fileID: 904626694}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.9981877, z: 0, w: -0.06017742}
-  m_LocalPosition: {x: -25.7, y: 46.690254, z: 158.6}
+  m_LocalPosition: {x: -25.7, y: 46.690254, z: 108}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14773,9 +14777,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camaleon: {fileID: 904626694}
-  spawnPosition: {x: 182, y: 20, z: 674}
-  exitPosition: {x: 826, y: 20, z: 674}
-  tiempoEsperaEntreCiclos: 5
+  spawnPosition: {x: 456, y: 10, z: 291}
+  exitPosition: {x: 456, y: 10, z: -250}
+  tiempoEsperaEntreCiclos: 30
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1
   distanciaDeteccion: 275
