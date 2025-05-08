@@ -142,10 +142,7 @@ public class Aim : MonoBehaviour
 
         float targetTimeScale;
 
-        if (checkIfBugInMouth.BugInMouth())
-            targetTimeScale = isAiming ? 0.1f : 1f;
-        else
-            targetTimeScale = 1f;
+        targetTimeScale = isAiming ? 0.1f : 1f;
 
         Time.timeScale = Mathf.Lerp(Time.timeScale, targetTimeScale, Time.unscaledDeltaTime * zoomSpeed);
         Time.fixedDeltaTime =  targetTimeScale*fixedDeltaTimeInit;
