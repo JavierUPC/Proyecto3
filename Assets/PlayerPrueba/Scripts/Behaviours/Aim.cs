@@ -156,9 +156,9 @@ public class Aim : MonoBehaviour
     void AdjustCamera(float zoom)
     {
         float[] aimHeights = { 2f, 0f, -2f };
-        float[] defaultHeights = { 3.5f, 1.5f, -2.5f };
+        float[] defaultHeights = { 17f, 1.5f, -17f };
         float[] aimDistances = { 2f, 1.5f, 2f };
-        float[] defaultDistances = { 10f, 6f, 10f };
+        float[] defaultDistances = { 14f, 14f, 14f };
 
         freeLookCamera.Orbits.Top.Height = Mathf.Lerp(defaultHeights[0], aimHeights[0], 1 - zoom);
         freeLookCamera.Orbits.Top.Radius = Mathf.Lerp(defaultDistances[0], aimDistances[0], 1 - zoom);
