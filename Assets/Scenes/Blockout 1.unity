@@ -6656,7 +6656,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ae7a758386241a347a10f09628cd54ae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.94
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae7a758386241a347a10f09628cd54ae,
         type: 3}
@@ -9167,6 +9167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalMovement: {fileID: 545778347}
   baseMovement: {fileID: 1251882153}
+  fallDelay: 0.5
+  checkDistance: 0.6
   climb: {fileID: -4030589357138319987, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
   fall: {fileID: -6977582181945453535, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
 --- !u!136 &904626704
