@@ -6723,6 +6723,21 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ed7599509c804b7448ebb271af4ea3a1, type: 2}
+    - target: {fileID: 5866666021909216657, guid: ae7a758386241a347a10f09628cd54ae,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: ae7a758386241a347a10f09628cd54ae,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: ae7a758386241a347a10f09628cd54ae,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8965422863770026172, guid: ae7a758386241a347a10f09628cd54ae,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15177,6 +15192,9 @@ MonoBehaviour:
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1
   distanciaDeteccion: 325
+  umbralVelocidad: 0.2
+  velocidadMinima: 4
+  velocidadMaxima: 30
   colorNormal: {r: 1, g: 1, b: 1, a: 1}
   colorDeteccion: {r: 1, g: 0, b: 0, a: 1}
   rend: {fileID: 2078469578}

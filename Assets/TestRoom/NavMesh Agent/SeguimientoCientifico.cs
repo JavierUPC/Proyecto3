@@ -20,6 +20,11 @@ public class CientificoPersecucion : MonoBehaviour
     [Header("Detección")]
     public float distanciaDeteccion = 5f;
 
+    [Header("Animación")]
+    public float umbralVelocidad = 0.2f;
+    public float velocidadMinima = 20f;
+    public float velocidadMaxima = 60f;
+
     [Header("Colores")]
     public Color colorNormal = Color.white;
     public Color colorDeteccion = Color.red;
@@ -27,6 +32,7 @@ public class CientificoPersecucion : MonoBehaviour
     private NavMeshAgent agent;
     public Renderer rend;
     private Camuflaje camuflajeScript; // Referencia al script Camuflaje para la variable bool isCamo
+    private Animator animator;
 
     private float tiempoDeteccionActual;
     private float tiempoMatarActual;
@@ -39,9 +45,24 @@ public class CientificoPersecucion : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         camuflajeScript = camaleon.GetComponent<Camuflaje>();
-       
+        animator = GetComponentInChildren<Animator>();
+
         StartCoroutine(Ciclo());
     }
+
+    private void Update()
+    {
+        float velocidadActual = agent.velocity.magnitude;
+
+        // Normalizamos la velocidad usando los valores configurables
+        float velocidadNormalizada = Mathf.InverseLerp(velocidadMinima, velocidadMaxima, velocidadActual);
+        animator.SetFloat("Speed", velocidadNormalizada);
+
+        bool estaCaminando = velocidadActual > umbralVelocidad;
+        animator.SetBool("isWalking", estaCaminando);
+    }
+
+
 
     private System.Collections.IEnumerator Ciclo()
     {
