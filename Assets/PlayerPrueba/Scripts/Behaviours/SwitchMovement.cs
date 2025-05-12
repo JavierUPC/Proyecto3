@@ -8,6 +8,10 @@ public class SwitchMovement : MonoBehaviour
     public GameObject verticalMovement;
     public GameObject baseMovement;
     private bool grounded = false, climbing = false;
+    private Coroutine fallCheckCoroutine = null;
+
+    public float fallDelay = 0.5f;
+    public float checkDistance = 0.6f; // --- MODIFIED: How far to raycast for climbables
 
     public InputActionReference climb, fall;
 
@@ -42,7 +46,6 @@ public class SwitchMovement : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = true;
             transform.up = Vector3.up;
 
-            // Clear climbing state explicitly
             verticalMovement.GetComponent<PlayerVerticalMove>().ClearClimbState();
         }
     }
@@ -85,6 +88,34 @@ public class SwitchMovement : MonoBehaviour
             grounded = true;
             baseMovement.GetComponent<PlayerBaseMove>().SetGrounded(grounded);
         }
+
+        if (verticalMovement.activeSelf)
+        {
+            bool foundClimbableBelow = false;
+
+            foreach (ContactPoint contact in collision.contacts)
+            {
+                Vector3 dir = contact.point - transform.position;
+                if (Vector3.Dot(dir.normalized, -transform.up) > 0.5f)
+                {
+                    if (collision.gameObject.CompareTag("Climbable"))
+                    {
+                        foundClimbableBelow = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!foundClimbableBelow && fallCheckCoroutine == null)
+            {
+                fallCheckCoroutine = StartCoroutine(DelayedFall());
+            }
+            else if (foundClimbableBelow && fallCheckCoroutine != null)
+            {
+                StopCoroutine(fallCheckCoroutine);
+                fallCheckCoroutine = null;
+            }
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -99,5 +130,28 @@ public class SwitchMovement : MonoBehaviour
             grounded = false;
             baseMovement.GetComponent<PlayerBaseMove>().SetGrounded(grounded);
         }
+    }
+
+    private IEnumerator DelayedFall()
+    {
+        yield return new WaitForSeconds(fallDelay);
+
+        if (!IsClimbableBelow()) // --- MODIFIED
+        {
+            Fall(new InputAction.CallbackContext());
+        }
+
+        fallCheckCoroutine = null;
+    }
+
+    // --- ADDED: Uses raycast in local down direction to re-check climbable below
+    private bool IsClimbableBelow()
+    {
+        Ray ray = new Ray(transform.position, -transform.up);
+        if (Physics.Raycast(ray, out RaycastHit hit, checkDistance))
+        {
+            return hit.collider.CompareTag("Climbable");
+        }
+        return false;
     }
 }
