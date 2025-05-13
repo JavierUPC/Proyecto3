@@ -29,7 +29,10 @@ public class FireAbilty : MonoBehaviour
         {
             if (hit.collider.CompareTag("Interact"))
             {
-                hit.collider.transform.GetComponent<Button>().Activate(abilty.type);
+                if (abilty.type == TipoMosca.Electrico)
+                    hit.collider.transform.GetComponent<Button>().Activate(abilty.type);
+                else if (abilty.type == TipoMosca.Fuego)
+                    hit.collider.transform.GetComponent<RamasSecas>().Activate(abilty.type);
             }
         }
     }

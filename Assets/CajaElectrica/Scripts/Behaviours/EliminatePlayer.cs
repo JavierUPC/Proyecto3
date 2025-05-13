@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Electricity : MonoBehaviour
+public class EliminatePlayer : MonoBehaviour
 {
     public bool On;
 

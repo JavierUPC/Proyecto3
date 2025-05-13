@@ -15,4 +15,9 @@ public class RamasSecas : MonoBehaviour
             interactableProp.SetTrigger("Activate");
         }
     }
+
+    public void Eliminate()
+    {
+        Destroy(gameObject);
+    }
 }
