@@ -5,18 +5,21 @@ using UnityEngine;
 public class SpawnerMosca : MonoBehaviour
 {
     public GameObject mosca;
-    private bool spawn = true;
+    private bool spawn = false;
+    public int spawnTimer;
 
     private void Start()
     {
-        
+        GameObject spawnedFly = Instantiate(mosca, transform.position, transform.rotation);
+        spawnedFly.GetComponent<MovimientoMosca>().spawnerMosca = this;
     }
 
     private void FixedUpdate()
     {
         if (spawn)
         {
-            //Instanciar mosca
+            GameObject spawnedFly = Instantiate(mosca, transform.position, transform.rotation);
+            spawnedFly.GetComponent<MovimientoMosca>().spawnerMosca = this;
             spawn = false;
         }
 
@@ -24,6 +27,12 @@ public class SpawnerMosca : MonoBehaviour
 
     public void SetSpawn()
     {
+        StartCoroutine(SetTimer());
+    }
+
+    private IEnumerator SetTimer()
+    {
+        yield return new WaitForSeconds(spawnTimer);
         spawn = true;
     }
 }

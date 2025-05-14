@@ -25,6 +25,7 @@ public class Lengua : MonoBehaviour
 
                 player.GetComponent<ApplyAbilty>().Abilty(mosca.GetComponentInParent<FlyType>().moscaSO.mosca);
 
+                mosca.GetComponentInParent<MovimientoMosca>().ActivateSpawner();
                 Destroy(mosca.GetComponentInParent<MovimientoMosca>().centroRotacion.gameObject);
                 Destroy(mosca.transform.parent.gameObject);
                 Destroy(mosca.gameObject);

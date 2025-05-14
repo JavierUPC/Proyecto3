@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovimientoMosca : MonoBehaviour
 {
+    public SpawnerMosca spawnerMosca;
+
     public float velocidad = 2f;
     public float escala = 3f;
     public float velocidadRotacion = 30f;
@@ -80,7 +82,7 @@ public class MovimientoMosca : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Lengua") || other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             Vector3 normalContacto = (transform.position - other.transform.position).normalized;
             direccionOpuesta = normalContacto;
@@ -97,5 +99,10 @@ public class MovimientoMosca : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         fleeing = true;
         timer = 0;
+    }
+
+    public void ActivateSpawner()
+    {
+        spawnerMosca.SetSpawn();
     }
 }
