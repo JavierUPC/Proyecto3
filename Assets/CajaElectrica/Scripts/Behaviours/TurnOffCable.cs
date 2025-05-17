@@ -23,7 +23,7 @@ public class TurnOffCable : MonoBehaviour
             if (rend != null && offCable != null)
             {
                 rend.material = offCable;
-                obj.GetComponent<Electricity>().On = false;
+                obj.GetComponent<EliminatePlayer>().On = false;
             }
             else
             {
