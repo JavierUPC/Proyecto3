@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 838badfbf10b6b442878844fdd143310
+guid: 63ee9cedc748c0f41819643a5fb3165c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: lengua
-      takeName: lengua
-      internalID: 1865303283322596090
+      name: disparo
+      takeName: disparo
+      internalID: 7432055413625953573
       firstFrame: 0
-      lastFrame: 8
+      lastFrame: 7
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
