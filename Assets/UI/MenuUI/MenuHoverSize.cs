@@ -39,7 +39,7 @@ public class MenuHoverSize : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         while (Vector3.Distance(transform.localScale, destination) > 0.001f)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, destination, Time.deltaTime * scaleSpeed);
+            transform.localScale = Vector3.Lerp(transform.localScale, destination, Time.unscaledDeltaTime * scaleSpeed);
             yield return null;
         }
 

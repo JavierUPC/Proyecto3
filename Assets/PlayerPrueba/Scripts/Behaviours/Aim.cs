@@ -18,24 +18,25 @@ public class Aim : MonoBehaviour
     public Vector2 displaceCamClimb = new Vector2(0.5f, 1.5f);
     public float rotationSpeed;
     public Transform lookAt;
-    public InputActionReference aim, fire;
+    public PlayerInput playerInput;
+    private InputAction fire, aim;
     public Animator uiApuntarLento, uiApuntarHabilidad;
     private void OnEnable()
     {
-        aim.action.Enable();
-        fire.action.Enable();
+        fire = playerInput.actions["Fire"];
+        aim = playerInput.actions["Aim"];
 
-        fire.action.performed += Fire;
-        fire.action.canceled += FireReleased;
+        fire.performed += Fire;
+        fire.canceled += FireReleased;
     }
 
     private void OnDisable()
     {
-        aim.action.Disable();
-        fire.action.Disable();
+        //aim.Disable();
+        //fire.Disable();
 
-        fire.action.performed -= Fire;
-        fire.action.canceled -= FireReleased;
+        fire.performed -= Fire;
+        fire.canceled -= FireReleased;
     }
 
     public FireAbilty fireAbilty;
@@ -72,7 +73,6 @@ public class Aim : MonoBehaviour
 
         cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
         cinemachineBrain.UpdateMethod = CinemachineBrain.UpdateMethods.ManualUpdate;
-
     }
 
     private void Fire(InputAction.CallbackContext context)
@@ -97,7 +97,7 @@ public class Aim : MonoBehaviour
     {
         cinemachineBrain.ManualUpdate();
 
-        isAiming = aim.action.IsPressed();
+        isAiming = aim.IsPressed();
 
         if (isAiming && vertical.activeSelf)
         {

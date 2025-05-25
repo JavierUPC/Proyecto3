@@ -7,7 +7,7 @@ public static class PassSaveFiles
 {
     public static void Save(string sceneName)
     {
-        SaveFile saveFile = null;
+        SaveFile saveFile = new SaveFile();
         saveFile.CurrentLevelName = sceneName;
 
         SaveSystem.SaveGame(saveFile);

@@ -8,6 +8,8 @@ public class CloseOpenMenu : MonoBehaviour
     public InputActionReference escapeKey;
     public GameObject menuWindow;
     public InputActionAsset inputActions;
+    public PlayerInput playerInput;
+    public Aim aim;
 
     private bool isMenuOpen = false;
 
@@ -45,9 +47,8 @@ public class CloseOpenMenu : MonoBehaviour
     {
         menuWindow.SetActive(true);
 
-        // Disable "Player" action map
-        inputActions.FindActionMap("Player").Disable();
-
+        aim.enabled = false;
+        playerInput.actions.FindActionMap("Player").Disable();
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -57,9 +58,8 @@ public class CloseOpenMenu : MonoBehaviour
     {
         menuWindow.SetActive(false);
 
-        // Enable "Player" action map
-        inputActions.FindActionMap("Player").Enable();
-
+        aim.enabled = true;
+        playerInput.actions.FindActionMap("Player").Enable();
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

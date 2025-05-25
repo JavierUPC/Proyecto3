@@ -8,7 +8,8 @@ public class PlayerVerticalMove : MonoBehaviour
     public GameObject player;
     public float moveSpeed = 5f;
     public float gravityForce = 9.81f;
-    public InputActionReference move;
+    public PlayerInput playerInput;
+    private InputAction move;
     private Rigidbody rb;
     private Vector3 surfaceNormal = Vector3.zero;
     public bool isClimbing = false;
@@ -26,17 +27,18 @@ public class PlayerVerticalMove : MonoBehaviour
     {
         rb = player.GetComponent<Rigidbody>();
         justStarted = true;
+        move = playerInput.actions["Move1"];
     }
 
-    private void OnEnable()
-    {
-        move.action.Enable();
-    }
+    //private void OnEnable()
+    //{
+    //    move.Enable();
+    //}
 
-    private void OnDisable()
-    {
-        move.action.Disable();
-    }
+    //private void OnDisable()
+    //{
+    //    move.Disable();
+    //}
 
     void FixedUpdate()
     {
@@ -116,7 +118,7 @@ public class PlayerVerticalMove : MonoBehaviour
 
     private void Move()
     {
-        input = move.action.ReadValue<Vector2>();
+        input = move.ReadValue<Vector2>();
         float turnSpeed = 100f;
         float turnAmount = input.x * turnSpeed * Time.fixedDeltaTime;
 

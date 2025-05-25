@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerBaseMove : MonoBehaviour
 {
     public float moveSpeed = 0, runSpeed = 0, rotationSpeed = 0;
-    public InputActionReference move, run;
+    public PlayerInput playerInput;
+    private InputAction move, run;
     public Transform playerCam;
 
     private bool grounded = false;
@@ -29,20 +30,20 @@ public class PlayerBaseMove : MonoBehaviour
     //ACTION EVENTLISTENERS
     private void OnEnable()
     {
-        move.action.Enable();
-        run.action.Enable();
+        run = playerInput.actions["Run"];
+        move = playerInput.actions["Move"];
 
-        run.action.started += Run;
-        run.action.canceled += StopRun;
+        run.started += Run;
+        run.canceled += StopRun;
     }
 
     private void OnDisable()
     {
-        move.action.Disable();
-        run.action.Disable();
+        //move.Disable();
+        //run.Disable();
 
-        run.action.started -= Run;
-        run.action.canceled -= StopRun;
+        run.started -= Run;
+        run.canceled -= StopRun;
     }
     //------
 
@@ -72,7 +73,7 @@ public class PlayerBaseMove : MonoBehaviour
     //MOVE
     private void Move()
     {
-        Vector2 worldMoveDirection = move.action.ReadValue<Vector2>();
+        Vector2 worldMoveDirection = move.ReadValue<Vector2>();
         Vector3 worldDirection = new Vector3(worldMoveDirection.x, 0, worldMoveDirection.y);
         moveDirection = playerCam.TransformDirection(worldDirection);
         if (moveDirection != new Vector3(0f, moveDirection.y, 0f))

@@ -16,27 +16,29 @@ public class Camuflaje : MonoBehaviour
     public Renderer playerSkin;
     public float camoUseTime;
     public float camoCoolDown;
-    public InputActionReference camouflage;
+    public PlayerInput playerInput;
+    private InputAction camouflage;
     private void OnEnable()
     {
-        camouflage.action.Enable();
+        //camouflage.Enable();
     }
 
     private void OnDisable()
     {
-        camouflage.action.Disable();
+        //camouflage.Disable();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        camouflage = playerInput.actions["Camo"];
     }
 
     // Update is called once per frame
     void Update()
     {
         if(!cooldown)
-        isCamo = (camouflage.action.IsPressed() && checkMoscaEnBoca.BugInMouth());
+        isCamo = (camouflage.IsPressed() && checkMoscaEnBoca.BugInMouth());
 
         if (isCamo)
             playerSkin.material = matContact;

@@ -13,8 +13,8 @@ public class SwitchMovement : MonoBehaviour
     public float fallDelay = 0.5f;
     public float checkDistance = 0.6f; // --- MODIFIED: How far to raycast for climbables
 
-    public InputActionReference climb, fall;
-
+    public PlayerInput playerInput;
+    private InputAction climb, fall;
     private void Start()
     {
         verticalMovement.SetActive(false);
@@ -23,18 +23,18 @@ public class SwitchMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        fall.action.Enable();
-        climb.action.Enable();
-        climb.action.started += SwitchState;
-        fall.action.started += Fall;
+        climb = playerInput.actions["Climb"];
+        fall = playerInput.actions["FallFromWall"];
+        climb.started += SwitchState;
+        fall.started += Fall;
     }
 
     private void OnDisable()
     {
-        fall.action.Disable();
-        climb.action.started -= SwitchState;
-        fall.action.started -= Fall;
-        climb.action.Disable();
+        //fall.Disable();
+        climb.started -= SwitchState;
+        fall.started -= Fall;
+        //climb.Disable();
     }
 
     public void Fall(InputAction.CallbackContext obj)
