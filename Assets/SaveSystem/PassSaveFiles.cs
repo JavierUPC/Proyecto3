@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public static class PassSaveFiles
 {
-    public static void Save()
+    public static void Save(string sceneName)
     {
         SaveFile saveFile = null;
-        saveFile.CurrentLevelName = SceneManager.GetActiveScene().name;
+        saveFile.CurrentLevelName = sceneName;
 
         SaveSystem.SaveGame(saveFile);
     }

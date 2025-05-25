@@ -13,6 +13,12 @@ public class SceneLoader : MonoBehaviour
         //PassSaveFiles.Load();
     }
 
+    public void SaveExit()
+    {
+        PassSaveFiles.Save(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Menu");
+    }
+
     public void Quit()
     {
         Application.Quit();

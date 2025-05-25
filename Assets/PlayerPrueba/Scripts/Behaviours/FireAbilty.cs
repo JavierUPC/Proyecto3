@@ -30,7 +30,7 @@ public class FireAbilty : MonoBehaviour
             if (hit.collider.CompareTag("Interact"))
             {
                 if (abilty.type == TipoMosca.Electrico)
-                    hit.collider.transform.GetComponent<Button>().Activate(abilty.type);
+                    hit.collider.transform.GetComponent<ElectricButton>().Activate(abilty.type);
                 else if (abilty.type == TipoMosca.Fuego)
                     hit.collider.transform.GetComponent<RamasSecas>().Activate(abilty.type);
             }

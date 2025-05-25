@@ -6,9 +6,7 @@ using UnityEngine.InputSystem;
 public class Habilidad : MonoBehaviour
 {
     private TipoMosca tipo = TipoMosca.None;
-    public InputActionReference fire;
     private bool habilidad;
-
 
     public void AssignType(TipoMosca type)
     {
