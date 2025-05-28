@@ -569,8 +569,7 @@ MonoBehaviour:
   moveSpeed: 3
   runSpeed: 5
   rotationSpeed: 15
-  move: {fileID: 6069018142070836439, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
-  run: {fileID: -2934525286551852955, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
+  playerInput: {fileID: 0}
   playerCam: {fileID: 1788094133}
   player: {fileID: 1079294282}
 --- !u!4 &292527003
@@ -620,7 +619,7 @@ MonoBehaviour:
   player: {fileID: 1079294282}
   moveSpeed: 5
   gravityForce: 90
-  move: {fileID: -147782202262129947, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
+  playerInput: {fileID: 0}
   isClimbing: 0
   justStarted: 0
   currentClimbable: {fileID: 0}
@@ -900,6 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6130ebe7841d8314dbafc9c01229e2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnerMosca: {fileID: 0}
   velocidad: 4.5
   escala: 2
   velocidadRotacion: 45
@@ -1535,7 +1535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94e4e0dce98f474cb52efa7845285ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 5439237347058325833, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
 --- !u!114 &1079294285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1555,8 +1554,7 @@ MonoBehaviour:
   playerSkin: {fileID: 0}
   camoUseTime: 5
   camoCoolDown: 5
-  camouflage: {fileID: 5382348245184421563, guid: 47225417dc76fad48a9838d4130af3c1,
-    type: 3}
+  playerInput: {fileID: 0}
 --- !u!114 &1079294286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,8 +1579,7 @@ MonoBehaviour:
   displaceCamClimb: {x: 0.5, y: 1.5}
   rotationSpeed: 15
   lookAt: {fileID: 188661344}
-  aim: {fileID: 2137594422101474723, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
-  fire: {fileID: 5439237347058325833, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
+  playerInput: {fileID: 0}
   uiApuntarLento: {fileID: 0}
   uiApuntarHabilidad: {fileID: 0}
   fireAbilty: {fileID: 0}
@@ -1630,8 +1627,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalMovement: {fileID: 324942308}
   baseMovement: {fileID: 292527001}
-  climb: {fileID: -4030589357138319987, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
-  fall: {fileID: -6977582181945453535, guid: 47225417dc76fad48a9838d4130af3c1, type: 3}
+  fallDelay: 0.5
+  checkDistance: 0.6
+  playerInput: {fileID: 0}
 --- !u!136 &1079294289
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1846,6 +1844,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -84.849, z: 0}
+--- !u!1001 &1198286190
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 38.053257
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.881577
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3542214625663638551, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcacadb018533bb43ac55e06b2480d4a, type: 2}
+    - target: {fileID: 895066471263115946, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a5ee2ae2ad946a4d958bc6f4ee4474d, type: 2}
+    - target: {fileID: 919132149155446097, guid: 367925a64f019554790315917e0bb74c,
+        type: 3}
+      propertyPath: m_Name
+      value: Cablefin
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 367925a64f019554790315917e0bb74c, type: 3}
 --- !u!1 &1256786755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,3 +3080,4 @@ SceneRoots:
   - {fileID: 961569483}
   - {fileID: 6626308372023472106}
   - {fileID: 957103176}
+  - {fileID: 1198286190}
