@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class CientificoPersecucion : MonoBehaviour
 {
     [Header("Referencias")]
-    public GameObject camaleon;
+    public GameObject camaleon; // el camaleón real (el que se mata)
+    public GameObject objetivoPersecucion; // el empty fuera del terrario
 
     [Header("Posiciones")]
     public Vector3 spawnPosition;
@@ -31,7 +32,7 @@ public class CientificoPersecucion : MonoBehaviour
 
     private NavMeshAgent agent;
     public Renderer rend;
-    private Camuflaje camuflajeScript; // Referencia al script Camuflaje para la variable bool isCamo
+    private Camuflaje camuflajeScript;
     private Animator animator;
 
     private float tiempoDeteccionActual;
@@ -53,8 +54,6 @@ public class CientificoPersecucion : MonoBehaviour
     private void Update()
     {
         float velocidadActual = agent.velocity.magnitude;
-
-        // Normalizamos la velocidad usando los valores configurables
         float velocidadNormalizada = Mathf.InverseLerp(velocidadMinima, velocidadMaxima, velocidadActual);
         animator.SetFloat("Speed", velocidadNormalizada);
 
@@ -62,16 +61,12 @@ public class CientificoPersecucion : MonoBehaviour
         animator.SetBool("isWalking", estaCaminando);
     }
 
-
-
-    private System.Collections.IEnumerator Ciclo()
+    private IEnumerator Ciclo()
     {
         while (true)
         {
-
             yield return new WaitForSeconds(tiempoEsperaEntreCiclos);
 
-            //Buscar camaleón
             buscando = true;
             enFaseDeteccion = false;
             yendoASalida = false;
@@ -79,15 +74,16 @@ public class CientificoPersecucion : MonoBehaviour
             tiempoDeteccionActual = tiempoDeteccion;
             tiempoMatarActual = tiempoNecesarioParaMatar;
 
+            // BÚSQUEDA
             while (buscando)
             {
-                agent.SetDestination(new Vector3(camaleon.transform.position.x, transform.position.y, camaleon.transform.position.z));
+                Vector3 destino = new Vector3(objetivoPersecucion.transform.position.x, transform.position.y, objetivoPersecucion.transform.position.z);
+                agent.SetDestination(destino);
 
-                float distancia = DistanciaXZ(transform.position, camaleon.transform.position);
+                float distancia = DistanciaXZ(transform.position, objetivoPersecucion.transform.position);
 
                 if (distancia <= distanciaDeteccion)
                 {
-                    //Iniciar tiempo de detección
                     buscando = false;
                     enFaseDeteccion = true;
                 }
@@ -95,9 +91,11 @@ public class CientificoPersecucion : MonoBehaviour
                 yield return null;
             }
 
+            // DETECCIÓN
             while (enFaseDeteccion)
             {
-                agent.SetDestination(new Vector3(camaleon.transform.position.x, transform.position.y, camaleon.transform.position.z));
+                Vector3 destino = new Vector3(objetivoPersecucion.transform.position.x, transform.position.y, objetivoPersecucion.transform.position.z);
+                agent.SetDestination(destino);
 
                 if (tiempoDeteccionActual > 0)
                 {
@@ -105,35 +103,31 @@ public class CientificoPersecucion : MonoBehaviour
 
                     if (!camuflajeScript.isCamo)
                     {
-                        // No camuflado -> detección
                         rend.material.color = colorDeteccion;
                         tiempoMatarActual -= Time.deltaTime;
 
                         if (tiempoMatarActual <= 0)
                         {
-                            Kill.Reload();
-                            //Debug.Log("MUERTE CAMALEON");
+                            Kill.Reload(); // Mata al camaleón
                             rend.material.color = colorNormal;
                             enFaseDeteccion = false;
                         }
                     }
                     else
                     {
-                        // Camuflado -> reset matar
                         rend.material.color = colorNormal;
                         tiempoMatarActual = tiempoNecesarioParaMatar;
                     }
                 }
                 else
                 {
-                    // Fin tiempo de detección
                     enFaseDeteccion = false;
                 }
 
                 yield return null;
             }
 
-            //Ir a salida
+            // SALIDA
             yendoASalida = true;
             agent.SetDestination(new Vector3(exitPosition.x, transform.position.y, exitPosition.z));
 
@@ -146,7 +140,7 @@ public class CientificoPersecucion : MonoBehaviour
                 yield return null;
             }
 
-            //Ir a spawn
+            // SPAWN
             yendoASpawn = true;
             agent.SetDestination(new Vector3(spawnPosition.x, transform.position.y, spawnPosition.z));
 
