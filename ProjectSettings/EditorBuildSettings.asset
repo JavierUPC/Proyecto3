@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Blockout 1.unity
     guid: 4b523689c3575a548a5b0b82705abda4
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: b31b0c3f4ede98f4b9f4bcf0ce4aa896
   m_configObjects: {}

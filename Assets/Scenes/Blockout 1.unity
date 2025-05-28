@@ -9365,6 +9365,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 21c416dcf380d834ba1d7e9353eab0fa, type: 2}
+    - target: {fileID: -888802475829762329, guid: e9bd4c5d9c5802442a4229a1c5754c0d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Climbable
+      objectReference: {fileID: 0}
     - target: {fileID: -744382917710837263, guid: e9bd4c5d9c5802442a4229a1c5754c0d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9380,6 +9385,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 21c416dcf380d834ba1d7e9353eab0fa, type: 2}
+    - target: {fileID: 6059258840747479643, guid: e9bd4c5d9c5802442a4229a1c5754c0d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Climbable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938996080847961855, guid: e9bd4c5d9c5802442a4229a1c5754c0d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Climbable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641483240746214942, guid: e9bd4c5d9c5802442a4229a1c5754c0d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Climbable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
