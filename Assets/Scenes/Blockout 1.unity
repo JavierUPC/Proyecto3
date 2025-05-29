@@ -12691,7 +12691,7 @@ PrefabInstance:
     - target: {fileID: 1801152826368942197, guid: 38d22f54bf9d8f345ab04bd83cdb0aa2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 52.7
+      value: 49.2
       objectReference: {fileID: 0}
     - target: {fileID: 1801152826368942197, guid: 38d22f54bf9d8f345ab04bd83cdb0aa2,
         type: 3}
@@ -12738,6 +12738,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7629494502982869075, guid: 38d22f54bf9d8f345ab04bd83cdb0aa2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8858ed72be355d049a995957a4fde323, type: 2}
     - target: {fileID: 7762192836778706555, guid: 38d22f54bf9d8f345ab04bd83cdb0aa2,
         type: 3}
       propertyPath: m_StaticEditorFlags
