@@ -17,6 +17,13 @@ public static class PassSaveFiles
     {
         SaveFile loadedFile = SaveSystem.LoadGame();
 
-        SceneManager.LoadScene(loadedFile.CurrentLevelName);
+        if (loadedFile != null)
+        {
+            SceneManager.LoadScene(loadedFile.CurrentLevelName);
+        }
+        else
+        {
+            SceneManager.LoadScene("Blockout 1");
+        }
     }
 }
