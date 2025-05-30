@@ -53,6 +53,8 @@ public class Aim : MonoBehaviour
     private Vector3 initPosLookAt, currentLookAt;
     private float fixedDeltaTimeInit;
     public Animator animator;
+    public Animator lenguaAnimator;
+    public GameObject toungue;
 
     void Start()
     {
@@ -74,6 +76,8 @@ public class Aim : MonoBehaviour
 
         cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
         cinemachineBrain.UpdateMethod = CinemachineBrain.UpdateMethods.ManualUpdate;
+        lenguaAnimator.speed = 10;
+        toungue.SetActive(false);
     }
 
     private void Fire(InputAction.CallbackContext context)
@@ -81,6 +85,8 @@ public class Aim : MonoBehaviour
         if (isAiming && zoomLevel < 0.1 && checkIfBugInMouth.BugInMouth())
         {
             lengua.firing = true;
+            lenguaAnimator.SetTrigger("Shoot");
+            animator.SetTrigger("Shoot");
         }
         else if (isAiming && zoomLevel < 0.1 && !checkIfBugInMouth.BugInMouth())
         {
@@ -100,7 +106,18 @@ public class Aim : MonoBehaviour
 
         isAiming = aim.IsPressed();
 
-        if(isAiming)
+        AnimatorStateInfo stateInfo = lenguaAnimator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.IsName("disparo"))
+        {
+            toungue.SetActive(true);
+        }
+        else
+        {
+            toungue.SetActive(false);
+        }
+
+        if (isAiming)
         {
             animator.SetBool("Aim", true);
             animator.SetBool("Walk", false);
@@ -111,7 +128,7 @@ public class Aim : MonoBehaviour
             animator.SetBool("Aim", false);
         }
 
-        if (isAiming && vertical.activeSelf)
+            if (isAiming && vertical.activeSelf)
         {
             cinemachineBrain.WorldUpOverride = transform;
             freeLookCamera.TrackerSettings.BindingMode = Unity.Cinemachine.TargetTracking.BindingMode.LockToTarget;
