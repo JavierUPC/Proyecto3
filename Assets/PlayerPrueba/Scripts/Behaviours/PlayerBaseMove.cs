@@ -16,6 +16,7 @@ public class PlayerBaseMove : MonoBehaviour
     private float speed;
 
     public GameObject player;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class PlayerBaseMove : MonoBehaviour
         Cursor.visible = false;
         rb = player.GetComponent<Rigidbody>();
         speed = moveSpeed;
+        animator.speed = 5f;
     }
 
 
@@ -59,6 +61,26 @@ public class PlayerBaseMove : MonoBehaviour
         }
 
         rb.velocity = new Vector3(moveDirection.x * speed, rb.velocity.y, moveDirection.z * speed);
+
+        if (moveDirection.x == 0f && moveDirection.y == 0f)
+        {
+            //Debug.Log("Idle");
+            animator.SetBool("Walk", false);
+            animator.SetBool("Run", false);
+        }
+        else if (speed == moveSpeed)
+        {
+            //Debug.Log("Walk");
+            animator.SetBool("Walk", true);
+            animator.SetBool("Run", false);
+        }
+        else if (speed == runSpeed)
+        {
+            //Debug.Log("Run");
+            animator.SetBool("Run", true);
+            animator.SetBool("Walk", false);
+        }
+
     }
     //------
 

@@ -52,6 +52,7 @@ public class Aim : MonoBehaviour
     private float[] originalDistances = new float[3];
     private Vector3 initPosLookAt, currentLookAt;
     private float fixedDeltaTimeInit;
+    public Animator animator;
 
     void Start()
     {
@@ -98,6 +99,17 @@ public class Aim : MonoBehaviour
         cinemachineBrain.ManualUpdate();
 
         isAiming = aim.IsPressed();
+
+        if(isAiming)
+        {
+            animator.SetBool("Aim", true);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Run", false);
+        }
+        else
+        {
+            animator.SetBool("Aim", false);
+        }
 
         if (isAiming && vertical.activeSelf)
         {

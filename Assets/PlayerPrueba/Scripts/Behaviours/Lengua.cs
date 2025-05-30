@@ -20,7 +20,7 @@ public class Lengua : MonoBehaviour
         {
             if (hit.collider.CompareTag("Mosca"))
             {
-                //Debug.Log("Mosca hit by ray");
+                Debug.Log("Mosca hit by ray");
                 GameObject mosca = hit.collider.gameObject;
 
                 player.GetComponent<ApplyAbilty>().Abilty(mosca.GetComponentInParent<FlyType>().moscaSO.mosca);

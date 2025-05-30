@@ -22,6 +22,7 @@ public class PlayerVerticalMove : MonoBehaviour
     private ContactPoint lastValidContact;
     private float lastDetachTime = -1f;
     private float reattachCooldown = 0.2f; // prevents immediate reattachment
+    public Animator animator;
 
     void Start()
     {
@@ -47,6 +48,19 @@ public class PlayerVerticalMove : MonoBehaviour
             ApplyGravity();
             AlignZDirectionToUp();
             Move();
+        }
+
+        if (input == Vector2.zero)
+        {
+            Debug.Log("Idle");
+            animator.SetBool("Walk", false);
+            animator.SetBool("Run", false);
+        }
+        else if (input != Vector2.zero)
+        {
+            Debug.Log("Walk");
+            animator.SetBool("Walk", true);
+            animator.SetBool("Run", false);
         }
     }
 
