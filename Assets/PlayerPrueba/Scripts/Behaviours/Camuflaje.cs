@@ -18,6 +18,7 @@ public class Camuflaje : MonoBehaviour
     public float camoCoolDown;
     public PlayerInput playerInput;
     private InputAction camouflage;
+
     private void OnEnable()
     {
         //camouflage.Enable();
@@ -28,17 +29,15 @@ public class Camuflaje : MonoBehaviour
         //camouflage.Disable();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         camouflage = playerInput.actions["Camo"];
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(!cooldown)
-        isCamo = (camouflage.IsPressed() && checkMoscaEnBoca.BugInMouth());
+        if (!cooldown)
+            isCamo = (camouflage.IsPressed() && checkMoscaEnBoca.BugInMouth());
 
         if (isCamo)
             playerSkin.material = matContact;
@@ -61,7 +60,7 @@ public class Camuflaje : MonoBehaviour
         else
             useTimer = 0;
 
-        if(useTimer >= camoUseTime)
+        if (useTimer >= camoUseTime)
         {
             cooldown = true;
             isCamo = false;
@@ -71,31 +70,50 @@ public class Camuflaje : MonoBehaviour
         {
             cooldownTimer += Time.deltaTime;
             if (cooldownTimer >= camoCoolDown)
-            { 
+            {
                 cooldown = false;
                 cooldownTimer = 0;
             }
         }
     }
 
-    //-----------------------------------------------------------------------------------------
-    //AÑADIR METODO PARA ACTICAR COOLDOWN PARA NO PODER ACTIVAR CAMO SI TIENE MOSCA EN LA BOCA
-    //-----------------------------------------------------------------------------------------
-
     private void OnCollisionStay(Collision collision)
     {
-        Material collisionMat = collision.gameObject.GetComponent<MeshRenderer>().material;
         if (collision.gameObject.layer == LayerMask.NameToLayer("Wall") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            matContact = collisionMat;
+            Material collisionMat = FindMaterialInObjectOrChildren(collision.gameObject);
+            if (collisionMat != null)
+            {
+                matContact = collisionMat;
+                Debug.Log($"Material found: {collisionMat.name} on {collision.gameObject.name}");
+            }
+            else
+            {
+                Debug.LogWarning($"No material found on {collision.gameObject.name} or its children");
+            }
         }
     }
 
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.layer == LayerMask.NameToLayer("Wall") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-    //    {
+    private Material FindMaterialInObjectOrChildren(GameObject obj)
+    {
+        // First, check the root object's MeshRenderer
+        MeshRenderer meshRenderer = obj.GetComponent<MeshRenderer>();
+        if (meshRenderer != null && meshRenderer.sharedMaterial != null)
+        {
+            return meshRenderer.sharedMaterial;
+        }
 
-    //    }
-    //}
+        // If no material on root, check children recursively
+        foreach (Transform child in obj.transform)
+        {
+            Material childMat = FindMaterialInObjectOrChildren(child.gameObject);
+            if (childMat != null)
+            {
+                return childMat;
+            }
+        }
+
+        // No material found anywhere
+        return null;
+    }
 }

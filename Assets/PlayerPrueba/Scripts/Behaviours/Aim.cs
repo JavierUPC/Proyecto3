@@ -76,7 +76,7 @@ public class Aim : MonoBehaviour
 
         cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
         cinemachineBrain.UpdateMethod = CinemachineBrain.UpdateMethods.ManualUpdate;
-        lenguaAnimator.speed = 10;
+        lenguaAnimator.speed = 15;
         toungue.SetActive(false);
     }
 

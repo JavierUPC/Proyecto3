@@ -7,7 +7,7 @@ public class TurnOffCable : MonoBehaviour
     public Material offCable; // Assign this in the Inspector
     public List<GameObject> cableToTurnOff; // List of objects to apply the material change to
 
-    private Renderer rend;
+    //Particulas
 
     void Start()
     {
@@ -19,16 +19,8 @@ public class TurnOffCable : MonoBehaviour
     {
         foreach (GameObject obj in cableToTurnOff)
         {
-            rend = obj.GetComponent<Renderer>();
-            if (rend != null && offCable != null)
-            {
-                rend.material = offCable;
-                obj.GetComponent<EliminatePlayer>().On = false;
-            }
-            else
-            {
-                Debug.LogWarning("Renderer or offCable material is missing on " + obj.name);
-            }
+            //Apagar particulas electricas
+            obj.GetComponent<EliminatePlayer>().On = false;
         }
     }
 }

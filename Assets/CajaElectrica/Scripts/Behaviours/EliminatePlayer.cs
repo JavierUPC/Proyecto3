@@ -9,11 +9,23 @@ public class EliminatePlayer : MonoBehaviour
     private void Start()
     {
         On = true;
+
+        // Find all colliders in children and add CollisionForwarder
+        Collider[] childColliders = GetComponentsInChildren<Collider>();
+        foreach (Collider col in childColliders)
+        {
+            CollisionForwarder forwarder = col.gameObject.GetComponent<CollisionForwarder>();
+            if (forwarder == null)
+            {
+                forwarder = col.gameObject.AddComponent<CollisionForwarder>();
+            }
+            forwarder.parentScript = this;
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    // This method gets called by CollisionForwarder on any child collider
+    public void OnChildCollision(Collision collision)
     {
-        //Debug.Log("DEBERÍA ENTRAR EN KILL: " + collision.transform.tag + "and " + On);
         if (On && collision.transform.CompareTag("Player"))
         {
             Kill.Reload();
