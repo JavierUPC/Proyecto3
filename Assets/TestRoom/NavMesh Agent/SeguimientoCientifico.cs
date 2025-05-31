@@ -42,6 +42,8 @@ public class CientificoPersecucion : MonoBehaviour
     private bool yendoASalida = false;
     private bool yendoASpawn = false;
 
+    //public SFX_Manager sfx;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
