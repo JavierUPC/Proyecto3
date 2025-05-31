@@ -8,6 +8,7 @@ public class CloseTabX : MonoBehaviour
     public GameObject tab;
     public PlayerInput playerInput;
     public Aim aim;
+
     public void CloseTab()
     {
         tab.SetActive(false);
