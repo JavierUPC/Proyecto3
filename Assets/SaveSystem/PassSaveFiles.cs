@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public static class PassSaveFiles
 {
     public static SaveFile loadedFile;
-    public static SaveFile saveFile;
+    public static SaveFile saveFile = new SaveFile();
 
     public static void Save(string sceneName)
     {
