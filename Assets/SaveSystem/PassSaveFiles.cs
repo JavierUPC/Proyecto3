@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public static class PassSaveFiles
 {
+    public static SaveFile loadedFile;
+    public static SaveFile saveFile;
+
     public static void Save(string sceneName)
     {
-        SaveFile saveFile = new SaveFile();
         saveFile.CurrentLevelName = sceneName;
 
         SaveSystem.SaveGame(saveFile);
@@ -15,7 +17,7 @@ public static class PassSaveFiles
 
     public static void Load()
     {
-        SaveFile loadedFile = SaveSystem.LoadGame();
+        loadedFile = SaveSystem.LoadGame();
 
         if (loadedFile != null)
         {

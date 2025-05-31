@@ -6,5 +6,5 @@ using UnityEngine;
 public class SaveFile
 {
     public string CurrentLevelName;
-    //public float musicVol, ambientVol;
+    public float musicVol, ambientVol;
 }

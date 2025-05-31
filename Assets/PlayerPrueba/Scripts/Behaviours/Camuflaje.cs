@@ -85,11 +85,11 @@ public class Camuflaje : MonoBehaviour
             if (collisionMat != null)
             {
                 matContact = collisionMat;
-                Debug.Log($"Material found: {collisionMat.name} on {collision.gameObject.name}");
+                //Debug.Log($"Material found: {collisionMat.name} on {collision.gameObject.name}");
             }
             else
             {
-                Debug.LogWarning($"No material found on {collision.gameObject.name} or its children");
+                //Debug.LogWarning($"No material found on {collision.gameObject.name} or its children");
             }
         }
     }
