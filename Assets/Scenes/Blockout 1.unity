@@ -39271,7 +39271,7 @@ MonoBehaviour:
   amplitudSerpenteo: 1
   frecuenciaSerpenteo: 5
   centroRotacion: {fileID: 0}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1858773619}
 --- !u!54 &1858773615
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39392,7 +39392,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -39427,7 +39427,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.912
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -39736,7 +39736,7 @@ Transform:
   m_LocalScale: {x: 4.5454545, y: 4.5454545, z: 4.5454545}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1326563054}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1884432865
 SphereCollider:
@@ -45094,3 +45094,4 @@ SceneRoots:
   - {fileID: 79808141}
   - {fileID: 51727447}
   - {fileID: 969201151}
+  - {fileID: 1884432864}
