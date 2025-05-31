@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class VolumeManager : MonoBehaviour
 {
-    public AudioSource music;
+        public AudioSource music;
     public AudioSource[] ambient;
 
     public Slider musicSlider;
@@ -20,12 +20,6 @@ public class VolumeManager : MonoBehaviour
         {
             musicVol = PassSaveFiles.loadedFile.musicVol;
             ambientVol = PassSaveFiles.loadedFile.ambientVol;
-        }
-        else
-        {
-            PassSaveFiles.saveFile = new SaveFile();
-            PassSaveFiles.saveFile.musicVol = musicVol;
-            PassSaveFiles.saveFile.ambientVol = ambientVol;
         }
 
         music.volume = musicVol;
