@@ -98,6 +98,8 @@ public class Aim : MonoBehaviour
             else if (isAiming && zoomLevel < 0.1 && !checkIfBugInMouth.BugInMouth())
             {
                 fireAbilty.fireAbility = true;
+                lenguaAnimator.SetTrigger("Shoot");
+                animator.SetTrigger("Shoot");
             }
 
             timer = 0;
