@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TurnOffCable : MonoBehaviour
 {
-    public Material offCable; // Assign this in the Inspector
     public List<GameObject> cableToTurnOff; // List of objects to apply the material change to
 
     //Particulas
