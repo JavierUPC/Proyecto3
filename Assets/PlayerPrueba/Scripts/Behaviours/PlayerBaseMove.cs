@@ -18,6 +18,10 @@ public class PlayerBaseMove : MonoBehaviour
     public GameObject player;
     public Animator animator;
 
+    public SFX_Manager sfx;
+    private float timer = 0;
+    private int clipNr = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,12 +74,42 @@ public class PlayerBaseMove : MonoBehaviour
         }
         else if (speed == moveSpeed)
         {
+            timer += Time.deltaTime;
+
+            bool isMoving = moveDirection.magnitude > 0.1f;
+
+            if (isMoving && timer >= 0.6f)
+            {
+                sfx.Play(clipNr);
+                clipNr++;
+
+                if (clipNr < 4)
+                    clipNr = 0;
+
+                timer = 0f;
+            }
+
             //Debug.Log("Walk");
             animator.SetBool("Walk", true);
             animator.SetBool("Run", false);
         }
         else if (speed == runSpeed)
         {
+            timer += Time.deltaTime;
+
+            bool isMoving = moveDirection.magnitude > 0.1f;
+
+            if (isMoving && timer >= 0.25f)
+            {
+                sfx.Play(clipNr);
+                clipNr++;
+
+                if (clipNr < 4)
+                    clipNr = 0;
+
+                timer = 0f;
+            }
+
             //Debug.Log("Run");
             animator.SetBool("Run", true);
             animator.SetBool("Walk", false);

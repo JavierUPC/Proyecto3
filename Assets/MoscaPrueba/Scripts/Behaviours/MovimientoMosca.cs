@@ -21,6 +21,8 @@ public class MovimientoMosca : MonoBehaviour
     private float timer;
     private Vector3 direccionOpuesta;
     private Vector3 direccionPerpendicular;
+    public AudioSource audioSource;
+    private SFX_Manager sfx;
 
     void Start()
     {
@@ -33,10 +35,14 @@ public class MovimientoMosca : MonoBehaviour
         ultimaPosicion = transform.position;
 
         fleeing = false;
+
+        sfx = FindAnyObjectByType<SFX_Manager>();
     }
 
     void FixedUpdate()
     {
+        audioSource.volume = sfx.volume;
+
         if (!fleeing)
         {
             timer = 0;

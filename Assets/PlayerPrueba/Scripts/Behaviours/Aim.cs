@@ -55,6 +55,10 @@ public class Aim : MonoBehaviour
     public Animator animator;
     public Animator lenguaAnimator;
     public GameObject toungue;
+    public SFX_Manager sfx;
+
+    private int toungueCooldown = 1;
+    private float timer = 0f;
 
     void Start()
     {
@@ -82,15 +86,21 @@ public class Aim : MonoBehaviour
 
     private void Fire(InputAction.CallbackContext context)
     {
-        if (isAiming && zoomLevel < 0.1 && checkIfBugInMouth.BugInMouth())
+        if (timer >= toungueCooldown)
         {
-            lengua.firing = true;
-            lenguaAnimator.SetTrigger("Shoot");
-            animator.SetTrigger("Shoot");
-        }
-        else if (isAiming && zoomLevel < 0.1 && !checkIfBugInMouth.BugInMouth())
-        {
-            fireAbilty.fireAbility = true;
+            if (isAiming && zoomLevel < 0.1 && checkIfBugInMouth.BugInMouth())
+            {
+                lengua.firing = true;
+                sfx.Play(5);
+                lenguaAnimator.SetTrigger("Shoot");
+                animator.SetTrigger("Shoot");
+            }
+            else if (isAiming && zoomLevel < 0.1 && !checkIfBugInMouth.BugInMouth())
+            {
+                fireAbilty.fireAbility = true;
+            }
+
+            timer = 0;
         }
     }
 
@@ -102,6 +112,8 @@ public class Aim : MonoBehaviour
 
     void Update()
     {
+        timer += Time.unscaledDeltaTime;
+
         cinemachineBrain.ManualUpdate();
 
         isAiming = aim.IsPressed();

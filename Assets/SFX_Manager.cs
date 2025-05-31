@@ -5,7 +5,7 @@ using UnityEngine;
 public class SFX_Manager : MonoBehaviour
 {
     private AudioSource audioSource;
-
+    public float volume = 0f;
     public AudioClip[] audioClip;
 
     private void Start()
@@ -16,5 +16,10 @@ public class SFX_Manager : MonoBehaviour
     public void Play(int number)
     {
         audioSource.PlayOneShot(audioClip[number]);
+    }
+
+    private void Update()
+    {
+        volume = audioSource.volume;
     }
 }
