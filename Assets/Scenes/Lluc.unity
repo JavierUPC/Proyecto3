@@ -2151,7 +2151,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: be7a88d975a340649bd94eaee81dd302,
         type: 3}
       propertyPath: m_Name
-      value: mosca_electrica_low (1)
+      value: mosca_fuego
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
