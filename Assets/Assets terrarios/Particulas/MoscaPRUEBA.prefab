@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 5098594930491524408}
   - component: {fileID: 5365728210071151749}
   m_Layer: 0
-  m_Name: Mosca
+  m_Name: MoscaPRUEBA
   m_TagString: Mosca
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,6 @@ Transform:
   m_Children:
   - {fileID: 371106486683239113}
   - {fileID: 2396811788623828743}
-  - {fileID: 4237275334371973578}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5047970810270597908
@@ -426,93 +425,4 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be7a88d975a340649bd94eaee81dd302,
     type: 3}
   m_PrefabInstance: {fileID: 192764314147644706}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &4938602371603291121
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 8430722599382629641}
-    m_Modifications:
-    - target: {fileID: 875944486435799184, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 875944486435799184, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 875944486435799184, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_Name
-      value: PartSyst_MOSCA Electica
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
---- !u!4 &4237275334371973578 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
-    type: 3}
-  m_PrefabInstance: {fileID: 4938602371603291121}
   m_PrefabAsset: {fileID: 0}

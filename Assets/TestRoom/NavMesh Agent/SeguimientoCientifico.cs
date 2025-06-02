@@ -26,9 +26,9 @@ public class CientificoPersecucion : MonoBehaviour
     public float velocidadMinima = 20f;
     public float velocidadMaxima = 60f;
 
-    [Header("Colores")]
-    public Color colorNormal = Color.white;
-    public Color colorDeteccion = Color.red;
+    [Header("Materiales")]
+    public Material materialNormal;
+    public Material materialDeteccion;
 
     private NavMeshAgent agent;
     public Renderer rend;
@@ -105,19 +105,19 @@ public class CientificoPersecucion : MonoBehaviour
 
                     if (!camuflajeScript.isCamo)
                     {
-                        rend.material.color = colorDeteccion;
+                        rend.material = materialDeteccion;
                         tiempoMatarActual -= Time.deltaTime;
 
                         if (tiempoMatarActual <= 0)
                         {
                             Kill.Reload(); // Mata al camaleón
-                            rend.material.color = colorNormal;
+                            rend.material = materialNormal;
                             enFaseDeteccion = false;
                         }
                     }
                     else
                     {
-                        rend.material.color = colorNormal;
+                        rend.material = materialNormal;
                         tiempoMatarActual = tiempoNecesarioParaMatar;
                     }
                 }
