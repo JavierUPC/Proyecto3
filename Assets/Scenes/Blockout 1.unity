@@ -13761,6 +13761,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2043306872559546919, guid: 99029531d731eb542b30fe3efc642cf0,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043306872559546919, guid: 99029531d731eb542b30fe3efc642cf0,
+        type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 0}
@@ -13823,6 +13828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MoscaPRUEBA
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556582531297945793, guid: 99029531d731eb542b30fe3efc642cf0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5365728210071151749, guid: 99029531d731eb542b30fe3efc642cf0, type: 3}
@@ -37063,7 +37073,6 @@ Transform:
   m_Children:
   - {fileID: 1868698405}
   - {fileID: 1266468480}
-  - {fileID: 5866649949052437265}
   - {fileID: 1601388745}
   m_Father: {fileID: 1324164429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44965,3 +44974,4 @@ SceneRoots:
   - {fileID: 969201151}
   - {fileID: 1884432864}
   - {fileID: 651600723}
+  - {fileID: 1081211782}
