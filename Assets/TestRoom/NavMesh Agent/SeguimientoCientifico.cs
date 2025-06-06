@@ -26,6 +26,27 @@ public class CientificoPersecucion : MonoBehaviour
     public float velocidadMinima = 20f;
     public float velocidadMaxima = 60f;
 
+    [Header("Audio pasos")]
+    public AudioSource audioSourcePasos;
+    public AudioClip pasoIzquierdo;
+    public AudioClip pasoDerecho;
+
+    [Tooltip("Factor de ajuste del ritmo de pasos. A mayor valor, más rápidos los pasos.")]
+    [Range(0.1f, 5f)]
+    public float frecuenciaPasos = 1.0f;
+
+    [Tooltip("Tiempo mínimo absoluto entre pasos para evitar solapamientos.")]
+    public float tiempoMinimoEntrePasos = 0.2f;
+
+    private float tiempoUltimoPaso = 0f;
+    private bool pieDerecho = false;
+
+
+
+
+    private bool pasosActivos = false;
+    private bool pasoDerecha = true; // Alternancia
+
     [Header("Materiales")]
     public Material materialNormal;
     public Material materialDeteccion;
@@ -61,7 +82,49 @@ public class CientificoPersecucion : MonoBehaviour
 
         bool estaCaminando = velocidadActual > umbralVelocidad;
         animator.SetBool("isWalking", estaCaminando);
+
+        //ANDAR
+        if (estaCaminando)
+        {
+            float velocidad = agent.velocity.magnitude;
+            float delay = Mathf.Max(tiempoMinimoEntrePasos, 1f / (velocidad * frecuenciaPasos));
+
+            if (Time.time - tiempoUltimoPaso >= delay)
+            {
+                AudioClip clip = pieDerecho ? pasoDerecho : pasoIzquierdo;
+                audioSourcePasos.PlayOneShot(clip);
+                pieDerecho = !pieDerecho;
+                tiempoUltimoPaso = Time.time;
+            }
+        }
+
     }
+
+    private IEnumerator ReproducirPasos()
+    {
+        bool pasoDerecha = true;
+
+        while (true)
+        {
+            if (agent.velocity.magnitude > umbralVelocidad)
+            {
+                AudioClip clip = pasoDerecha ? pasoDerecho : pasoIzquierdo;
+                audioSourcePasos.PlayOneShot(clip);
+                pasoDerecha = !pasoDerecha;
+
+                // Calcula el tiempo entre pasos en función de la velocidad
+                float delay = 1.0f / (agent.velocity.magnitude * frecuenciaPasos);
+                delay = Mathf.Max(delay, tiempoMinimoEntrePasos); // asegura que no se solapen
+                yield return new WaitForSeconds(delay);
+            }
+            else
+            {
+                yield return null;
+            }
+        }
+    }
+
+
 
     private IEnumerator Ciclo()
     {
@@ -75,6 +138,9 @@ public class CientificoPersecucion : MonoBehaviour
             yendoASpawn = false;
             tiempoDeteccionActual = tiempoDeteccion;
             tiempoMatarActual = tiempoNecesarioParaMatar;
+
+            //Asegura que empieza siempre con el material normal al salir de spawn
+            rend.material = materialNormal;
 
             // BÚSQUEDA
             while (buscando)
@@ -129,6 +195,9 @@ public class CientificoPersecucion : MonoBehaviour
                 yield return null;
             }
 
+            //Una vez termina la detección, vuelve al material normal por si quedó en detección pero no lo mató
+            rend.material = materialNormal;
+
             // SALIDA
             yendoASalida = true;
             agent.SetDestination(new Vector3(exitPosition.x, transform.position.y, exitPosition.z));
@@ -156,6 +225,7 @@ public class CientificoPersecucion : MonoBehaviour
             }
         }
     }
+
 
     private float DistanciaXZ(Vector3 a, Vector3 b)
     {
