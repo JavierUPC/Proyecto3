@@ -697,7 +697,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -2192,7 +2192,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.059
   m_Height: 0.05
@@ -2630,9 +2630,9 @@ GameObject:
   - component: {fileID: 125203933}
   - component: {fileID: 125203932}
   - component: {fileID: 125203931}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain jungla
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -3201,6 +3201,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1085849879}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &144380591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
 --- !u!1 &146399962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,11 +3561,199 @@ CapsuleCollider:
   m_Height: 0.03
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &155424139
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &155424140 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 155424139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &157312631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7178581637816246140, guid: 367925a64f019554790315917e0bb74c,
     type: 3}
   m_PrefabInstance: {fileID: 1451778708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &157972037
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -38.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &157972038 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 157972037}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &160728434 stripped
 Transform:
@@ -6748,6 +7024,100 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &286535508
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &286535509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 286535508}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &288281281
 GameObject:
   m_ObjectHideFlags: 0
@@ -8440,6 +8810,194 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348216407}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &360523408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 28.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &360523409 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 360523408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &363140505
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -44.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &363140506 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 363140505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &366072009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2726568780636716469, guid: 367925a64f019554790315917e0bb74c,
@@ -8569,6 +9127,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2726568780636716469, guid: 367925a64f019554790315917e0bb74c,
     type: 3}
   m_PrefabInstance: {fileID: 403140013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &378733313
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 24.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 24.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 24.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -50.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &378733314 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 378733313}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &380256347
 MeshCollider:
@@ -9812,6 +10464,100 @@ CapsuleCollider:
   m_Height: 0.03
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &431861277
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -43.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &431861278 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 431861277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &431958177
 GameObject:
   m_ObjectHideFlags: 0
@@ -10478,6 +11224,12 @@ CapsuleCollider:
   m_Height: 0.03
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &461489692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 1883349516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &472543604
 GameObject:
   m_ObjectHideFlags: 0
@@ -10619,11 +11371,105 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6329158148709259305, guid: a760041d8eea6a5419ebc5c3dfb415d4, type: 3}
+--- !u!1001 &473651104
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 24.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 24.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 24.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -53.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &473651105 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 473651104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &475834154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12524,7 +13370,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -15180,6 +16026,100 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &590623598
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -55.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &590623599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 590623598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &594113461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1801152826368942197, guid: 38d22f54bf9d8f345ab04bd83cdb0aa2,
@@ -15235,6 +16175,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7178581637816246140, guid: 367925a64f019554790315917e0bb74c,
     type: 3}
   m_PrefabInstance: {fileID: 752744067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &601742351 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 1193351840}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &602048312 stripped
 Transform:
@@ -15607,7 +16553,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.059
   m_Height: 0.11
@@ -15968,6 +16914,100 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   On: 0
+--- !u!1001 &623101412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &623101413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 623101412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &629480907
 GameObject:
   m_ObjectHideFlags: 0
@@ -17637,7 +18677,7 @@ PrefabInstance:
     - target: {fileID: 8556582531297945793, guid: 99029531d731eb542b30fe3efc642cf0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5365728210071151749, guid: 99029531d731eb542b30fe3efc642cf0, type: 3}
@@ -17852,6 +18892,94 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1001 &674558230
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -25.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
 --- !u!1 &683304672 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8056817917324986991, guid: a760041d8eea6a5419ebc5c3dfb415d4,
@@ -18634,6 +19762,100 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.32900003, y: 0, z: 0.65300006}
   m_TimeToStationary: 0.5
+--- !u!1001 &686417961
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -29.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &686417962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 686417961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &688324846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20716,7 +21938,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.059
   m_Height: 0.05
@@ -22454,7 +23676,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.059
   m_Height: 0.05
@@ -23782,6 +25004,7 @@ Transform:
   - {fileID: 135427312}
   - {fileID: 1840547247}
   - {fileID: 911469277}
+  - {fileID: 1787886645}
   m_Father: {fileID: 74460875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &829409142
@@ -23828,6 +25051,7 @@ MonoBehaviour:
   - {fileID: 1644496372}
   - {fileID: 191375911}
   - {fileID: 1480404915}
+  electricParticle: {fileID: 1787886644}
 --- !u!64 &830061622
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27258,6 +28482,12 @@ CapsuleCollider:
   m_Height: 0.03
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1010327431 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 674558230}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1012014300
 GameObject:
   m_ObjectHideFlags: 0
@@ -29646,6 +30876,7 @@ Transform:
   - {fileID: 1045180517}
   - {fileID: 853087950}
   - {fileID: 2058303013}
+  - {fileID: 1629260919}
   m_Father: {fileID: 74460875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1050282283
@@ -29690,6 +30921,7 @@ MonoBehaviour:
   - {fileID: 1045180516}
   - {fileID: 853087949}
   - {fileID: 2058303012}
+  electricParticle: {fileID: 1629260918}
 --- !u!64 &1054550134
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33300,7 +34532,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a760041d8eea6a5419ebc5c3dfb415d4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 54.81
+      value: 52.34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a760041d8eea6a5419ebc5c3dfb415d4,
         type: 3}
@@ -34159,7 +35391,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.059
   m_Height: 0.05
@@ -34827,6 +36059,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1948056258}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1193351840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -43.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
 --- !u!64 &1194935070
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34932,7 +36252,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -38144,7 +39464,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.059
   m_Height: 0.05
@@ -38211,7 +39531,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -39796,7 +41116,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.059
   m_Height: 0.05
@@ -42562,7 +43882,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.059
   m_Height: 0.05
@@ -43099,6 +44419,100 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1037020236}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1498909081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -34.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &1498909082 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 1498909081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1500644236
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43509,6 +44923,194 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1950079155}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1543143115
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -37.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &1543143116 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 1543143115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1545067974
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 23.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 23.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 23.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -53.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &1545067975 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 1545067974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1547368919
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43719,6 +45321,100 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1001 &1557004371
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 14.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 14.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 14.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &1557004372 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 1557004371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1558536379
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46077,7 +47773,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f6d2a26a81ff2cb48a55a4a845d3f6d7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.522
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -46454,6 +48150,49 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &1629260918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1629260919}
+  m_Layer: 0
+  m_Name: Particles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1629260919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629260918}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -212.40002, y: 186, z: 56.200005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 363140506}
+  - {fileID: 1498909082}
+  - {fileID: 1543143116}
+  - {fileID: 431861278}
+  - {fileID: 2042011924}
+  - {fileID: 590623599}
+  - {fileID: 1710554664}
+  - {fileID: 1802593092}
+  - {fileID: 157972038}
+  - {fileID: 473651105}
+  - {fileID: 378733314}
+  - {fileID: 1545067975}
+  m_Father: {fileID: 1050282282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1634284976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47730,6 +49469,100 @@ CapsuleCollider:
   m_Height: 0.035
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &1710554663
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -49.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &1710554664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 1710554663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1710986967
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50013,6 +51846,48 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &1787886644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787886645}
+  m_Layer: 0
+  m_Name: Particles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1787886645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787886644}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -212.4, y: 186, z: 56.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 155424140}
+  - {fileID: 623101413}
+  - {fileID: 360523409}
+  - {fileID: 1915891808}
+  - {fileID: 1557004372}
+  - {fileID: 461489692}
+  - {fileID: 1010327431}
+  - {fileID: 1818633936}
+  - {fileID: 601742351}
+  - {fileID: 286535509}
+  - {fileID: 686417962}
+  m_Father: {fileID: 829409141}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1789564272
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50276,6 +52151,100 @@ CapsuleCollider:
   m_Height: 0.03
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &1802593091
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -45.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &1802593092 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 1802593091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1803768065
 GameObject:
   m_ObjectHideFlags: 0
@@ -50480,6 +52449,12 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!4 &1818633936 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 144380591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1818652504
 GameObject:
   m_ObjectHideFlags: 0
@@ -51616,7 +53591,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -51660,7 +53635,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -51682,7 +53657,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -52551,6 +54526,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1026448749}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1883349516
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
 --- !u!1 &1884432863
 GameObject:
   m_ObjectHideFlags: 0
@@ -53215,6 +55278,100 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1001 &1915891807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1787886645}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -39.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &1915891808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 1915891807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1917771789
 GameObject:
   m_ObjectHideFlags: 0
@@ -56681,6 +58838,100 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1001 &2042011923
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1629260919}
+    m_Modifications:
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_Name
+      value: PartSyst_MOSCA Electica (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -53
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cef342226aa52946a88f8d3bd109240, type: 3}
+--- !u!4 &2042011924 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
+    type: 3}
+  m_PrefabInstance: {fileID: 2042011923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &2042435264
 MeshCollider:
   m_ObjectHideFlags: 0

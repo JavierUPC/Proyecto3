@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurnOffCable : MonoBehaviour
 {
     public List<GameObject> cableToTurnOff; // List of objects to apply the material change to
+    public GameObject electricParticle;
 
     //Particulas
 
@@ -16,6 +17,8 @@ public class TurnOffCable : MonoBehaviour
     // Call this method to switch the material on each object in the list
     public void SwitchOffCable()
     {
+        electricParticle.SetActive(false);
+
         foreach (GameObject obj in cableToTurnOff)
         {
             //Apagar particulas electricas
