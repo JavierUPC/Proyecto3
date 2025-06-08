@@ -59,10 +59,8 @@ public class PlayerBaseMove : MonoBehaviour
     //UPDATE
     void Update()
     {
-        if (grounded)
-        {
-            Move();
-        }
+        Move();
+
 
         rb.velocity = new Vector3(moveDirection.x * speed, rb.velocity.y, moveDirection.z * speed);
 

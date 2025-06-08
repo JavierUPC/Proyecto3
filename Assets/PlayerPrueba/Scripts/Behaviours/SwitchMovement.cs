@@ -15,6 +15,8 @@ public class SwitchMovement : MonoBehaviour
 
     public PlayerInput playerInput;
     private InputAction climb, fall;
+
+    private float noClimbTime, noGroundTime;
     private void Start()
     {
         verticalMovement.SetActive(false);
