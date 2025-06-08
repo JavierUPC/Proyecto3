@@ -13,6 +13,8 @@ public class VolumeManager : MonoBehaviour
 
     void Start()
     {
+        PassSaveFiles.SetVariables();
+
         float musicVol = 0.5f;
         float ambientVol = 0.5f;
 

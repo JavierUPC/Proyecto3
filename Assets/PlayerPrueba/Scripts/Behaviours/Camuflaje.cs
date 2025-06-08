@@ -96,30 +96,30 @@ public class Camuflaje : MonoBehaviour
 
     private Material FindMaterialInObjectOrChildren(GameObject obj)
     {
-        // Check MeshRenderer
-        MeshRenderer meshRenderer = obj.GetComponent<MeshRenderer>();
-        if (meshRenderer != null && meshRenderer.sharedMaterial != null)
-        {
-            return meshRenderer.sharedMaterial;
-        }
+        // Get all MeshRenderer and SkinnedMeshRenderer components in this object and children
+        var meshRenderers = obj.GetComponentsInChildren<MeshRenderer>();
+        var skinnedRenderers = obj.GetComponentsInChildren<SkinnedMeshRenderer>();
 
-        // Check SkinnedMeshRenderer
-        SkinnedMeshRenderer skinnedRenderer = obj.GetComponent<SkinnedMeshRenderer>();
-        if (skinnedRenderer != null && skinnedRenderer.sharedMaterial != null)
+        // Check MeshRenderers
+        foreach (var meshRenderer in meshRenderers)
         {
-            return skinnedRenderer.sharedMaterial;
-        }
-
-        // Recursively check children
-        foreach (Transform child in obj.transform)
-        {
-            Material childMat = FindMaterialInObjectOrChildren(child.gameObject);
-            if (childMat != null)
+            foreach (var mat in meshRenderer.sharedMaterials)
             {
-                return childMat;
+                if (mat != null)
+                    return mat;
             }
         }
 
-        return null; // No material found in this object or its children
+        // Check SkinnedMeshRenderers
+        foreach (var skinnedRenderer in skinnedRenderers)
+        {
+            foreach (var mat in skinnedRenderer.sharedMaterials)
+            {
+                if (mat != null)
+                    return mat;
+            }
+        }
+
+        return null;
     }
 }

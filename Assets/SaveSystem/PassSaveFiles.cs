@@ -29,4 +29,9 @@ public static class PassSaveFiles
             SceneManager.LoadScene("Blockout 1");
         }
     }
+
+    public static void SetVariables()
+    {
+        loadedFile = SaveSystem.LoadGame();
+    }
 }
