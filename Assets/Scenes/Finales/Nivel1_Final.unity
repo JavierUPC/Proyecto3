@@ -12463,6 +12463,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a30a2eb65b2b46e44a926328b2358aa5, type: 3}
   - {fileID: 8300000, guid: 293374b1cf2c7ec468c7832576488beb, type: 3}
   - {fileID: 8300000, guid: 2e2758d885fb82d4db5c4e221e1f430b, type: 3}
+  - {fileID: 8300000, guid: 43134c74ea331d44d9f7886c681110cb, type: 3}
+  - {fileID: 8300000, guid: 43134c74ea331d44d9f7886c681110cb, type: 3}
 --- !u!82 &270205191
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59134,7 +59136,7 @@ PrefabInstance:
     - target: {fileID: 7056069387368437986, guid: 7fc801db66646954b8a94400def31273,
         type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Climbable
       objectReference: {fileID: 0}
     - target: {fileID: 8589677653080923032, guid: 7fc801db66646954b8a94400def31273,
         type: 3}
