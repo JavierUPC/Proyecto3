@@ -61,7 +61,6 @@ public class PlayerBaseMove : MonoBehaviour
     {
         Move();
 
-
         rb.velocity = new Vector3(moveDirection.x * speed, rb.velocity.y, moveDirection.z * speed);
 
         if (moveDirection.x == 0f && moveDirection.y == 0f)

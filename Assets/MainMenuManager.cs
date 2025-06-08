@@ -6,10 +6,12 @@ public class MainMenuManager : MonoBehaviour
 {
     public GameObject ventanaVolumen;
     public GameObject mainMenu;
+    public GameObject creditos;
 
     private void Start()
     {
         ventanaVolumen.SetActive(false);
+        creditos.SetActive(false);
         mainMenu.SetActive(true);
     }
 
@@ -21,7 +23,14 @@ public class MainMenuManager : MonoBehaviour
 
     public void VolverMenu()
     {
+        creditos.SetActive(false);
         ventanaVolumen.SetActive(false);
         mainMenu.SetActive(true);
+    }
+
+    public void AbrirCreditos()
+    {
+        mainMenu.SetActive(false);
+        creditos.SetActive(true);
     }
 }
