@@ -34949,7 +34949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireAbility: 0
-  rayDistance: 20
+  rayDistance: 25
   cameraRef: {fileID: 241943586}
   abilty: {fileID: 1113968506}
   sfx: {fileID: 270205190}
@@ -34968,7 +34968,7 @@ MonoBehaviour:
   player: {fileID: 1113968506}
   cameraRef: {fileID: 241943586}
   firing: 0
-  rayDistance: 20
+  rayDistance: 25
   sfx: {fileID: 270205190}
 --- !u!114 &1113968505
 MonoBehaviour:
