@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CloseOpenMenu : MonoBehaviour
 {
@@ -64,6 +65,7 @@ public class CloseOpenMenu : MonoBehaviour
         hubWindow.SetActive(false);
         volumeWindow.SetActive(false);
         controlsWindow.SetActive(false);
+        PassSaveFiles.Save(SceneManager.GetActiveScene().name);
 
         aim.enabled = true;
         playerInput.actions.FindActionMap("Player").Enable();

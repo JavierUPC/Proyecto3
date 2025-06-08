@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CloseTabX : MonoBehaviour
 {
@@ -18,5 +19,6 @@ public class CloseTabX : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        PassSaveFiles.Save(SceneManager.GetActiveScene().name);
     }
 }

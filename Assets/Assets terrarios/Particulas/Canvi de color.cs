@@ -3,7 +3,7 @@ using UnityEngine;
 public class ChispasColorChanger : MonoBehaviour
 {
     [Header("Material")]
-    public Material material;  // El material que usa el Particle System (asignado en el inspector)
+    public Material material;
 
     [Header("Colores")]
     public Color[] baseColors;
@@ -16,6 +16,9 @@ public class ChispasColorChanger : MonoBehaviour
     public float tiempoEntreCambios = 0.1f;
 
     private float timer = 0f;
+    //private ParticleSystem particles;
+    //public Transform toFollow;
+    //private Transform initialPos;
 
     void Start()
     {
@@ -23,11 +26,15 @@ public class ChispasColorChanger : MonoBehaviour
         {
             Debug.LogError("No se ha asignado un material.");
         }
+
+        //particles = GetComponent<ParticleSystem>();
+
+        //initialPos = toFollow.transform;
     }
 
     void Update()
     {
-        if (material == null) return;
+        if (material == null/* || particles == null || toFollow == null*/) return;
 
         timer += Time.deltaTime;
         if (timer >= tiempoEntreCambios)
@@ -35,6 +42,10 @@ public class ChispasColorChanger : MonoBehaviour
             CambiarColor();
             timer = 0f;
         }
+
+        //var shape = particles.shape;
+
+        //shape.position = transform.InverseTransformPoint(toFollow.position);
     }
 
     void CambiarColor()
@@ -46,6 +57,6 @@ public class ChispasColorChanger : MonoBehaviour
 
         material.SetColor("_BaseColor", baseColor);
         material.SetColor("_EmissionColor", emissionColor);
-        material.EnableKeyword("_EMISSION"); // Necesario para que el color emisivo funcione
+        material.EnableKeyword("_EMISSION");
     }
 }

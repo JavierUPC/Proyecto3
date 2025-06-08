@@ -159,7 +159,6 @@ public class Aim : MonoBehaviour
         {
             currentLookAt = initPosLookAt;
 
-            uiApuntarLento.SetBool("Activar", false);
             uiApuntarHabilidad.SetBool("Activar", false);
 
         }
@@ -167,9 +166,6 @@ public class Aim : MonoBehaviour
         {
             currentLookAt = new Vector3(initPosLookAt.x + currentDisplaceCam.x, initPosLookAt.y + currentDisplaceCam.y, initPosLookAt.z);
 
-            if (checkIfBugInMouth.BugInMouth())
-                uiApuntarLento.SetBool("Activar", true);
-            if (!checkIfBugInMouth.BugInMouth())
                 uiApuntarHabilidad.SetBool("Activar", true);
 
             if (!playerVertical.activeSelf)
