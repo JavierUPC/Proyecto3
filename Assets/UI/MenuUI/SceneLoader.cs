@@ -9,6 +9,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene()
     {
+        PassSaveFiles.Save(SceneManager.GetActiveScene().name);
         PassSaveFiles.Load();
     }
 

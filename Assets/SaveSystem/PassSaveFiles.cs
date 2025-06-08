@@ -10,7 +10,8 @@ public static class PassSaveFiles
 
     public static void Save(string sceneName)
     {
-        saveFile.CurrentLevelName = sceneName;
+        if(sceneName != "Menu")
+            saveFile.CurrentLevelName = sceneName;
 
         SaveSystem.SaveGame(saveFile);
     }
@@ -19,7 +20,7 @@ public static class PassSaveFiles
     {
         loadedFile = SaveSystem.LoadGame();
 
-        if (loadedFile != null)
+        if (loadedFile.CurrentLevelName != null)
         {
             SceneManager.LoadScene(loadedFile.CurrentLevelName);
         }
