@@ -19737,7 +19737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38246687a8389c14dae6c562576474e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTutorialAfter: 2
+  startTutorialAfter: 4
   Text1: {fileID: 2033077904}
   Text2: {fileID: 680889159}
   TutorialScreen: {fileID: 1893905464}
