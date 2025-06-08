@@ -5682,6 +5682,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   On: 0
+--- !u!1 &194044355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a30f21bc44f49184898ddb484eee481f,
+    type: 3}
+  m_PrefabInstance: {fileID: 884801704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &194044359
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194044355}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 075d1164c0df41346a81db19173b68a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &194044360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194044355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 786b59ef6d3eca6439a105e8542e9a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableProp: {fileID: 194044359}
 --- !u!64 &196217628
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29269,7 +29309,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a30f21bc44f49184898ddb484eee481f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 194044360}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a30f21bc44f49184898ddb484eee481f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 194044359}
   m_SourcePrefab: {fileID: 100100000, guid: a30f21bc44f49184898ddb484eee481f, type: 3}
 --- !u!64 &890327830
 MeshCollider:
@@ -51419,7 +51467,7 @@ MonoBehaviour:
   objetivoPersecucion: {fileID: 1968504129}
   spawnPosition: {x: 824, y: 20, z: 764}
   exitPosition: {x: 670, y: 20, z: -176}
-  tiempoEsperaEntreCiclos: 1
+  tiempoEsperaEntreCiclos: 30
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1.5
   distanciaDeteccion: 250
@@ -65604,7 +65652,6 @@ SceneRoots:
   - {fileID: 410360678}
   - {fileID: 1941688378}
   - {fileID: 1927489755}
-  - {fileID: 0}
   - {fileID: 1841484553}
   - {fileID: 537775086}
   - {fileID: 836912487}
