@@ -10,6 +10,12 @@ public class ApplyAbilty : MonoBehaviour
     private float timer;
     public TipoMosca type;
     public float tiempoHabilidad;
+    public GameObject pariclesAbility;
+
+    private void Start()
+    {
+        pariclesAbility.SetActive(false);
+    }
 
     public void Abilty(TipoMosca tipoMosca)
     {
@@ -17,6 +23,7 @@ public class ApplyAbilty : MonoBehaviour
         activeAbilty = habilidad;
         abilty = true;
         activeAbilty.AssignType(tipoMosca);
+        pariclesAbility.SetActive(true);
         Debug.Log("Tipo: " + tipoMosca);
     }
 
@@ -32,6 +39,7 @@ public class ApplyAbilty : MonoBehaviour
             timer = 0;
             activeAbilty.Stop();
             activeAbilty = null;
+            pariclesAbility.SetActive(false);
             Debug.Log("Abilty Limit Reached");
         }
     }
