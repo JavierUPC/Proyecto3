@@ -1,0 +1,75 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class Tutorial : MonoBehaviour
+{
+    public float startTutorialAfter = 2;
+    public GameObject Text1, Text2, TutorialScreen;
+    public PlayerInput playerInput;
+    public Aim aim;
+    public SpawnerMosca flySpawner;
+    private bool started = false, once = false;
+
+    void Start()
+    {
+        StartCoroutine(TimerToStart());
+        TutorialScreen.SetActive(false);
+        Text1.SetActive(false);
+        Text2.SetActive(false);
+    }
+
+    void Update()
+    {
+        if(flySpawner.tutorialHelp && started && !once)
+        {
+            once = true;
+            SetText2();
+        }
+    }
+
+    private IEnumerator TimerToStart()
+    {
+        yield return new WaitForSeconds(startTutorialAfter);
+        SetText1();
+    }
+
+    private void SetText1()
+    {
+        Text1.SetActive(true);
+        TutorialScreen.SetActive(true);
+
+        aim.enabled = false;
+        playerInput.actions.FindActionMap("Player").Disable();
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void Close()
+    {
+        Text1.SetActive(false);
+        Text2.SetActive(false);
+        TutorialScreen.SetActive(false);
+
+        aim.enabled = true;
+        playerInput.actions.FindActionMap("Player").Enable();
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        started = true;
+    }
+
+    private void SetText2()
+    {
+        Text2.SetActive(true);
+        TutorialScreen.SetActive(true);
+
+        aim.enabled = false;
+        playerInput.actions.FindActionMap("Player").Disable();
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+}

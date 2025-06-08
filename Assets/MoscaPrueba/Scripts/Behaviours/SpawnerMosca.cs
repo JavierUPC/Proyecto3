@@ -6,6 +6,7 @@ public class SpawnerMosca : MonoBehaviour
 {
     public GameObject mosca;
     private bool spawn = false;
+    public bool tutorialHelp = false;
     public int spawnTimer;
 
     private void Start()
@@ -28,6 +29,7 @@ public class SpawnerMosca : MonoBehaviour
     public void SetSpawn()
     {
         StartCoroutine(SetTimer());
+        tutorialHelp = true;
     }
 
     private IEnumerator SetTimer()

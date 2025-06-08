@@ -31,7 +31,7 @@ public class ApplyAbilty : MonoBehaviour
     void Update()
     {
         if (abilty)
-            timer += Time.unscaledDeltaTime;
+            timer += Time.deltaTime;
 
         if (abilty && timer >= tiempoHabilidad)
         {
