@@ -85,7 +85,7 @@ public class SwitchMovement : MonoBehaviour
             climbing = true;
             verticalMovement.GetComponent<PlayerVerticalMove>().SetClimbing(climbing, collision);
         }
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             grounded = true;
             baseMovement.GetComponent<PlayerBaseMove>().SetGrounded(grounded);
@@ -127,7 +127,7 @@ public class SwitchMovement : MonoBehaviour
             climbing = false;
             verticalMovement.GetComponent<PlayerVerticalMove>().SetClimbing(climbing, collision);
         }
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             grounded = false;
             baseMovement.GetComponent<PlayerBaseMove>().SetGrounded(grounded);
