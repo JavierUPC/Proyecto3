@@ -53,6 +53,7 @@ public class CientificoPersecucion : MonoBehaviour
 
     private NavMeshAgent agent;
     public Renderer rend;
+    public MuerteManager muerteManager;
     private Camuflaje camuflajeScript;
     private Animator animator;
 
@@ -176,7 +177,9 @@ public class CientificoPersecucion : MonoBehaviour
 
                         if (tiempoMatarActual <= 0)
                         {
-                            Kill.Reload(); // Mata al camaleón
+                            muerteManager.ActivarSecuenciaMuerte(); //activar animació
+
+                            //Kill.Reload(); // Mata al camaleón
                             rend.material = materialNormal;
                             enFaseDeteccion = false;
                         }
