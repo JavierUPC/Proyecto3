@@ -33,7 +33,7 @@ public class MuerteManager : MonoBehaviour
             manoAnimacion.SetTrigger("Agafar"); // Assegura’t que el trigger es diu així
         }
 
-        // 3. Pausar el joc (excepte aquest objecte que continua amb Time.unscaledDeltaTime)
+        // 3.Parar el camaleon. Que no es pugui moure. Desacrivar els scripts de moviment
         Time.timeScale = 0f;
 
         // 4. Esperar 1 segon real (no afectat pel timeScale)
