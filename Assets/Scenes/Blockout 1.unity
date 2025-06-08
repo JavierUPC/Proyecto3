@@ -6747,7 +6747,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.38202304, y: -0.0000000063653025, z: -0.0000000026312665,
     w: 0.9241528}
-  m_LocalPosition: {x: -29.2, y: 56.714775, z: 161.05997}
+  m_LocalPosition: {x: -26.4, y: 56.714775, z: 164.52797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9305,7 +9305,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.38202304, y: -0.0000000063653025, z: -0.0000000026312665,
     w: 0.9241528}
-  m_LocalPosition: {x: -29.2, y: 33.3, z: 133.9}
+  m_LocalPosition: {x: -26.4, y: 36, z: 140.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32752,6 +32752,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e5fb46baeae9b5845b0157beca1c2232, type: 2}
+    - target: {fileID: 7056069387368437986, guid: 7fc801db66646954b8a94400def31273,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056069387368437986, guid: 7fc801db66646954b8a94400def31273,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 8589677653080923032, guid: 7fc801db66646954b8a94400def31273,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
