@@ -10726,6 +10726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PartSyst_MOSCA Electica
       objectReference: {fileID: 0}
+    - target: {fileID: 3581596170064079657, guid: 2cef342226aa52946a88f8d3bd109240,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9098577224949613115, guid: 2cef342226aa52946a88f8d3bd109240,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -38640,6 +38645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PartSyst_MOSCA Foc
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822670031312588832, guid: 135ae798d399dd141be244feabf60d96,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4692995542258527360, guid: 135ae798d399dd141be244feabf60d96,
         type: 3}
