@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Camuflaje : MonoBehaviour
 {
-    private Material matContact;
+    public Material matContact;
     public Material matPlayer;
     private float useTimer, cooldownTimer;
     private bool cooldown;
