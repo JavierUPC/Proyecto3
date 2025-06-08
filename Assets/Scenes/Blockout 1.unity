@@ -47013,8 +47013,8 @@ GameObject:
   - component: {fileID: 1607474752}
   - component: {fileID: 1607474751}
   - component: {fileID: 1607474757}
-  - component: {fileID: 1607474758}
   - component: {fileID: 1607474759}
+  - component: {fileID: 1607474760}
   m_Layer: 0
   m_Name: Scientist
   m_TagString: Untagged
@@ -47177,8 +47177,8 @@ MonoBehaviour:
   objetivoPersecucion: {fileID: 1968504129}
   spawnPosition: {x: 824, y: 20, z: 764}
   exitPosition: {x: 670, y: 20, z: -176}
-  tiempoEsperaEntreCiclos: 3
-  tiempoDeteccion: 1
+  tiempoEsperaEntreCiclos: 30
+  tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1.5
   distanciaDeteccion: 250
   umbralVelocidad: 0.2
@@ -47192,7 +47192,7 @@ MonoBehaviour:
   materialNormal: {fileID: 2100000, guid: 0ed8669315ea6ab4f86a46894d7b560f, type: 2}
   materialDeteccion: {fileID: 2100000, guid: 4b1cb3fbdf3088a43901234804c7ac54, type: 2}
   rend: {fileID: 764837370}
---- !u!82 &1607474758
+--- !u!82 &1607474759
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47202,18 +47202,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f6d2a26a81ff2cb48a55a4a845d3f6d7, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.522
+  m_Volume: 0.408
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 128
   DopplerLevel: 1
-  MinDistance: 30
-  MaxDistance: 300
+  MinDistance: 258.08
+  MaxDistance: 504.2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -47288,7 +47288,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &1607474759
+--- !u!82 &1607474760
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47298,18 +47298,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f6d2a26a81ff2cb48a55a4a845d3f6d7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.286
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 30
-  MaxDistance: 300
+  MinDistance: 258.08
+  MaxDistance: 504.2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -47319,50 +47319,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.002
+      time: 0
       value: 1
-      inSlope: -500.20065
-      outSlope: -500.20065
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.005342774
-      value: 0.49803162
-      inSlope: -1.3800129
-      outSlope: -1.3800129
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.5791996
-      outWeight: 0.47102633
-    - serializedVersion: 3
-      time: 0.23321384
-      value: 0.15316772
-      inSlope: -1.9539088
-      outSlope: -1.9539088
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.5992498
-      value: 0.1282959
-      inSlope: -0.010064726
-      outSlope: -0.010064726
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.9481111
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0.002
-      inSlope: -0.002000801
-      outSlope: -0.002000801
+      value: 0
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -47371,7 +47344,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
