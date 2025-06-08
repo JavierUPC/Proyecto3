@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: b31b0c3f4ede98f4b9f4bcf0ce4aa896
+  - enabled: 1
+    path: Assets/Scenes/Nivel2_Desierto.unity
+    guid: bc272d1f6b2529648b9e82db1ba32919
   m_configObjects: {}

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class VolumeManager : MonoBehaviour
 {
-        public AudioSource music;
+    public AudioSource music;
     public AudioSource[] ambient;
 
     public Slider musicSlider;
