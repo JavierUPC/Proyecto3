@@ -1,48 +1,43 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MuerteManager : MonoBehaviour
 {
-    public Camera camaraPrincipal;
-    public Transform posicionCamaraMuerte;
-    public Animator manoAnimacion; // Animació de la mà que agafa el camaleó
-    public float tiempoAntesDeKill = 1f;
+    [Header("Objectes per activar")]
+    public GameObject Braç;
+    public Animator animatorMa;
 
-    private bool muerteEnProgreso = false;
+    private void Start()
+    {
+        if (Braç != null)
+        {
+            Braç.SetActive(false); //activar i desactivar el braç
+        }
+    }
 
     public void ActivarSecuenciaMuerte()
     {
-        if (muerteEnProgreso) return;
-        muerteEnProgreso = true;
-        StartCoroutine(SecuenciaMuerte());
-    }
-
-    private IEnumerator SecuenciaMuerte()
-    {
-        // 1. Col·locar càmera en la posició concreta
-        if (camaraPrincipal != null && posicionCamaraMuerte != null)
+        // 1. Activar el GameObject
+        if (Braç != null)
         {
-            camaraPrincipal.transform.position = posicionCamaraMuerte.position;
-            camaraPrincipal.transform.rotation = posicionCamaraMuerte.rotation;
+            Braç.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("No s'ha assignat cap objecte a activar.");
         }
 
-        // 2. Llençar animació de la mà si n'hi ha
-        if (manoAnimacion != null)
+        // 2. Activar el bool 'agafar' de l'Animator
+        if (animatorMa != null)
         {
-            manoAnimacion.SetTrigger("Agafar"); // Assegura’t que el trigger es diu així
+            animatorMa.SetBool("Agafar", true);
         }
+        else
+        {
+            Debug.LogWarning("No s'ha assignat cap Animator.");
+        }
+        
+        //Kill.Reload(); // Mata al camaleón
 
-        // 3.Parar el camaleon. Que no es pugui moure. Desacrivar els scripts de moviment
-        Time.timeScale = 0f;
-
-        // 4. Esperar 1 segon real (no afectat pel timeScale)
-        yield return new WaitForSecondsRealtime(tiempoAntesDeKill);
-
-        // 5. Tornar al timeScale normal
-        Time.timeScale = 1f;
-
-        // 6. Cridar Kill
-        Kill.Reload();
     }
 }
