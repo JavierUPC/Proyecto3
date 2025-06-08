@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class MuerteManager : MonoBehaviour
@@ -7,15 +8,23 @@ public class MuerteManager : MonoBehaviour
     public GameObject Braç;
     public Animator animatorMa;
 
+    [Header("Camera")]
+    public CinemachineOrbitalFollow freeLookCamera;
+
     private void Start()
     {
         if (Braç != null)
         {
-            Braç.SetActive(false); //activar i desactivar el braç
+            Braç.SetActive(false);
         }
     }
 
     public void ActivarSecuenciaMuerte()
+    {
+        StartCoroutine(SecuenciaMuerteCoroutine());
+    }
+
+    private IEnumerator SecuenciaMuerteCoroutine()
     {
         // 1. Activar el GameObject
         if (Braç != null)
@@ -27,7 +36,14 @@ public class MuerteManager : MonoBehaviour
             Debug.LogWarning("No s'ha assignat cap objecte a activar.");
         }
 
-        // 2. Activar el bool 'agafar' de l'Animator
+        // 2. Posar la càmera
+        if (freeLookCamera != null)
+        {
+            freeLookCamera.VerticalAxis.Value = 0.53f;
+            freeLookCamera.HorizontalAxis.Value = -114f;
+        }
+
+        // 3. Activar animació
         if (animatorMa != null)
         {
             animatorMa.SetBool("Agafar", true);
@@ -36,8 +52,11 @@ public class MuerteManager : MonoBehaviour
         {
             Debug.LogWarning("No s'ha assignat cap Animator.");
         }
-        
-        //Kill.Reload(); // Mata al camaleón
 
+        // 4. Pausar mig segon (0.5s)
+        yield return new WaitForSecondsRealtime(1f);
+
+        // 5. Cridar Kill
+        Kill.Reload();
     }
 }

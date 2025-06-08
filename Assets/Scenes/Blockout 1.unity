@@ -6850,8 +6850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241943582}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.38202304, y: -0.0000000063653025, z: -0.0000000026312665,
-    w: 0.9241528}
+  m_LocalRotation: {x: -0.3820415, y: 0.00000006317968, z: 0.000000026118473, w: 0.92414516}
   m_LocalPosition: {x: -26.4, y: 56.714775, z: 164.52797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9257,7 +9256,7 @@ MonoBehaviour:
   RecenteringTarget: 2
   HorizontalAxis:
     Value: 0
-    Center: 0
+    Center: 29.32
     Range: {x: -180, y: 180}
     Wrap: 1
     Recentering:
@@ -9336,8 +9335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345165541}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.38202304, y: -0.0000000063653025, z: -0.0000000026312665,
-    w: 0.9241528}
+  m_LocalRotation: {x: -0.3820415, y: 0.00000006317968, z: 0.000000026118473, w: 0.92414516}
   m_LocalPosition: {x: -26.4, y: 36, z: 140.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18102,6 +18100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "Bra\xE7": {fileID: 1855127999}
   animatorMa: {fileID: 1855128000}
+  freeLookCamera: {fileID: 345165546}
 --- !u!1 &618729588
 GameObject:
   m_ObjectHideFlags: 0
@@ -50559,7 +50558,7 @@ MonoBehaviour:
   objetivoPersecucion: {fileID: 1968504129}
   spawnPosition: {x: 824, y: 20, z: 764}
   exitPosition: {x: 670, y: 20, z: -176}
-  tiempoEsperaEntreCiclos: 1
+  tiempoEsperaEntreCiclos: 30
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1.5
   distanciaDeteccion: 250
