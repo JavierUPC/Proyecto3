@@ -79,27 +79,27 @@ public class Camuflaje : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Wall") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        GameObject other = collision.gameObject;
+
+        if (other.layer == LayerMask.NameToLayer("Wall") || other.layer == LayerMask.NameToLayer("Ground"))
         {
-            Material collisionMat = FindMaterialInObjectOrChildren(collision.gameObject);
+            Material collisionMat = FindMaterialInHierarchy(other);
             if (collisionMat != null)
             {
                 matContact = collisionMat;
-                //Debug.Log($"Material found: {collisionMat.name} on {collision.gameObject.name}");
+                // Debug.Log($"Material found: {collisionMat.name} on {other.name}");
             }
             else
             {
-                //Debug.LogWarning($"No material found on {collision.gameObject.name} or its children");
+                // Debug.LogWarning($"No material found on {other.name} or its hierarchy");
             }
         }
     }
 
-    private Material FindMaterialInObjectOrChildren(GameObject obj)
+    private Material FindMaterialInHierarchy(GameObject obj)
     {
-        // Search the current object and all its children
+        // 1. Search in children (including self)
         var meshRenderers = obj.GetComponentsInChildren<MeshRenderer>(includeInactive: true);
-        var skinnedRenderers = obj.GetComponentsInChildren<SkinnedMeshRenderer>(includeInactive: true);
-
         foreach (var renderer in meshRenderers)
         {
             foreach (var mat in renderer.sharedMaterials)
@@ -109,6 +109,7 @@ public class Camuflaje : MonoBehaviour
             }
         }
 
+        var skinnedRenderers = obj.GetComponentsInChildren<SkinnedMeshRenderer>(includeInactive: true);
         foreach (var renderer in skinnedRenderers)
         {
             foreach (var mat in renderer.sharedMaterials)
@@ -118,7 +119,7 @@ public class Camuflaje : MonoBehaviour
             }
         }
 
-        // Now search upwards through parents
+        // 2. Search up through parents
         Transform current = obj.transform.parent;
         while (current != null)
         {
@@ -145,6 +146,6 @@ public class Camuflaje : MonoBehaviour
             current = current.parent;
         }
 
-        return null; // No material found anywhere
+        return null; // No material found
     }
 }
