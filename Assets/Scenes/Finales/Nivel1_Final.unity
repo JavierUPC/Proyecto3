@@ -3517,6 +3517,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9047747531115863187, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8841110769163004470, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1635592aecc9134abea60492bd6f2c8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3587,10 +3597,50 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 88873316adbbd9b4f88ff61731150e86, type: 2}
+    - target: {fileID: -8481613504586842350, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6646056793480380878, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4167389339363206445, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3129841931607536711, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2653976545829171266, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1672319973000695517, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -28006297558584295, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c1635592aecc9134abea60492bd6f2c8,
         type: 3}
       propertyPath: m_Name
       value: lonaa
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c1635592aecc9134abea60492bd6f2c8,
         type: 3}
@@ -3601,6 +3651,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Climbable
+      objectReference: {fileID: 0}
+    - target: {fileID: 923255426971422408, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655462073462890802, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072897634565958479, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389988697962143367, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378255743343418013, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717717274944114209, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043346929087192529, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116602701236258535, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294532438625594100, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862837000681008701, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055317849006569906, guid: c1635592aecc9134abea60492bd6f2c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -52657,13 +52762,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Is he the one who trapped and experimented on me? I better hide!
-
-
-    [Hold
-    down X to camouflage yourself and prevent the criminal scientist from finding
-    you. He''s already close and searching for you, so hold X immediately after clicking
-    on the arrow.]'
+  m_Text: "Is he the one who trapped and experimented on me? I need to hide!\n\n[
+    Hold down X to camouflage yourself and avoid being spotted by the criminal scientist.
+    You can\u2019t use this ability while holding another one. He's already nearby
+    and searching for you, so press X right after clicking the arrow! ]"
 --- !u!222 &908767258
 CanvasRenderer:
   m_ObjectHideFlags: 0
