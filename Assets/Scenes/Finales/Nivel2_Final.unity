@@ -59002,7 +59002,7 @@ MonoBehaviour:
   objetivoPersecucion: {fileID: 52682077}
   spawnPosition: {x: 803, y: 20, z: 392}
   exitPosition: {x: 670, y: 20, z: -176}
-  tiempoEsperaEntreCiclos: 30
+  tiempoEsperaEntreCiclos: 1
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1.5
   distanciaDeteccion: 250
