@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CallScreen : MonoBehaviour
 {
@@ -14,12 +15,21 @@ public class CallScreen : MonoBehaviour
     public float killWaitTime;
     public AudioSource musica;
     public AudioClip audioClip;
+    public bool saltarMuerte = false;
 
     private void Start()
     {
         scientist.SetActive(false);
         electricity.SetActive(false);
         cactus.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (saltarMuerte && Keyboard.current.anyKey.wasPressedThisFrame)
+        {
+            Kill.Reload();
+        }
     }
 
     public void Scientist()
@@ -42,9 +52,11 @@ public class CallScreen : MonoBehaviour
 
     public void On(GameObject screen)
     {
+        PassSaveFiles.Save(SceneManager.GetActiveScene().name);
         musica.Stop();
         musica.PlayOneShot(audioClip);
         StartCoroutine(KillWait());
+        StartCoroutine(ScreenWait());
         aim.enabled = false;
         playerInput.actions.FindActionMap("Player").Disable();
         playerInput.actions.FindActionMap("UI").Disable();
@@ -78,6 +90,12 @@ public class CallScreen : MonoBehaviour
         Color color = imageInScreen.color;
         color.a = alpha;
         imageInScreen.color = color;
+    }
+
+    private IEnumerator ScreenWait()
+    {
+        yield return new WaitForSecondsRealtime(3);
+        saltarMuerte = true;
     }
 
     private IEnumerator KillWait()
