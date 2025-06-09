@@ -12596,7 +12596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241943582}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.3820415, y: 0.00000006317968, z: 0.000000026118473, w: 0.92414516}
+  m_LocalRotation: {x: -0.3820415, y: 0.000000040553868, z: 0.000000016764966, w: 0.92414516}
   m_LocalPosition: {x: -26.4, y: 56.714775, z: 164.52797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17048,7 +17048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345165541}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.3820415, y: 0.00000006317968, z: 0.000000026118473, w: 0.92414516}
+  m_LocalRotation: {x: -0.3820415, y: 0.000000040553868, z: 0.000000016764966, w: 0.92414516}
   m_LocalPosition: {x: -26.4, y: 36, z: 140.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -53885,52 +53885,52 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 20.912178
+      value: 7.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 20.912176
+      value: 7.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 20.912174
+      value: 7.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 68.7
+      value: 44.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.32050267
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0.6302999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.6302999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.32050267
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
@@ -53940,7 +53940,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 126.094
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33a2d064d29a29a418e017e184b8568f,
         type: 3}
@@ -53969,6 +53969,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1855128002}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 33a2d064d29a29a418e017e184b8568f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1855128003}
   m_SourcePrefab: {fileID: 100100000, guid: 33a2d064d29a29a418e017e184b8568f, type: 3}
 --- !u!64 &941286940
 MeshCollider:
@@ -60783,6 +60787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: jaula y puerta
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7fc801db66646954b8a94400def31273,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7fc801db66646954b8a94400def31273,
         type: 3}
@@ -87470,19 +87479,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 1607474749}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.7
+  m_Radius: 1.2
   m_Speed: 80
   m_Acceleration: 50
-  avoidancePriority: 50
+  avoidancePriority: 99
   m_AngularSpeed: 250
-  m_StoppingDistance: 0
+  m_StoppingDistance: 50
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.7
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!54 &1607474752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -87615,14 +87624,14 @@ MonoBehaviour:
   camaleon: {fileID: 1113968501}
   objetivoPersecucion: {fileID: 1968504129}
   spawnPosition: {x: 824, y: 20, z: 764}
-  exitPosition: {x: 670, y: 20, z: -176}
-  tiempoEsperaEntreCiclos: 30
+  exitPosition: {x: 630, y: 20, z: -176}
+  tiempoEsperaEntreCiclos: 1
   tiempoDeteccion: 4
-  tiempoNecesarioParaMatar: 1.5
+  tiempoNecesarioParaMatar: 5
   distanciaDeteccion: 250
-  umbralVelocidad: 0.2
+  umbralVelocidad: 22.8
   velocidadMinima: 4
-  velocidadMaxima: 30
+  velocidadMaxima: 5
   audioSourcePasos: {fileID: 1607474759}
   pasoIzquierdo: {fileID: 8300000, guid: 4ae02733de4f19943bd124bc0ad2a69b, type: 3}
   pasoDerecho: {fileID: 8300000, guid: 748bfe64e1e23de49aa19fd2f4191a01, type: 3}
@@ -98296,6 +98305,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objecteADesactivar: {fileID: 2067189562}
+--- !u!54 &1855128003
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855127999}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!64 &1857905835
 MeshCollider:
   m_ObjectHideFlags: 0

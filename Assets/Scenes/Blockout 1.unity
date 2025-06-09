@@ -19680,10 +19680,12 @@ MonoBehaviour:
   startTutorialAfter: 2
   Text1: {fileID: 2033077904}
   Text2: {fileID: 680889159}
+  Text3: {fileID: 0}
   TutorialScreen: {fileID: 1893905464}
   playerInput: {fileID: 1113968502}
   aim: {fileID: 1113968508}
   flySpawner: {fileID: 1410645681}
+  cientificoPersecucion: {fileID: 0}
 --- !u!1001 &439508624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62022,6 +62024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb0d55afa081ed40bac69cbd2f8ac50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  matContact: {fileID: 0}
   matPlayer: {fileID: 2100000, guid: 6e999c3d10ab1754e91dcf5fc0b06d11, type: 2}
   isCamo: 0
   previousState: 0
@@ -85239,7 +85242,7 @@ MonoBehaviour:
   objetivoPersecucion: {fileID: 1968504129}
   spawnPosition: {x: 824, y: 20, z: 764}
   exitPosition: {x: 670, y: 20, z: -176}
-  tiempoEsperaEntreCiclos: 30
+  tiempoEsperaEntreCiclos: 1
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1.5
   distanciaDeteccion: 250
@@ -85255,6 +85258,7 @@ MonoBehaviour:
   materialDeteccion: {fileID: 2100000, guid: 4b1cb3fbdf3088a43901234804c7ac54, type: 2}
   rend: {fileID: 764837370}
   muerteManager: {fileID: 618548579}
+  enFaseDeteccion: 0
 --- !u!82 &1607474759
 AudioSource:
   m_ObjectHideFlags: 0
