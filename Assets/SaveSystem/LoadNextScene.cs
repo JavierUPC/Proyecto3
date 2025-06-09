@@ -14,6 +14,7 @@ public class LoadNextScene : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             blackScreen.On();
+            PassSaveFiles.Save(SceneManager.GetActiveScene().name);
             StartCoroutine(timeToNextLevel());
         }
     }
