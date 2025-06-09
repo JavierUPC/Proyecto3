@@ -41549,7 +41549,7 @@ MonoBehaviour:
   previousState: 0
   checkMoscaEnBoca: {fileID: 1113968506}
   playerSkin: {fileID: 2010537770}
-  camoUseTime: 7
+  camoUseTime: 12
   camoCoolDown: 5
   playerInput: {fileID: 1113968502}
 --- !u!114 &1113968508
