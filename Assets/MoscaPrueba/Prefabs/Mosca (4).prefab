@@ -440,6 +440,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PartSyst_MOSCA Foc
       objectReference: {fileID: 0}
+    - target: {fileID: 4692995542258527360, guid: 135ae798d399dd141be244feabf60d96,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692995542258527360, guid: 135ae798d399dd141be244feabf60d96,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692995542258527360, guid: 135ae798d399dd141be244feabf60d96,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5903091624890520368, guid: 135ae798d399dd141be244feabf60d96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -448,7 +463,7 @@ PrefabInstance:
     - target: {fileID: 5903091624890520368, guid: 135ae798d399dd141be244feabf60d96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.077
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5903091624890520368, guid: 135ae798d399dd141be244feabf60d96,
         type: 3}
