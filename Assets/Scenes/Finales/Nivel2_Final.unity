@@ -8311,9 +8311,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241943582}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.38206974, y: -0.0000000057969283, z: -0.0000000023966569,
-    w: 0.9241335}
-  m_LocalPosition: {x: -11.3, y: 52.001003, z: -97.740005}
+  m_LocalRotation: {x: -0.38188633, y: 0.000000055087202, z: 0.000000022762215, w: 0.9242093}
+  m_LocalPosition: {x: -11.3, y: 52.001003, z: -88.576004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11183,9 +11182,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345165541}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.38206974, y: -0.0000000057969283, z: -0.0000000023966569,
-    w: 0.9241335}
-  m_LocalPosition: {x: -11.3, y: 36, z: -116.3}
+  m_LocalRotation: {x: -0.38188633, y: 0.000000055087202, z: 0.000000022762215, w: 0.9242093}
+  m_LocalPosition: {x: -11.3, y: 28.099998, z: -116.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41639,7 +41637,7 @@ Transform:
   m_GameObject: {fileID: 1113968501}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.9981877, z: 0, w: -0.06017742}
-  m_LocalPosition: {x: -11.3, y: 61, z: -87.3}
+  m_LocalPosition: {x: -11.3, y: 53.1, z: -87.3}
   m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -43231,7 +43229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 453754934}
-  sceneName: Nivel2_Desierto
+  sceneName: Menu
 --- !u!65 &1159319965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53662,7 +53660,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8bf6f1617a7c568478827b134b9fa3bd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2e86943ddcb25494dacf09c5f6e02d4f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.381
   m_Pitch: 1
@@ -59002,7 +59000,7 @@ MonoBehaviour:
   objetivoPersecucion: {fileID: 52682077}
   spawnPosition: {x: 803, y: 20, z: 392}
   exitPosition: {x: 670, y: 20, z: -176}
-  tiempoEsperaEntreCiclos: 1
+  tiempoEsperaEntreCiclos: 30
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1.5
   distanciaDeteccion: 250
