@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
+using static Unity.Cinemachine.CinemachineOrbitalFollow;
 
 public class MuerteManager : MonoBehaviour
 {
@@ -39,8 +40,19 @@ public class MuerteManager : MonoBehaviour
         // 2. Posar la càmera
         if (freeLookCamera != null)
         {
+            //POSICIO CAMERA
             freeLookCamera.VerticalAxis.Value = 0.53f;
             freeLookCamera.HorizontalAxis.Value = -114f;
+
+            //OBRIM ANGULACIO
+            //freeLookCamera.Orbits.Top.Radius = 39;
+            //freeLookCamera.Orbits.Center.Radius = 44;
+            //freeLookCamera.Orbits.Bottom.Radius = 39;
+
+            freeLookCamera.Orbits.Top.Radius = 139;
+            freeLookCamera.Orbits.Center.Radius = 144;
+            freeLookCamera.Orbits.Bottom.Radius = 139;
+            //yield return new WaitForSecondsRealtime(10f);
         }
 
         // 3. Activar animació

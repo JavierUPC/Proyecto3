@@ -58478,19 +58478,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 1607474749}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.7
+  m_Radius: 1.2
   m_Speed: 80
   m_Acceleration: 50
-  avoidancePriority: 50
+  avoidancePriority: 99
   m_AngularSpeed: 250
-  m_StoppingDistance: 0
+  m_StoppingDistance: 50
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.7
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!54 &1607474752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -58628,9 +58628,9 @@ MonoBehaviour:
   tiempoDeteccion: 4
   tiempoNecesarioParaMatar: 1.5
   distanciaDeteccion: 250
-  umbralVelocidad: 0.2
+  umbralVelocidad: 22.8
   velocidadMinima: 4
-  velocidadMaxima: 30
+  velocidadMaxima: 5
   audioSourcePasos: {fileID: 1607474759}
   pasoIzquierdo: {fileID: 8300000, guid: 4ae02733de4f19943bd124bc0ad2a69b, type: 3}
   pasoDerecho: {fileID: 8300000, guid: 748bfe64e1e23de49aa19fd2f4191a01, type: 3}
