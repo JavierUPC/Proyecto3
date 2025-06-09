@@ -19680,10 +19680,12 @@ MonoBehaviour:
   startTutorialAfter: 2
   Text1: {fileID: 2033077904}
   Text2: {fileID: 680889159}
+  Text3: {fileID: 0}
   TutorialScreen: {fileID: 1893905464}
   playerInput: {fileID: 1113968502}
   aim: {fileID: 1113968508}
   flySpawner: {fileID: 1410645681}
+  cientificoPersecucion: {fileID: 0}
 --- !u!1001 &439508624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45385,6 +45387,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1569152774}
+    - targetCorrespondingSourceObject: {fileID: 1420087847084964559, guid: 38d22f54bf9d8f345ab04bd83cdb0aa2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1569152778}
   m_SourcePrefab: {fileID: 100100000, guid: 38d22f54bf9d8f345ab04bd83cdb0aa2, type: 3}
 --- !u!64 &783758373
 MeshCollider:
@@ -62022,6 +62028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb0d55afa081ed40bac69cbd2f8ac50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  matContact: {fileID: 0}
   matPlayer: {fileID: 2100000, guid: 6e999c3d10ab1754e91dcf5fc0b06d11, type: 2}
   isCamo: 0
   previousState: 0
@@ -82802,6 +82809,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.51596993, y: 16.504925, z: 32.679214}
   m_Center: {x: -6.642951, y: 7.667753, z: 0.017270772}
+--- !u!65 &1569152778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569152772}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.86, y: 1, z: 6.15}
+  m_Center: {x: 0, y: 16.68, z: -12.46}
 --- !u!1 &1569773837 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7609145667655734672, guid: a760041d8eea6a5419ebc5c3dfb415d4,
@@ -85255,6 +85283,7 @@ MonoBehaviour:
   materialDeteccion: {fileID: 2100000, guid: 4b1cb3fbdf3088a43901234804c7ac54, type: 2}
   rend: {fileID: 764837370}
   muerteManager: {fileID: 618548579}
+  enFaseDeteccion: 0
 --- !u!82 &1607474759
 AudioSource:
   m_ObjectHideFlags: 0
