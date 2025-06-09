@@ -26,7 +26,7 @@ public class Tutorial : MonoBehaviour
         if(flySpawner.tutorialHelp && started && !once)
         {
             once = true;
-            SetText2();
+            StartCoroutine(MoscaEnBoca());
         }
         if(cientificoPersecucion.enFaseDeteccion && !first)
         {
@@ -67,6 +67,13 @@ public class Tutorial : MonoBehaviour
         Cursor.visible = false;
         started = true;
     }
+
+    private IEnumerator MoscaEnBoca()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SetText2();
+    }
+
 
     private void SetText2()
     {
