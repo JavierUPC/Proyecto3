@@ -20228,6 +20228,7 @@ GameObject:
   - component: {fileID: 453754928}
   - component: {fileID: 453754932}
   - component: {fileID: 453754933}
+  - component: {fileID: 453754934}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -20360,6 +20361,20 @@ MonoBehaviour:
   - {fileID: 270205191}
   musicSlider: {fileID: 499412502}
   ambientSlider: {fileID: 846734200}
+--- !u!114 &453754934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453754927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6c9161c6f5b1d4da5d8e4acd4bb6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackScreen: {fileID: 0}
+  fadeDuration: 1
 --- !u!1 &453950717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 367925a64f019554790315917e0bb74c,
