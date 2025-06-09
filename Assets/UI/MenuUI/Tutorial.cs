@@ -48,6 +48,7 @@ public class Tutorial : MonoBehaviour
 
         aim.enabled = false;
         playerInput.actions.FindActionMap("Player").Disable();
+        playerInput.actions.FindActionMap("UI").Disable();
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -62,6 +63,7 @@ public class Tutorial : MonoBehaviour
 
         aim.enabled = true;
         playerInput.actions.FindActionMap("Player").Enable();
+        playerInput.actions.FindActionMap("UI").Enable();
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -82,6 +84,7 @@ public class Tutorial : MonoBehaviour
 
         aim.enabled = false;
         playerInput.actions.FindActionMap("Player").Disable();
+        playerInput.actions.FindActionMap("UI").Disable();
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -94,6 +97,7 @@ public class Tutorial : MonoBehaviour
 
         aim.enabled = false;
         playerInput.actions.FindActionMap("Player").Disable();
+        playerInput.actions.FindActionMap("UI").Disable();
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

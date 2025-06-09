@@ -47,6 +47,7 @@ public class CallScreen : MonoBehaviour
         StartCoroutine(KillWait());
         aim.enabled = false;
         playerInput.actions.FindActionMap("Player").Disable();
+        playerInput.actions.FindActionMap("UI").Disable();
         Time.timeScale = 0f;
 
         screen.SetActive(true);
