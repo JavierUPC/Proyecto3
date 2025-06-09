@@ -2,9 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum DeadBy
+{
+    Cactus,
+    Cable
+}
+
 public class EliminatePlayer : MonoBehaviour
 {
     public bool On;
+    public CallScreen callScreen;
+    public DeadBy deadBy;
 
     private void Start()
     {
@@ -28,7 +37,14 @@ public class EliminatePlayer : MonoBehaviour
     {
         if (On && collision.transform.CompareTag("Player"))
         {
-            Kill.Reload();
+            if (deadBy == DeadBy.Cable)
+            {
+                callScreen.Electricity();
+            }
+            else if(deadBy == DeadBy.Cactus)
+            {
+                callScreen.Cactus();
+            }
         }
     }
 }

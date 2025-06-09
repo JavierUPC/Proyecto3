@@ -26,12 +26,13 @@ public static class PassSaveFiles
         }
         else
         {
-            SceneManager.LoadScene("Blockout 1");
+            SceneManager.LoadScene("Nivel1_Final");
         }
     }
 
     public static void SetVariables()
     {
-        loadedFile = SaveSystem.LoadGame();
+        if (loadedFile != null)
+            loadedFile = SaveSystem.LoadGame();
     }
 }

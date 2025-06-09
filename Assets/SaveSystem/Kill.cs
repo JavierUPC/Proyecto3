@@ -11,6 +11,7 @@ public static class Kill
 
     public static void Reload()
     {
+        Debug.Log("Entra en Kill");
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }

@@ -9,6 +9,8 @@ public class MuerteManager : MonoBehaviour
     public GameObject Braç;
     public Animator animatorMa;
 
+    public CallScreen callScreen;
+
     [Header("Camera")]
     public CinemachineOrbitalFollow freeLookCamera;
 
@@ -68,7 +70,6 @@ public class MuerteManager : MonoBehaviour
         // 4. Pausar mig segon (0.5s)
         yield return new WaitForSecondsRealtime(1f);
 
-        // 5. Cridar Kill
-        Kill.Reload();
+        callScreen.Scientist();
     }
 }
