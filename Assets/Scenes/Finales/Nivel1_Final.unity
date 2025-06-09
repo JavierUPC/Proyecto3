@@ -41129,7 +41129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &694614108
 RectTransform:
   m_ObjectHideFlags: 0
@@ -98189,6 +98189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416ae5cef003b974d92f6e9070e80f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackScreen: {fileID: 453754934}
   sceneName: Nivel2_Final
 --- !u!65 &1851959801
 BoxCollider:
