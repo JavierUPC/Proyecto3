@@ -96,30 +96,55 @@ public class Camuflaje : MonoBehaviour
 
     private Material FindMaterialInObjectOrChildren(GameObject obj)
     {
-        // Get all MeshRenderer and SkinnedMeshRenderer components in this object and children
-        var meshRenderers = obj.GetComponentsInChildren<MeshRenderer>();
-        var skinnedRenderers = obj.GetComponentsInChildren<SkinnedMeshRenderer>();
+        // Search the current object and all its children
+        var meshRenderers = obj.GetComponentsInChildren<MeshRenderer>(includeInactive: true);
+        var skinnedRenderers = obj.GetComponentsInChildren<SkinnedMeshRenderer>(includeInactive: true);
 
-        // Check MeshRenderers
-        foreach (var meshRenderer in meshRenderers)
+        foreach (var renderer in meshRenderers)
         {
-            foreach (var mat in meshRenderer.sharedMaterials)
+            foreach (var mat in renderer.sharedMaterials)
             {
                 if (mat != null)
                     return mat;
             }
         }
 
-        // Check SkinnedMeshRenderers
-        foreach (var skinnedRenderer in skinnedRenderers)
+        foreach (var renderer in skinnedRenderers)
         {
-            foreach (var mat in skinnedRenderer.sharedMaterials)
+            foreach (var mat in renderer.sharedMaterials)
             {
                 if (mat != null)
                     return mat;
             }
         }
 
-        return null;
+        // Now search upwards through parents
+        Transform current = obj.transform.parent;
+        while (current != null)
+        {
+            var parentMesh = current.GetComponent<MeshRenderer>();
+            if (parentMesh != null)
+            {
+                foreach (var mat in parentMesh.sharedMaterials)
+                {
+                    if (mat != null)
+                        return mat;
+                }
+            }
+
+            var parentSkinned = current.GetComponent<SkinnedMeshRenderer>();
+            if (parentSkinned != null)
+            {
+                foreach (var mat in parentSkinned.sharedMaterials)
+                {
+                    if (mat != null)
+                        return mat;
+                }
+            }
+
+            current = current.parent;
+        }
+
+        return null; // No material found anywhere
     }
 }
