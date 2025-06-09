@@ -6,11 +6,12 @@ using UnityEngine.InputSystem;
 public class Tutorial : MonoBehaviour
 {
     public float startTutorialAfter = 2;
-    public GameObject Text1, Text2, TutorialScreen;
+    public GameObject Text1, Text2, Text3, TutorialScreen;
     public PlayerInput playerInput;
     public Aim aim;
     public SpawnerMosca flySpawner;
-    private bool started = false, once = false;
+    private bool started = false, once = false, first = false;
+    public CientificoPersecucion cientificoPersecucion;
 
     void Start()
     {
@@ -26,6 +27,11 @@ public class Tutorial : MonoBehaviour
         {
             once = true;
             SetText2();
+        }
+        if(cientificoPersecucion.enFaseDeteccion && !first)
+        {
+            first = true;
+            SetText3();
         }
     }
 
@@ -51,6 +57,7 @@ public class Tutorial : MonoBehaviour
     {
         Text1.SetActive(false);
         Text2.SetActive(false);
+        Text3.SetActive(false);
         TutorialScreen.SetActive(false);
 
         aim.enabled = true;
@@ -64,6 +71,18 @@ public class Tutorial : MonoBehaviour
     private void SetText2()
     {
         Text2.SetActive(true);
+        TutorialScreen.SetActive(true);
+
+        aim.enabled = false;
+        playerInput.actions.FindActionMap("Player").Disable();
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    private void SetText3()
+    {
+        Text3.SetActive(true);
         TutorialScreen.SetActive(true);
 
         aim.enabled = false;

@@ -60,7 +60,7 @@ public class CientificoPersecucion : MonoBehaviour
     private float tiempoDeteccionActual;
     private float tiempoMatarActual;
     private bool buscando = false;
-    private bool enFaseDeteccion = false;
+    public bool enFaseDeteccion = false;
     private bool yendoASalida = false;
     private bool yendoASpawn = false;
 
