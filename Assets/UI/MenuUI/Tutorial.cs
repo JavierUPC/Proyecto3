@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Tutorial : MonoBehaviour
 {
-    public float startTutorialAfter = 2;
-    public GameObject Text1, Text2, Text3, TutorialScreen;
+    public float startTextAfter = 2, startTutorialAfter = 2;
+    public GameObject Text0, Text1, Text2, Text3, TutorialScreen;
     public PlayerInput playerInput;
     public Aim aim;
     public SpawnerMosca flySpawner;
-    private bool started = false, once = false, first = false;
+    private bool started = false, once = false, first = false, firstText = false;
     public CientificoPersecucion cientificoPersecucion;
 
     void Start()
@@ -19,6 +19,8 @@ public class Tutorial : MonoBehaviour
         TutorialScreen.SetActive(false);
         Text1.SetActive(false);
         Text2.SetActive(false);
+        Text3.SetActive(false);
+        Text0.SetActive(false);
     }
 
     void Update()
@@ -38,6 +40,24 @@ public class Tutorial : MonoBehaviour
     private IEnumerator TimerToStart()
     {
         yield return new WaitForSeconds(startTutorialAfter);
+        SetText0();
+    }
+
+    private void SetText0()
+    {
+        Text0.SetActive(true);
+        TutorialScreen.SetActive(true);
+
+        aim.enabled = false;
+        playerInput.actions.FindActionMap("Player").Disable();
+        playerInput.actions.FindActionMap("UI").Disable();
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    private IEnumerator TimerToStart2()
+    {
+        yield return new WaitForSeconds(startTextAfter);
         SetText1();
     }
 
@@ -56,9 +76,16 @@ public class Tutorial : MonoBehaviour
 
     public void Close()
     {
+        if(!firstText)
+        {
+            firstText = true;
+            StartCoroutine(TimerToStart2());
+        }
+
         Text1.SetActive(false);
         Text2.SetActive(false);
         Text3.SetActive(false);
+        Text0.SetActive(false);
         TutorialScreen.SetActive(false);
 
         aim.enabled = true;
